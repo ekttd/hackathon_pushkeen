@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, request, jsonify, session
 from pymongo import MongoClient
 from datetime import datetime
 import random
@@ -23,10 +23,12 @@ def generate_unique_code():
         if not users.find_one({'code': code}):
             return code
 
+
 def get_end_of_day():
     now = datetime.now()
     end_of_day = datetime(now.year, now.month, now.day, 23, 59, 59)
     return end_of_day
+
 
 @app.route('/add_user', methods=['POST'])
 def add_user():
@@ -61,6 +63,11 @@ def submit_code():
         now = datetime.now().date()
         if now != valid_date:
             return jsonify({'error': 'The code is no longer valid'}), 400
+
+        session['user_code'] = code
+        session['username'] = user.get('username', '')
+        session['coins'] = user.get('coins', 0)
+
         return jsonify({'message': 'Code is valid', 'code': code}), 200
     else:
         return jsonify({'error': 'Invalid code'}), 400
@@ -77,21 +84,39 @@ def update_username():
     result = users.update_one({'code': int(code)}, {'$set': {'username': username}})
 
     if result.modified_count == 1:
+        user = users.find_one({'code': int(code)})
+        session['username'] = user['username']
         return jsonify({'message': 'Username updated successfully'}), 200
     else:
         return jsonify({'error': 'Failed to update username or user not found'}), 400
 
 
+@app.route('/session_info', methods=['GET'])
+def session_info():
+    if 'username' in session and 'coins' in session:
+        return jsonify({
+            'username': session['username'],
+            'coins': session['coins']
+        }), 200
+    else:
+        return jsonify({'error': 'No user is logged in'}), 400
+
+
 @app.route('/add_coin', methods=['POST'])
 def add_coin():
-    result = users.update_one({'code': 123456}, {'$inc': {'coins': 1}})
-    updated_user = users.find_one({'coins': 1})
-    if updated_user:
-        print(f'New coins amount: {updated_user["coins"]}')
-        return render_template('index.html', coins=updated_user['coins'])
+    if 'user_code' not in session:
+        return jsonify({'error': 'User is not logged in'}), 400
+
+    user_code = session['user_code']
+
+    result = users.update_one({'code': int(user_code)}, {'$inc': {'coins': 1}})
+
+    if result.modified_count == 1:
+        updated_user = users.find_one({'code': int(user_code)})
+        session['coins'] = updated_user['coins']
+        return jsonify({'message': 'Coin added successfully', 'coins': updated_user['coins']}), 200
     else:
-        print('User not found')
-        return 404
+        return jsonify({'error': 'Failed to add coin or user not found'}), 400
 
 
 if __name__ == '__main__':
