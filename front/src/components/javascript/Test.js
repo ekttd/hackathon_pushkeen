@@ -1,58 +1,68 @@
-import React, { useState } from 'react';
-import '../css/Test.css';
+import React, { useState, useEffect } from "react";
+import "../css/Test.css";
 
-const TestPage = () => {
-    const questions = [
-        {
-            question: 'Какой город является столицей России?',
-            options: ['Москва', 'Санкт-Петербург', 'Казань'],
-            answer: 0,
-        },
-        // Добавьте еще 9 вопросов в том же формате
-    ];
+function Test() {
+    const [questions, setQuestions] = useState([]);
+    const [answers, setAnswers] = useState([]);
 
-    const [answers, setAnswers] = useState(Array(questions.length).fill(null));
-    const [showResults, setShowResults] = useState(false);
+    useEffect(() => {
+        // Имитация запроса к серверу для получения вопросов
+        const mockQuestions = [
+            {
+                question: "Какого цвета небо?",
+                options: ["Синий", "Зелёный", "Красный", "Жёлтый"],
+            },
+            {
+                question: "Сколько дней в неделе?",
+                options: ["5", "6", "7", "8"],
+            },
+        ];
+        setQuestions(mockQuestions);
+        setAnswers(Array(mockQuestions.length).fill(null));
+    }, []); // Пустой массив зависимостей, чтобы эффект сработал только один раз при монтировании компонента
 
-    const handleAnswerChange = (index, value) => {
-        setAnswers(prevAnswers => prevAnswers.map((answer, i) => (i === index ? value : answer)));
+    const handleAnswerChange = (questionIndex, answerIndex) => {
+        const newAnswers = [...answers];
+        newAnswers[questionIndex] = answerIndex;
+        setAnswers(newAnswers);
     };
 
     const handleSubmit = () => {
-        let correctAnswers = 0;
-        questions.forEach((question, index) => {
-            if (question.answer === answers[index]) {
-                correctAnswers++;
-            }
-        });
-        setShowResults(true);
-        alert(`Вы ответили правильно на ${correctAnswers} из 10 вопросов.`);
+        // Имитация отправки ответов на сервер
+        console.log("Отправленные ответы:", answers);
+        alert("Ответы отправлены! Проверьте консоль для деталей.");
     };
 
     return (
-        <div>
-            {questions.map((question, index) => (
-                <div key={index}>
-                    <p>{question.question}</p>
-                    {question.options.map((option, optionIndex) => (
-                        <label key={optionIndex}>
-                            <input
-                                type="checkbox"
-                                value={optionIndex}
-                                checked={answers[index] === optionIndex}
-                                onChange={e => handleAnswerChange(index, e.target.value)}
-                            />
-                            {option}
-                        </label>
+        <div className="test-container">
+            <div className="test-form">
+                <h1 className="test-title">Тест</h1>
+                <div className="questions">
+                    {questions.map((question, index) => (
+                        <div key={index} className="question">
+                            <p>{question.question}</p>
+                            <div className="options options-horizontal">
+                                {question.options.map((option, optionIndex) => (
+                                    <label key={optionIndex} className="option">
+                                        <input
+                                            type="radio"
+                                            value={optionIndex}
+                                            name={`question-${index}`}
+                                            onChange={(e) => handleAnswerChange(index, parseInt(e.target.value))}
+                                        />
+                                        {option}
+                                    </label>
+                                ))}
+                            </div>
+                        </div>
                     ))}
                 </div>
-            ))}
-            <button onClick={handleSubmit} disabled={answers.some(answer => answer === null)}>
-                Отправить ответы
-            </button>
-            {showResults && <p>Результаты теста будут показаны после нажатия кнопки.</p>}
+                <button className="submit-button" disabled={answers.some((answer) => answer === null)} onClick={handleSubmit}>
+                    Отправить ответы
+                </button>
+            </div>
         </div>
     );
-};
+}
 
 export default Test;

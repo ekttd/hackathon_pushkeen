@@ -8,7 +8,8 @@ import AdminHome from './components/javascript/AdminHome';
 import Register from './components/javascript/Register';
 import MuseumHistory from './components/javascript/MuseumHistory';
 import About from './components/javascript/About';
-import RoomDetail from './components/javascript/RoomDetail'; // Импортируйте новый компонент
+import RoomDetail from './components/javascript/RoomDetail';
+import Test from "./components/javascript/Test"; // Импортируйте новый компонент
 // Импортируйте остальные компоненты
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
                     <Route path="/admin" element={<AdminHome />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/history" element={<MuseumHistory />} />
+                    <Route path="/test" element={<Test />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/room1" element={<RoomDetail />} />
                     {/* Добавьте маршруты для других комнат */}
