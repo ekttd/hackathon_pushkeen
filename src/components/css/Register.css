@@ -1,0 +1,130 @@
+/* src/css/Register.css */
+.register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #f0f0f0; /* Фон, пока изображение загружается */
+    position: relative;
+    overflow: hidden;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.register-form:hover {
+    transform: scale(1.05);
+}
+
+.register-form h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.input-field {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: #2295b4;
+    box-shadow: 0 0 8px rgba(34, 149, 180, 0.3);
+    outline: none;
+}
+
+.main-button {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background: linear-gradient(135deg, #2295b4, #196c83);
+    border: none;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.main-button:hover {
+    background: linear-gradient(135deg, #196c83, #2295b4);
+    transform: translateY(-3px);
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.success-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.success-animation {
+    animation: zoomIn 8s ease-out;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-image {
+    width: 100vw; /* Начальная ширина */
+    height: 100vh; /* Начальная высота */
+    object-fit: cover;
+    animation: scaleUp 2s ease-out forwards;
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.5);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.5);
+    }
+}
