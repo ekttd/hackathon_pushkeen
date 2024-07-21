@@ -1,9 +1,11 @@
 from flask import Flask, request, jsonify, session
+from flask_cors import CORS
 from pymongo import MongoClient
 from datetime import datetime
 import random
 
 app = Flask(__name__)
+CORS(app)
 app.secret_key = 'kkk'
 
 client = MongoClient('mongodb://localhost:27017/')
@@ -15,6 +17,7 @@ else:
 
 db = client['pushkeen']
 users = db['users']
+questions = db['questions']
 
 
 def generate_unique_code():
@@ -32,15 +35,13 @@ def get_end_of_day():
 
 @app.route('/add_user', methods=['POST'])
 def add_user():
-    username = request.json.get('username')
-    if not username:
-        return jsonify({'error': 'Username is required'}), 400
+    username = request.json.get('username', '')
 
     code = generate_unique_code()
     end_of_day = get_end_of_day()
 
     user_data = {
-        'username': '',
+        'username': username,
         '_id': users.count_documents({}) + 1,
         'coins': 0,
         'valid_date': end_of_day,
@@ -117,6 +118,19 @@ def add_coin():
         return jsonify({'message': 'Coin added successfully', 'coins': updated_user['coins']}), 200
     else:
         return jsonify({'error': 'Failed to add coin or user not found'}), 400
+
+
+@app.route('/get_question', methods=['GET'])
+def get_question_route():
+    question_data = questions.aggregate([{'$sample': {'size': 1}}]).next()
+    question = question_data.get('question')
+    answers = [question_data.get('answer'), question_data.get('trap_1'), question_data.get('trap_2')]
+    random.shuffle(answers)
+    question_info = {
+        'question': question,
+        'answers': answers
+    }
+    return jsonify(question_info), 200
 
 
 if __name__ == '__main__':
