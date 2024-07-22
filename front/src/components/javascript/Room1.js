@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/Room.css'; // Подключаем CSS файл для стилизации
+import '../css/Room3Admin.css'; // Подключаем CSS файл для стилизации
 
 function Room1() {
     const [showAdminExit, setShowAdminExit] = useState(false);

@@ -22,7 +22,7 @@ body {
 }
 
 .full-image {
-    width: 100%;
+    width: 120%;
     height: 100%;
     object-fit: cover; /* Подгоняет изображение по размеру контейнера */
 }
@@ -31,7 +31,7 @@ body {
 .clickable-balal {
     position: absolute;
     top: 30%;
-    left: 56%;
+    left: 58%;
     transform: translate(-50%, -50%);
     color: white;
     padding: 10px;
@@ -56,6 +56,12 @@ body {
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease;
     z-index: 20; /* Кнопка должна быть поверх всего контента */
+}
+.hidden {
+
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.5s, opacity 0.5s ease;
 }
 
 .back-button:hover {

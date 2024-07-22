@@ -14,14 +14,6 @@ body {
 }
 
 .image-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    filter: blur(10px); /* Размытие фона */
-    transition: filter 0.3s ease; /* Плавная анимация при изменении фильтра */
-}
-
-.image-container-3 {
     display: flex;
     position: relative;
     width: 100%;
@@ -32,7 +24,48 @@ body {
     overflow: hidden; /* Скрывает выходящие за пределы элементы */
 }
 
-.full-image-3 {
+.normal-back {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    filter: blur(0px);
+    transition: filter 0.3s ease;
+    align-items: center;
+    overflow: hidden; /* Скрывает выходящие за пределы элементы */
+}
+
+.small-text-rectangle,
+.large-text-rectangle {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    text-align: center;
+}
+
+
+.large-text-rectangle {
+    position: fixed;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 150px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #143d49; /* Измените цвет на желаемый */
+    font-size: 250%; /* Измените размер шрифта на желаемый */
+}
+
+
+.full-image {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Полностью покрывает контейнер без обрезки краев */
@@ -44,38 +77,6 @@ body {
     transition: transform 0.3s ease; /* Плавная анимация при изменении масштаба */
 }
 
-
-.full-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Подгоняет изображение по размеру контейнера */
-}
-
-.clickable-candle {
-    position: absolute;
-    top: 17%;
-    left: 60%;
-    transform: translate(-50%, -50%);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    z-index: 10; /* Слой выше изображения */
-}
-
-.clickable-balal {
-    position: absolute;
-    top: 30%;
-    left: 56%;
-    transform: translate(-50%, -50%);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    z-index: 10; /* Слой выше изображения */
-}
 
 .clickable-pralka {
     position: absolute;
@@ -90,17 +91,12 @@ body {
     z-index: 10; /* Слой выше изображения */
 }
 
-.overlay-image-3 {
+.overlay-image {
     width: 80%;
     height: 80%;
     object-fit: cover;
 }
 
-.overlay-image-2 {
-    width: 120%;
-    height: 120%;
-    object-fit: cover;
-}
 
 /* Кнопка "Назад" */
 .back-button {
@@ -124,6 +120,13 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.5s, opacity 0.5s ease;
+}
+
 
 /* Окно с деталями */
 .details-overlay {

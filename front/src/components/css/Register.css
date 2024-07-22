@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: #f0f0f0; /* Фон, пока изображение загружается */
+    background: #72cbee; /* Фон, пока изображение загружается */
     position: relative;
     overflow: hidden;
 }
@@ -46,6 +46,29 @@
 }
 
 .input-field:focus {
+    border-color: #2295b4;
+    box-shadow: 0 0 8px rgba(34, 149, 180, 0.3);
+    outline: none;
+}
+
+.code-input-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.code-input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 24px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.code-input:focus {
     border-color: #2295b4;
     box-shadow: 0 0 8px rgba(34, 149, 180, 0.3);
     outline: none;

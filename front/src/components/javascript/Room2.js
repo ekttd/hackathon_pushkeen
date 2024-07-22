@@ -1,15 +1,15 @@
 // src/components/Room1.js
 import React from 'react';
-import '../css/Room.css'; // Создайте соответствующий CSS файл
+import '../css/Room3Admin.css'; // Создайте соответствующий CSS файл
 
-function Room1() {
+function Room2() {
     return (
         <div className="room-container">
-            <h1>Комната 1</h1>
-            <p>Добро пожаловать в Комнату 1!</p>
+            <h1>Комната 2</h1>
+            <p>Добро пожаловать в Комнату 2!</p>
             {/* Здесь можно добавить больше контента для комнаты */}
         </div>
     );
 }
 
-export default Room1;
+export default Room2;

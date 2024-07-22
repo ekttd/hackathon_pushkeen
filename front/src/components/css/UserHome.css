@@ -81,3 +81,23 @@
     text-align: center;
     border-radius: 0 0 10px 10px;
 }
+
+.test-button {
+    width: 20%;
+    padding: 1%;
+    margin: 10px 0;
+    background: linear-gradient(135deg, #2295b4, #196c83);
+    border: none;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.test-button:hover {
+    background: linear-gradient(135deg, #196c83, #2295b4);
+    transform: translateY(-3px);
+}
+
