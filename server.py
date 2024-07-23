@@ -134,14 +134,14 @@ def add_coin():
 @app.route('/submit_answers', methods=['POST'])
 def submit_answers():
     answers = request.json.get('answers', [])
-
+    print(request.json)
     if 'user_code' not in session:
+        print('User is not logged in')
         return jsonify({'error': 'User is not logged in'}), 400
 
-    user_code = session['user_code']
-
-    user = users.find_one({'code': int(user_code)})
+    user = users.find_one({'code': int(session['user_code'])})
     if not user:
+        print('User is not found')
         return jsonify({'error': 'User not found'}), 400
 
     correct_answers_count = 0
@@ -154,13 +154,10 @@ def submit_answers():
         correct_answer = question.get('answer')
         if answer['selected_answer'] == correct_answer:
             correct_answers_count += 1
-            users.update_one({'code': int(user_code)}, {'$inc': {'coins': 1}})
+            users.update_one({'code': int(session['user_code'])}, {'$inc': {'coins': 1}})
 
-    updated_user = users.find_one({'code': int(user_code)})
+    updated_user = users.find_one({'code': int(session['user_code'])})
     session['coins'] = updated_user['coins']
-
-    return jsonify({'correct_answers': correct_answers_count, 'coins': updated_user['coins']}), 200
-
 
 @app.route('/get_questions', methods=['GET'])
 def get_questions():
