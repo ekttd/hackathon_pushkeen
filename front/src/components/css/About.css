@@ -81,8 +81,8 @@ body {
 }
 
 iframe {
-    width: 320px; /* Задайте нужную ширину */
-    height: 180px; /* Задайте нужную высоту */
+    width: 320px;
+    height: 180px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

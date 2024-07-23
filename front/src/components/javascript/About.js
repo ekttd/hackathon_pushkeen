@@ -14,7 +14,7 @@ function About() {
             <div className="about-section">
                 <button className="collapsible" onClick={handleToggle}>Режим работы</button>
                 <div className="content">
-                    <p>Вторник - воскресенье:</p>
+                    <p>Вторник - Воскресенье:</p>
                     <p>10:00 - 17:00 (Касса до 16:30)</p>
                     <p>Выходной день - Понедельник</p>
                 </div>
