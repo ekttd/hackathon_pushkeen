@@ -1,16 +1,78 @@
 // src/components/javascript/About.js
 import React from 'react';
-import '../css/About.css'; // Проверьте, что путь к CSS-файлу верный
+import '../css/About.css';
 
 function About() {
+    const handleToggle = (event) => {
+        const content = event.currentTarget.nextElementSibling;
+        content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + 'px';
+    };
+
     return (
         <div className="about-container">
-            <h1>О нас</h1>
-            <div className="content">
-                <p>Здесь вы можете узнать больше о нашем сайте. Мы стремимся предоставлять лучший опыт для наших пользователей, предлагая интересные и увлекательные материалы.</p>
-                <p>Наш сайт был создан с целью познакомить вас с культурным наследием и предоставить возможность исследовать различные выставки и экспонаты.</p>
-                <p>Мы надеемся, что наш сайт принесет вам много полезной информации и приятных впечатлений.</p>
-                <p>Присоединяйтесь к нам в этом увлекательном путешествии по миру искусства и культуры!</p>
+            <h1 className="title">О нас</h1>
+            <div className="about-section">
+                <button className="collapsible" onClick={handleToggle}>Режим работы</button>
+                <div className="content">
+                    <p>Вторник - воскресенье:</p>
+                    <p>10:00 - 17:00 (Касса до 16:30)</p>
+                    <p>Выходной день - Понедельник</p>
+                </div>
+            </div>
+            <div className="about-section">
+                <button className="collapsible" onClick={handleToggle}>Стоимость билетов</button>
+                <div className="content">
+                    <p>Взрослый билет (от 18 лет) - 120 рублей</p>
+                    <p>Детский билет - бесплатно</p>
+                </div>
+            </div>
+            <div className="about-section">
+                <button className="collapsible" onClick={handleToggle}>Контакты</button>
+                <div className="content">
+                    <p>E-mail: mus_agency_obl@lenoblmus.ru</p>
+                    <p>Приёмная: 8 812 579 57 22</p>
+                    <p>Директор: Леся Анатольевна Колесникова</p>
+                </div>
+            </div>
+            <div className="about-section">
+                <button className="collapsible" onClick={handleToggle}>Видео об усадьбе</button>
+                <div className="content">
+                    <div className="video-wrapper">
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/-f4nldm53GE"
+                            title="Видео 1"
+                            style={{ border: 'none' }} // Заменяет frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/dXhd2yTAlNQ"
+                            title="Видео 2"
+                            style={{ border: 'none' }} // Заменяет frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/Kvj9ToooQrk"
+                            title="Видео 3"
+                            style={{ border: 'none' }} // Заменяет frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+            <div className="museum-details">
+                <div className="museum-address">
+                    <h2>Адрес</h2>
+                    <p>Санкт-Петербург, ул. Смольного, д.3</p>
+                </div>
             </div>
         </div>
     );
