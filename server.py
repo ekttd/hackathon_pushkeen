@@ -3,6 +3,7 @@ from flask_cors import CORS
 from pymongo import MongoClient
 from datetime import datetime
 import random
+from bson import ObjectId
 
 app = Flask(__name__)
 CORS(app)
@@ -31,6 +32,16 @@ def get_end_of_day():
     now = datetime.now()
     end_of_day = datetime(now.year, now.month, now.day, 23, 59, 59)
     return end_of_day
+
+
+def serialize_question(question):
+    return {
+        '_id': str(question['_id']),
+        'question': question.get('question'),
+        'answer': question.get('answer'),
+        'trap_1': question.get('trap_1'),
+        'trap_2': question.get('trap_2')
+    }
 
 
 @app.route('/add_user', methods=['POST'])
@@ -120,17 +131,42 @@ def add_coin():
         return jsonify({'error': 'Failed to add coin or user not found'}), 400
 
 
-@app.route('/get_question', methods=['GET'])
-def get_question_route():
-    question_data = questions.aggregate([{'$sample': {'size': 1}}]).next()
-    question = question_data.get('question')
-    answers = [question_data.get('answer'), question_data.get('trap_1'), question_data.get('trap_2')]
-    random.shuffle(answers)
-    question_info = {
-        'question': question,
-        'answers': answers
-    }
-    return jsonify(question_info), 200
+@app.route('/submit_answers', methods=['POST'])
+def submit_answers():
+    answers = request.json.get('answers', [])
+
+    if 'user_code' not in session:
+        return jsonify({'error': 'User is not logged in'}), 400
+
+    user_code = session['user_code']
+
+    user = users.find_one({'code': int(user_code)})
+    if not user:
+        return jsonify({'error': 'User not found'}), 400
+
+    correct_answers_count = 0
+
+    for answer in answers:
+        question = questions.find_one({'_id': ObjectId(answer['question_id'])})
+        if not question:
+            continue
+
+        correct_answer = question.get('answer')
+        if answer['selected_answer'] == correct_answer:
+            correct_answers_count += 1
+            users.update_one({'code': int(user_code)}, {'$inc': {'coins': 1}})
+
+    updated_user = users.find_one({'code': int(user_code)})
+    session['coins'] = updated_user['coins']
+
+    return jsonify({'correct_answers': correct_answers_count, 'coins': updated_user['coins']}), 200
+
+
+@app.route('/get_questions', methods=['GET'])
+def get_questions():
+    questions_cursor = questions.find()
+    questions_list = [serialize_question(question) for question in questions_cursor]
+    return jsonify(questions_list), 200
 
 
 if __name__ == '__main__':
