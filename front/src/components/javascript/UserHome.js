@@ -6,6 +6,7 @@ import room2Image from '../pics/room2.png';
 import room3Image from '../pics/room3.png';
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NavigationButtons from "./NavigationButtons";
 
 function UserHome() {
     const [showMessage, setShowMessage] = useState(false);
@@ -87,6 +88,7 @@ function UserHome() {
             <button className="test-button" onClick={() => setShowConfirmation(true)}>
                 Завершить просмотр
             </button>
+            <NavigationButtons />
         </div>
     );
 }

@@ -1,6 +1,6 @@
 // src/components/Room1.js
 import React from 'react';
-import '../css/Room3Admin.css'; // Создайте соответствующий CSS файл
+import '../css/Room3Admin.css';
 
 function Room2() {
     return (

@@ -1,7 +1,7 @@
 // src/components/javascript/About.js
 import React from 'react';
 import '../css/About.css';
-
+import NavigationButtons from './NavigationButtons';
 function About() {
     const handleToggle = (event) => {
         const content = event.currentTarget.nextElementSibling;
@@ -74,6 +74,7 @@ function About() {
                     <p>Санкт-Петербург, ул. Смольного, д.3</p>
                 </div>
             </div>
+            <NavigationButtons />
         </div>
     );
 }

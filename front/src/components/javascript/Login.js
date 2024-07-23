@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Login.css';
-import buildingImage from '../pics/building.jpg'; // Импортируем изображение
+import buildingImage from '../pics/building.jpg';
+import NavigationButtons from "./NavigationButtons";
 
 function Login() {
     const [username, setUsername] = useState('');
@@ -53,6 +54,7 @@ function Login() {
                     <img src={buildingImage} alt="Building" className="building-image" />
                 </div>
             )}
+            <NavigationButtons />
         </div>
     );
 }

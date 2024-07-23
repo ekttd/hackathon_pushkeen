@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Register.css';
 import successImage from '../pics/building.jpg';
+import NavigationButtons from "./NavigationButtons";
 
 function Register() {
     const [username, setUsername] = useState('');
@@ -158,6 +159,7 @@ function Register() {
                     <p>Успешная регистрация!</p>
                 </div>
             )}
+            <NavigationButtons />
         </div>
     );
 }

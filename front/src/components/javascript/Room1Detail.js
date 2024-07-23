@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Room1Detail.css'; // Подключаем CSS файл
 import roomImage from '../pics/room1.png'; // Импортируем изображение комнаты
-import overlayImage from '../pics/balal.png'; // Импортируем изображение комнаты
+import overlayImage from '../pics/balal.png';
 
 function Room1Detail() {
     const [showDetails, setShowDetails] = useState(null); // Хранение состояния выбранного объекта

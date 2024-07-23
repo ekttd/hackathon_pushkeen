@@ -52,7 +52,6 @@ function Room2Detail() {
                     </div>
                 </div>
             )}
-
         </div>
     );
 }

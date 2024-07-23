@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import '../css/Room3Detail.css'; // Подключаем CSS файл
 import '../css/PasswordForm.css'; // Подключаем CSS файл
 import roomImage from '../pics/room3.png';
-import overlayImage from "../pics/pralka.png"; // Импортируем изображение комнаты
+import overlayImage from "../pics/pralka.png";
 
 function Room3Detail() {
     const [showDetails, setShowDetails] = useState(null); // Хранение состояния выбранного объекта
@@ -53,6 +53,7 @@ function Room3Detail() {
                     </div>
                 </div>
             )}
+
         </div>
     );
 }
