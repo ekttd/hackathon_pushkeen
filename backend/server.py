@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 from pymongo import MongoClient
 from bson import ObjectId
 from datetime import datetime
@@ -29,11 +29,13 @@ db = client['pushkeen']
 users = db['users']
 questions_collection = db['questions']  # Коллекция для вопросов
 
+
 def generate_unique_code():
     while True:
         code = random.randint(100000, 999999)
         if not users.find_one({'code': code}):
             return code
+
 
 @app.route('/add_user', methods=['POST'])
 def add_user():
@@ -56,6 +58,7 @@ def add_user():
         logging.error(f'Failed to add user: {e}')
         return jsonify({'error': 'Failed to add user'}), 500
 
+
 @app.route('/submit_code', methods=['POST'])
 def submit_code():
     code = request.json.get('code')
@@ -67,6 +70,7 @@ def submit_code():
         return jsonify({'message': 'Code is valid'}), 200
     else:
         return jsonify({'error': 'Invalid code'}), 400
+
 
 @app.route('/update_username', methods=['POST'])
 def update_username():
@@ -84,12 +88,14 @@ def update_username():
     else:
         return jsonify({'error': 'Failed to update username'}), 500
 
+
 @app.route('/get_questions', methods=['GET'])
 def get_questions():
     questions = list(questions_collection.find({}))
     for q in questions:
         q['_id'] = str(q['_id'])  # Преобразование ObjectId в строку
     return jsonify(questions)
+
 
 @app.route('/submit_answers', methods=['POST'])
 def submit_answers():
@@ -131,7 +137,6 @@ def submit_answers():
         new_coin_balance = 0
 
     return jsonify({'correct_answers': correct_answers, 'coins': new_coin_balance})
-
 
 
 if __name__ == '__main__':

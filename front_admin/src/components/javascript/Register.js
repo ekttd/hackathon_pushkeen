@@ -27,7 +27,7 @@ function Register() {
         const fullCode = code.join('');
         if (fullCode.length === 6) {
             try {
-                const response = await fetch('http://127.0.0.1:5000/check_code', {
+                const response = await fetch('http://127.0.0.1:5000/submit_code', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

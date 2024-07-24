@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Login.css';
-import buildingImage from '../pics/building.jpg'; // Импортируем изображение
+import buildingImage from '../pics/building.jpg';
 
 function Login() {
     const [username, setUsername] = useState('');
@@ -24,7 +24,7 @@ function Login() {
         if (isLoggedIn) {
             const timer = setTimeout(() => {
                 navigate(redirectTo);
-            }, 5000); // Задержка в 3 секунды для завершения анимации
+            }, 5000); 
 
             return () => clearTimeout(timer);
         }
