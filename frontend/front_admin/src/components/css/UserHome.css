@@ -1,0 +1,123 @@
+/* src/css/UserHome.css */
+.user-home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url('../pics/bg_pc.png') no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.message-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.message-box {
+    background: white;
+    color: black;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+}
+
+.close-button {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: black;
+}
+
+.room-gallery {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.room {
+    position: relative;
+    cursor: pointer;
+}
+
+.room-image {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.room-image:hover {
+    transform: scale(1.05);
+}
+
+.room-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+}
+
+.test-button {
+    width: 20%;
+    padding: 1%;
+    margin: 10px 0;
+    background: linear-gradient(135deg, #2295b4, #196c83);
+    border: none;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.test-button:hover {
+    background: linear-gradient(135deg, #196c83, #2295b4);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .test-button {
+        width: 35%;
+        padding: 1%;
+        margin: 10px 0;
+        background: linear-gradient(135deg, #2295b4, #196c83);
+        border: none;
+        color: white;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .test-button:hover {
+        background: linear-gradient(135deg, #196c83, #2295b4);
+        transform: translateY(-3px);
+    }
+}
