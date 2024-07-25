@@ -1,0 +1,27 @@
+[{
+  "_id": 1,
+  "username": "dashka",
+  "coins": 0,
+  "valid_date": {
+    "$date": "2024-07-19T00:00:00.000Z"
+  },
+  "code": 111111
+},
+{
+  "_id": 2,
+  "username": "svetik",
+  "coins": 0,
+  "valid_date": {
+    "$date": "2024-07-19T00:00:00.000Z"
+  },
+  "code": 111111
+},
+{
+  "_id": 19,
+  "username": "",
+  "coins": 0,
+  "valid_date": {
+    "$date": "2024-07-24T23:59:59.000Z"
+  },
+  "code": 888803
+}]
