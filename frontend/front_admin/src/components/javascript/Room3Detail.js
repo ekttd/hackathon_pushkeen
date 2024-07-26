@@ -8,16 +8,12 @@ import overlayImage from "../pics/pralka.png"; // Импортируем изо�
 function Room3Detail() {
     const [showDetails, setShowDetails] = useState(null); // Хранение состояния выбранного объекта
     const [isPralkaVisible, setIsPralkaVisible] = useState(true); // Хранение состояния видимости балалайки
-    const [adminPassword, setAdminPassword] = useState('');
     const [code, setCode] = useState(['', '', '', '', '', '']);
     const [errorMessage, setErrorMessage] = useState('');
     const [showCodeInput, setShowCodeInput] = useState(false);
     const [showNameInput, setShowNameInput] = useState(false);
-    const [codeSent, setCodeSent] = useState(false);
-    const [showSuccess, setShowSuccess] = useState(false);
     const [isAdmin, setIsAdmin] = useState(localStorage.getItem('isAdmin') === 'true');
     const navigate = useNavigate();
-    const [showCodePrompt, setShowCodePrompt] = useState(false);
 
     const handleCodeChange = (e, index) => {
         const { value } = e.target;
@@ -48,6 +44,7 @@ function Room3Detail() {
                     if (data.message === 'Code is valid') {
                         setShowNameInput(true);
                         setErrorMessage('');
+                        navigate('/admin');
                     } else {
                         setErrorMessage('Неверный код. Пожалуйста, введите 6-значный код.');
                     }
@@ -81,15 +78,6 @@ function Room3Detail() {
         }
     };
 
-    const handlePasswordSubmit = () => {
-        if (adminPassword === '123456') { // Замените '123456' на правильный код доступа
-            navigate('/admin'); // Замените '/select' на правильный путь к странице выбора
-            setShowCodeInput(false);
-            setAdminPassword('');
-        } else {
-            alert('Неверный код доступа');
-        }
-    };
 
     return (
         <div className="room-detail-container">
@@ -109,7 +97,7 @@ function Room3Detail() {
                             />
                         ))}
                     </div>
-                    <button onClick={handlePasswordSubmit} className="code-button">Подтвердить</button>
+                    <button onClick={handleCodeSubmit} className="code-button">Подтвердить</button>
                     <button onClick={() => setShowCodeInput(false)} className="code-button">Отмена</button>
                 </div>
             )}

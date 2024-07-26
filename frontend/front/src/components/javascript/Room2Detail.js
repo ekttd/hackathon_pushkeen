@@ -24,20 +24,22 @@ function Room2Detail() {
     };
 
     return (
-        <div className={`room-detail-container`}>
+        <div className={`room-detail-container-2`}>
             <button className="back-button" onClick={handleBack}>Назад к комнатам</button>
-            <div className={`image-container ${isCandleVisible ? '' : 'normal-back'}`} onClick={handleCandleClick}>
-                <img src={roomImage} alt="Комната" className="full-image"/>
-            </div>
-            {isCandleVisible && (
-                <div className="large-text-rectangle-2">Комната 2</div>
+            {isCandleVisible ? (
+                <>
+                    <div className="blur-filter-2" />
+                    <div className="large-text-rectangle-2">Комната 2</div>
+                </>
+            ) : (
+                <div className="no-blur-filter-2"/>
             )}
             <div className={`clickable-candle ${isCandleVisible ? '' : 'hidden'}`} onClick={handleCandleClick}>
                 <img src={overlayImage} alt="Открыть детали" className="overlay-image-2"/>
             </div>
             {showDetails && (
-                <div className="details-overlay">
-                <button className="close-button" onClick={handleClose}>
+                <div className="details-overlay-2">
+                    <button className="close-button" onClick={handleClose}>
                         <span>&times;</span> {/* Крестик для закрытия */}
                     </button>
                     <div className="details">
@@ -50,7 +52,6 @@ function Room2Detail() {
                     </div>
                 </div>
             )}
-
         </div>
     );
 }

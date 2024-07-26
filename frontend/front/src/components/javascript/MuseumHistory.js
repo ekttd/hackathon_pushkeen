@@ -3,6 +3,7 @@ import '../css/MuseumHistory.css';
 import galleryImage1 from '../pics/room1.png';
 import galleryImage2 from '../pics/room2.png';
 import galleryImage3 from '../pics/room3.png';
+import NavigationButtons from "./NavigationButtons";
 
 function MuseumHistory() {
     const handleToggle = (event) => {
@@ -48,6 +49,7 @@ function MuseumHistory() {
                     <img src={galleryImage3} alt="Gallery Image 3" className="gallery-image" />
                 </div>
             </div>+
+            <NavigationButtons />
         </div>
     );
 }

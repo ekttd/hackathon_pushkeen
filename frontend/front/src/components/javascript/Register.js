@@ -5,6 +5,7 @@ import { useUser } from './UserContext';
 import '../css/Register.css';
 import successImage from '../pics/building.jpg';
 import axios from 'axios';
+import NavigationButtons from "./NavigationButtons";
 
 const instance = axios.create({
     baseURL: 'http://127.0.0.1:5000',
@@ -144,6 +145,7 @@ function Register() {
                     <p>Успешная регистрация!</p>
                 </div>
             )}
+            <NavigationButtons />
         </div>
     );
 }

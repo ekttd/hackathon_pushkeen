@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: url('../pics/bg_pc.png') no-repeat center center fixed;
+    background: linear-gradient(135deg, #cfa847, #f8ebb9); /* Линейный градиент */
     background-size: cover;
     padding: 20px;
     color: white;
@@ -86,7 +86,7 @@
     width: 20%;
     padding: 1%;
     margin: 10px 0;
-    background: linear-gradient(135deg, #2295b4, #196c83);
+    background: linear-gradient(135deg, #e3a400, #fbb200);
     border: none;
     color: white;
     border-radius: 25px;
@@ -97,7 +97,7 @@
 }
 
 .test-button:hover {
-    background: linear-gradient(135deg, #196c83, #2295b4);
+    background: linear-gradient(135deg, #e3a400, #fbb200);
     transform: translateY(-3px);
 }
 
@@ -106,7 +106,7 @@
         width: 35%;
         padding: 1%;
         margin: 10px 0;
-        background: linear-gradient(135deg, #2295b4, #196c83);
+        background: linear-gradient(135deg, #cf9204, #fbb200);
         border: none;
         color: white;
         border-radius: 25px;
@@ -117,23 +117,20 @@
     }
 
     .test-button:hover {
-        background: linear-gradient(135deg, #196c83, #2295b4);
+        background: linear-gradient(135deg, #e3a400, #fbb200);
         transform: translateY(-3px);
     }
 }
 
-.custom-modal .modal-dialog {
-    max-width: 400px;
-    margin: 30px auto;
-    border-radius: 10px;
-}
-
-.custom-modal .modal-header {
-    border-bottom: none;
-}
-
 .custom-modal .modal-body {
     padding: 30px;
+    border-radius: 10px;
+    background-color: #fffce8;
+}
+
+.room-title {
+    margin-top: 10%;
+    margin-bottom: 10%; /* Отступ снизу */
 }
 
 .modal-buttons {
@@ -143,13 +140,17 @@
 }
 
 .modal-button {
-    background-color: #4CAF50;
+    width: 20%;
+    padding: 1%;
+    margin: 10px 0;
+    background: linear-gradient(135deg, #e3a400, #fbb200);
     border: none;
-    color: #fff;
-    border-radius: 5px;
+    color: white;
+    border-radius: 25px;
     cursor: pointer;
-    padding: 10px 20px;
-    font-size: 16px;
+    font-size: 14px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .modal-button:hover {

@@ -4,6 +4,7 @@ import '../css/UserHome.css';
 import room1Image from '../pics/room1.png';
 import room2Image from '../pics/room2.png';
 import room3Image from '../pics/room3.png';
+import NavigationButtons from './NavigationButtons';
 
 function AdminHome() {
     const [showMessage, setShowMessage] = useState(false);
@@ -55,6 +56,7 @@ function AdminHome() {
                     <div className="room-overlay">Комната 3</div>
                 </div>
             </div>
+            <NavigationButtons />
         </div>
     );
 }

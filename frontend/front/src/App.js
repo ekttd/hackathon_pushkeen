@@ -12,7 +12,9 @@ import Room1Detail from './components/javascript/./Room1Detail';
 import Test from "./components/javascript/Test";
 import Room2Detail from "./components/javascript/Room2Detail";
 import Room3Detail from "./components/javascript/Room3Detail";
+import Accept from "./components/javascript/Accept";
 // Импортируйте остальные компоненты
+
 
 function App() {
     return (
@@ -30,6 +32,7 @@ function App() {
                     <Route path="/room1" element={<Room1Detail />} />
                     <Route path="/room2" element={<Room2Detail />} />
                     <Route path="/room3" element={<Room3Detail />} />
+                    <Route path="/accept" element={<Accept />} />
                     {/* Добавьте маршруты для других комнат */}
                 </Routes>
             </div>

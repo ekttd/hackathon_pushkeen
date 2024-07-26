@@ -1,5 +1,6 @@
 // src/Test.js
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../css/Test.css';
 import { useUser } from './UserContext';
@@ -22,7 +23,7 @@ const Test = () => {
     const [coins, setCoins] = useState(0);
     const [notification, setNotification] = useState('');
     const [currentShuffledAnswers, setCurrentShuffledAnswers] = useState([]);
-
+    const navigate = useNavigate();
     const { user } = useUser();
     const userCode = user.code;
 
@@ -36,6 +37,10 @@ const Test = () => {
             })
             .catch(error => console.error('Error fetching questions:', error));
     }, []);
+
+    const handleBack = () => {
+        navigate('/');
+    };
 
     const handleAnswerChange = (value) => {
         setAnswers(prevAnswers => {
@@ -88,35 +93,41 @@ const Test = () => {
         <div className="test-container">
             <div className="test-form">
                 <h1 className="test-title">Тест</h1>
-                <div className="questions">
-                    <div className="question">
-                        <p>{currentQuestion.question}</p>
-                        <div className="options options-horizontal">
-                            {shuffledAnswers.map((option, optionIndex) => (
-                                <label key={optionIndex} className="option">
-                                    <input
-                                        type="radio"
-                                        name={`question-${currentQuestionIndex}`}
-                                        value={optionIndex}
-                                        checked={answers[currentQuestionIndex] === optionIndex}
-                                        onChange={e => handleAnswerChange(parseInt(e.target.value))}
-                                    />
-                                    {option}
-                                </label>
-                            ))}
+
+                {!showResults  ? (
+                    <div className="questions">
+                        <div className="question">
+                            <p>{currentQuestion.question}</p>
+                            <div className="options options-horizontal">
+                                {shuffledAnswers.map((option, optionIndex) => (
+                                    <label key={optionIndex} className="option">
+                                        <input
+                                            type="radio"
+                                            name={`question-${currentQuestionIndex}`}
+                                            value={optionIndex}
+                                            checked={answers[currentQuestionIndex] === optionIndex}
+                                            onChange={e => handleAnswerChange(parseInt(e.target.value))}
+                                        />
+                                        {option}
+                                    </label>
+                                ))}
+                            </div>
                         </div>
+                        <button onClick={handleSubmit} disabled={answers[currentQuestionIndex] === null}>
+                            {currentQuestionIndex < questions.length - 1 ? 'Следующий вопрос' : 'Отправить ответы'}
+                        </button>
+
+                        {notification && <p className="notification">{notification}</p>}
                     </div>
-                    <button onClick={handleSubmit} disabled={answers[currentQuestionIndex] === null}>
-                        {currentQuestionIndex < questions.length - 1 ? 'Следующий вопрос' : 'Отправить ответы'}
-                    </button>
-                    {showResults && (
-                        <div>
-                            <p>Вы ответили правильно на {correctAnswers} вопросов.</p>
-                            <p>Ваши монеты: {coins}</p>
-                        </div>
-                    )}
-                    {notification && <p className="notification">{notification}</p>}
-                </div>
+                ) : (
+                    <div>
+                        <p>Вы ответили правильно на {correctAnswers} вопросов.</p>
+                        <p>Ваши монеты: {coins}. Их можно потратить в нашем магазине</p>
+                        <p>До скорых встреч!</p>
+                        <button className="test-form button" onClick={handleBack}>На главную</button>
+
+                    </div>
+                )}
             </div>
         </div>
     );

@@ -9,6 +9,7 @@ import MuseumHistory from './components/javascript/MuseumHistory';
 import Room1Detail from './components/javascript/./Room1Detail';
 import Room2Detail from "./components/javascript/Room2Detail";
 import Room3Detail from "./components/javascript/Room3Detail";
+import About from "./components/javascript/About";
 // Импортируйте остальные компоненты
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
                     <Route path="/room1" element={<Room1Detail />} />
                     <Route path="/room2" element={<Room2Detail />} />
                     <Route path="/room3" element={<Room3Detail />} />
+                    <Route path="/about" element={<About />} />
                     {/* Добавьте маршруты для других комнат */}
                 </Routes>
             </div>

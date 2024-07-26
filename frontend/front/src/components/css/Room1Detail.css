@@ -7,26 +7,44 @@ body {
     padding: 0;
 }
 
-.room-detail-container {
-    position: relative;
-    height: 100vh; /* Высота на весь экран */
-    overflow: hidden; /* Скрыть выходящие за пределы элементы */
-}
-
-.image-container {
-    position: relative;
+.blur-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    filter: blur(10px); /* Размытие фона */
-    transition: filter 0.3s ease; /* Плавная анимация при изменении фильтра */
+    background-image: url('../pics/room1.png');
+    background-position: 50% 50%;
+    background-size: cover;
+    filter: blur(5px); /* Размытие фона */
+    z-index: 1; /* Установите z-index ниже з-индекса остальных элементов */
 }
 
-.full-image {
-    width: 120%;
+@keyframes panorama {
+    0% { background-position: 50% 50%; }
+    30% { background-position: 0% 50%; }
+    60% { background-position: 100% 50%; }
+    100% { background-position: 50% 50%; }
+}
+
+.no-blur-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    object-fit: cover; /* Подгоняет изображение по размеру контейнера */
+    background-image: url('../pics/room1.png');
+    background-position: 50% 50%;
+    background-size: cover;
+    animation: panorama 30s linear infinite;
+    z-index: 1; /* Установите z-index ниже з-индекса остальных элементов */
 }
 
+.room-detail-container {
+    background-image: url('../pics/room1.png');
+    background-position: 50% 50%; /* Начальная позиция фона по центру */
+    background-size: cover;
+}
 
 .clickable-balal {
     position: absolute;
@@ -57,6 +75,7 @@ body {
     justify-content: center;
     color: #143d49; /* Измените цвет на желаемый */
     font-size: 250%; /* Измените размер шрифта на желаемый */
+    z-index: 20;
 }
 
 .overlay-image-1 {
@@ -95,7 +114,7 @@ body {
 }
 
 /* Окно с деталями */
-.details-overlay {
+.details-overlay-1 {
     position: absolute;
     top: 20%;
     right: 10%; /* Смещаем окно вправо, не доходя до краев */
@@ -131,17 +150,44 @@ body {
     background-color: #2294b3;
 }
 
+
 /* Настройки для мобильной версии */
 @media (max-width: 768px) {
-    .details-overlay {
-        top: auto; /* Убираем фиксированное позиционирование */
-        bottom: 0; /* Размещаем окно внизу экрана */
-        right: 0;
+    .blur-filter {
+        position: absolute;
+        top: 0;
         left: 0;
         width: 100%;
-        height: auto;
-        max-height: 50%;
-        border-radius: 0;
+        height: 100%;
+        background-image: url('../pics/room1.png');
+        background-position: 50% 50%;
+        background-size: cover;
+        filter: blur(5px); /* Размытие фона */
+        z-index: 1; /* Установите z-index ниже з-индекса остальных элементов */
+    }
+
+    .room-detail-container {
+        background-image: url('../pics/room1.png');
+        background-position: 50% 50%; /* Начальная позиция фона по центру */
+        background-size: cover;
+    }
+
+
+    .details-overlay-1 {
+        position: absolute;
+        top: 60%;
+        right: 50%; /* Смещаем окно вправо, не доходя до краев */
+        width: fit-content;
+        transform: translate(50%, 0%);
+        max-width: 400px;
+        height: 60%;
+        background: rgba(255, 255, 255, 0.5); /* Белый фон с прозрачностью */
+        backdrop-filter: blur(10px); /* Размытие фона за элементом */
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-y: auto; /* Добавляем прокрутку, если контент не помещается */
+        z-index: 30;
+        border-radius: 10px;
     }
 
     .clickable-item {
@@ -170,8 +216,8 @@ body {
 
 
     .overlay-image-1 {
-        width: 125%;
-        height: 125%;
+        width: 150%;
+        height: 150%;
         object-fit: cover;
     }
 

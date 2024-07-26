@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Register.css';
+import NavigationButtons from './NavigationButtons';
 
 function Register() {
     const [username, setUsername] = useState('');
-    const [code, setCode] = useState(['', '', '', '', '', '']);
+    const [code, setCode] = useState(Array(6).fill(''));
     const [errorMessage, setErrorMessage] = useState('');
     const [showCodeInput, setShowCodeInput] = useState(true);
     const navigate = useNavigate();
@@ -27,7 +28,7 @@ function Register() {
         const fullCode = code.join('');
         if (fullCode.length === 6) {
             try {
-                const response = await fetch('http://127.0.0.1:5000/check_code', {
+                const response = await fetch('http://127.0.0.1:5000/submit_code', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

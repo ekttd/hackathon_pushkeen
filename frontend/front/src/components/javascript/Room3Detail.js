@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import '../css/Room3Detail.css'; // Подключаем CSS файл
 import '../css/PasswordForm.css'; // Подключаем CSS файл
 import roomImage from '../pics/room3.png';
-import overlayImage from "../pics/pralka.png"; // Импортируем изображение комнаты
+import overlayImage from "../pics/pralka.png";
 
 function Room3Detail() {
     const [showDetails, setShowDetails] = useState(null); // Хранение состояния выбранного объекта
@@ -25,19 +25,21 @@ function Room3Detail() {
     };
 
     return (
-        <div className="room-detail-container">
+        <div className="room-detail-container-3">
             <button className="back-button" onClick={handleBack}>Назад к комнатам</button>
-            <div className={`image-container ${isPralkaVisible ? '' : 'normal-back'}`} onClick={handlePralkaClick}>
-                <img src={roomImage} alt="Комната" className="full-image"/>
-            </div>
-            {isPralkaVisible && (
-                <div className="large-text-rectangle-3">Комната 3</div>
+            {isPralkaVisible ? (
+                <>
+                    <div className="blur-filter-3"/>
+                    <div className="large-text-rectangle-3">Комната 3</div>
+                </>
+            ) : (
+                <div className="no-blur-filter-3"/>
             )}
             <div className={`clickable-pralka ${isPralkaVisible ? '' : 'hidden'}`} onClick={handlePralkaClick}>
                 <img src={overlayImage} alt="Открыть детали" className="overlay-image-3"/>
             </div>
             {showDetails && (
-                <div className="details-overlay">
+                <div className="details-overlay-3">
                     <button className="close-button" onClick={handleClose}>
                         <span>&times;</span> {/* Крестик для закрытия */}
                     </button>
@@ -51,6 +53,7 @@ function Room3Detail() {
                     </div>
                 </div>
             )}
+
         </div>
     );
 }
