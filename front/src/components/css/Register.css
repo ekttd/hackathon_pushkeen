@@ -1,0 +1,199 @@
+/* src/css/Register.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #fff9c4; /* Белый с желтым оттенком фон */
+}
+
+.register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.register-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1) 70%);
+    opacity: 0.5;
+    z-index: 0;
+    animation: backgroundAnimation 15s ease-in-out infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1) 70%);
+    }
+    50% {
+        background: radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2) 70%);
+    }
+    100% {
+        background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1) 70%);
+    }
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    z-index: 1;
+    animation: formAppearance 1s ease-out;
+}
+
+@keyframes formAppearance {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.register-form h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.input-field {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: #ffeb3b; /* Желтый цвет для фокуса */
+    box-shadow: 0 0 8px rgba(255, 235, 59, 0.3);
+    outline: none;
+}
+
+.code-input-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.code-input {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 24px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
+}
+
+.code-input:focus {
+    border-color: #ffeb3b; /* Желтый цвет для фокуса */
+    box-shadow: 0 0 8px rgba(255, 235, 59, 0.3);
+    outline: none;
+}
+
+.main-button {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background: #ffeb3b; /* Желтый фон кнопки */
+    border: none;
+    color: #333;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.main-button:hover {
+    background: #fdd835; /* Более темный желтый при наведении */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.success-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.success-animation {
+    animation: zoomIn 8s ease-out;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-image {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    animation: scaleUp 2s ease-out forwards;
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.5);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.5);
+    }
+}

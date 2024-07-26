@@ -1,0 +1,91 @@
+/* src/css/MuseumHistory.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.museum-history-container {
+    padding: 40px;
+    background: linear-gradient(to right, #fffde7, #fff9c4); /* Бело-желтый градиент */
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    max-height: 90vh; /* Максимальная высота контейнера для скролла */
+    overflow-y: auto; /* Вертикальный скролл при необходимости */
+}
+
+.title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px; /* Увеличим размер шрифта для заголовка */
+}
+
+.history-section {
+    margin-bottom: 20px;
+}
+
+.collapsible {
+    background-color: #ffeb3b; /* Желтый цвет для кнопок */
+    color: #333; /* Темный текст для видимости */
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.collapsible:hover {
+    background-color: #fdd835; /* Более темный желтый при наведении */
+}
+
+.content {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border: 1px solid #ddd;
+    border-radius: 0 0 10px 10px; /* Увеличим радиус скругления */
+}
+
+.content p {
+    margin: 18px 0;
+    color: #333; /* Цвет текста в контенте */
+}
+
+.gallery-section, .audio-guide-section {
+    margin-top: 40px;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column; /* Вертикальная прокрутка */
+    gap: 20px; /* Отступ между изображениями */
+}
+
+.gallery-image {
+    width: 100%; /* Ширина изображений равна ширине контейнера */
+    max-height: 300px; /* Максимальная высота изображений */
+    object-fit: cover; /* Обрезка изображений, если они больше, чем контейнер */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+
+.audio-guide-section audio {
+    width: 100%;
+    margin-top: 20px;
+}
