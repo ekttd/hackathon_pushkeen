@@ -1,4 +1,3 @@
-/* src/css/MuseumHistory.css */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
@@ -9,20 +8,17 @@ body {
 
 .museum-history-container {
     padding: 40px;
-    background: linear-gradient(to right, #fffde7, #fff9c4); /* Бело-желтый градиент */
+    background: linear-gradient(to right, #f7f9fc, #e2ebf0);
     border-radius: 10px;
     max-width: 800px;
     margin: 0 auto;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Легкая тень */
-    max-height: 90vh; /* Максимальная высота контейнера для скролла */
-    overflow-y: auto; /* Вертикальный скролл при необходимости */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .title {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
-    font-size: 24px; /* Увеличим размер шрифта для заголовка */
 }
 
 .history-section {
@@ -30,8 +26,8 @@ body {
 }
 
 .collapsible {
-    background-color: #ffeb3b; /* Желтый цвет для кнопок */
-    color: #333; /* Темный текст для видимости */
+    background-color: #2295b4;
+    color: white;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -44,7 +40,7 @@ body {
 }
 
 .collapsible:hover {
-    background-color: #fdd835; /* Более темный желтый при наведении */
+    background-color: #196c83;
 }
 
 .content {
@@ -54,12 +50,11 @@ body {
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     border: 1px solid #ddd;
-    border-radius: 0 0 10px 10px; /* Увеличим радиус скругления */
+    border-radius: 0 0 5px 5px;
 }
 
 .content p {
     margin: 18px 0;
-    color: #333; /* Цвет текста в контенте */
 }
 
 .gallery-section, .audio-guide-section {
@@ -68,21 +63,20 @@ body {
 
 .gallery {
     display: flex;
-    flex-direction: column; /* Вертикальная прокрутка */
-    gap: 20px; /* Отступ между изображениями */
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .gallery-image {
-    width: 100%; /* Ширина изображений равна ширине контейнера */
-    max-height: 300px; /* Максимальная высота изображений */
-    object-fit: cover; /* Обрезка изображений, если они больше, чем контейнер */
+    width: 30%;
+    margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
 .gallery-image:hover {
-    transform: scale(1.05); /* Легкое увеличение при наведении */
+    transform: scale(1.05);
 }
 
 .audio-guide-section audio {

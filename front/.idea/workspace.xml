@@ -4,63 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9788830d-19a2-45a7-af15-a88c7625f16e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/audio/item1.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/audio/item1.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/css/About.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/About.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/css/AdminExit.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/AdminExit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/css/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/css/MuseumHistory.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/MuseumHistory.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/css/NavigationButtons.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/NavigationButtons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/css/Register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/Register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/css/Test.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/Test.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/css/UserHome.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/UserHome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/javascript/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/About.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/javascript/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/javascript/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/javascript/MuseumHistory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/MuseumHistory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/javascript/NavigationButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/NavigationButtons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/javascript/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/javascript/Room1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/Room1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/javascript/Room1Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/Room1Detail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/javascript/Room2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/Room2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/javascript/Room2Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/Room2Detail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/javascript/Test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/Test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/javascript/UserHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/UserHome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pics/back-arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pics/back-arrow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pics/balal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pics/balal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pics/home-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pics/home-icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pics/room2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pics/room2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pics/room3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pics/room3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/css/About.css" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/css/About.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/javascript/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/javascript/About.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/javascript/AdminHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/javascript/AdminHome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/javascript/MuseumHistory.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/javascript/MuseumHistory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/javascript/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/javascript/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/javascript/Room1Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/javascript/Room1Detail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/javascript/Room2Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/javascript/Room2Detail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/javascript/Room3Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/javascript/Room3Detail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server.py" beforeDir="false" />
+    <list default="true" id="f42e13bb-7377-4e49-a6ad-43a7ceaa7071" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../backend/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../backend/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../backend/.idea/backend.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../backend/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../backend/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../backend/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../backend/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../backend/flask_session/2029240f6d1128be89ddc32729463129" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../backend/server.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 7
-}</component>
-  <component name="ProjectId" id="2jmsGyI4UcXuhyDVOk3kwYoHLF0" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2jgpmtpFfml3UuF5rfzMy5rKCBT" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -87,14 +61,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9788830d-19a2-45a7-af15-a88c7625f16e" name="Changes" comment="" />
-      <created>1722003500908</created>
+      <changelist id="f42e13bb-7377-4e49-a6ad-43a7ceaa7071" name="Changes" comment="" />
+      <created>1721818741692</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1722003500908</updated>
-      <workItem from="1722003504663" duration="66000" />
-      <workItem from="1722004218313" duration="2000" />
-      <workItem from="1722004744534" duration="8726000" />
+      <updated>1721818741692</updated>
+      <workItem from="1721818744424" duration="8411000" />
     </task>
     <servers />
   </component>
