@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Slider from 'react-slick';
 import '../css/UserHome.css';
 import room1Image from '../pics/room1.png';
 import room2Image from '../pics/room2.png';
 import room3Image from '../pics/room3.png';
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import NavigationButtons from "./NavigationButtons";
 
 function UserHome() {
     const [showMessage, setShowMessage] = useState(false);
     const [showConfirmation, setShowConfirmation] = useState(false);
-    const [isAdmin, setIsAdmin] = useState(false);
     const navigate = useNavigate();
 
     const handleConfirmExit = () => {
@@ -25,8 +27,6 @@ function UserHome() {
 
     useEffect(() => {
         const messageShown = localStorage.getItem('welcomeMessageShown');
-        const adminStatus = localStorage.getItem('isAdmin');
-        setIsAdmin(adminStatus === 'true');
 
         if (!messageShown) {
             setShowMessage(true);
@@ -40,6 +40,14 @@ function UserHome() {
 
     const handleNavigate = (path) => {
         navigate(path);
+    };
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
     };
 
     return (
@@ -64,24 +72,21 @@ function UserHome() {
             )}
             <h1 className="room-title">Выберите комнату</h1>
             <div className="room-gallery">
-            <div className="room" onClick={() => handleNavigate('/room1')}>
-                    <img src={room1Image} alt="Комната 1" className="room-image"/>
-                    <div className="room-overlay">Комната 1</div>
-                </div>
-                <div className="room" onClick={() => handleNavigate('/room2')}>
-                    <img src={room2Image} alt="Комната 2" className="room-image"/>
-                    <div className="room-overlay">Комната 2</div>
-                </div>
-                <div className="room" onClick={() => handleNavigate('/room3')}>
-                    <img src={room3Image} alt="Комната 3" className="room-image"/>
-                    <div className="room-overlay">Комната 3</div>
-                </div>
+                <Slider {...settings}>
+                    <div className="room" onClick={() => handleNavigate('/room1')}>
+                        <img src={room1Image} alt="Комната 1" className="room-image"/>
+                        <div className="room-overlay">Комната 1</div>
+                    </div>
+                    <div className="room" onClick={() => handleNavigate('/room2')}>
+                        <img src={room2Image} alt="Комната 2" className="room-image"/>
+                        <div className="room-overlay">Комната 2</div>
+                    </div>
+                    <div className="room" onClick={() => handleNavigate('/room3')}>
+                        <img src={room3Image} alt="Комната 3" className="room-image"/>
+                        <div className="room-overlay">Комната 3</div>
+                    </div>
+                </Slider>
             </div>
-            {isAdmin && (
-                <button className="admin-exit-button" onClick={() => navigate('/admin')}>
-                    Администраторский режим
-                </button>
-            )}
             <button className="test-button" onClick={() => setShowConfirmation(true)}>
                 Завершить просмотр
             </button>

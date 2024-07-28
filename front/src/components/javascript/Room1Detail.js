@@ -1,37 +1,38 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/Room1Detail.css'; // Подключаем CSS файл
-import roomImage from '../pics/room1.png'; // Импортируем изображение комнаты
+import '../css/Room1Detail.css'; 
+import roomImage from '../pics/room1.png'; 
 import overlayImage from '../pics/balal.png';
 
 function Room1Detail() {
-    const [showDetails, setShowDetails] = useState(null); // Хранение состояния выбранного объекта
-    const [isBalalaVisible, setisBalalaVisible] = useState(true); // Хранение состояния видимости балалайки
+    const [showDetails, setShowDetails] = useState(null);
+    const [isBalalaVisible, setIsBalalaVisible] = useState(true); 
     const navigate = useNavigate();
 
     const handleBalalaClick = () => {
-        setisBalalaVisible(false);
-        setShowDetails('item1');
-        document.querySelector('.clickable-balal').classList.add('clicked'); // Добавляем класс "clicked" при нажатии
+        setIsBalalaVisible(false);
+        setShowDetails('room1');
+        document.querySelector('.clickable-balal').classList.add('clicked'); 
         setTimeout(() => {
-            document.querySelector('.clickable-balal').classList.remove('clicked'); // Удаляем класс "clicked" через 0.3 секунды
+            document.querySelector('.clickable-balal').classList.remove('clicked'); 
         }, 300);
     };
 
     const handleClose = () => {
-        setisBalalaVisible(true);
+        setIsBalalaVisible(true);
         setShowDetails(null);
     };
+
     const handleBack = () => {
         navigate('/user');
     };
 
     return (
-        <div className={`room-detail-container`}>
+        <div className="room-detail-container">
             <button className="back-button" onClick={handleBack}>Назад к комнатам</button>
             {isBalalaVisible ? (
                 <>
-                    <div className="large-text-rectangle-1">Комната 1</div>
+                    <div className="large-text-rectangle-1">Гостевая</div>
                     <div className="blur-filter"/>
                 </>
             ) : (
@@ -41,20 +42,23 @@ function Room1Detail() {
             <div className={`clickable-balal ${isBalalaVisible ? '' : 'hidden'}`} onClick={handleBalalaClick}>
                 <img src={overlayImage} alt="Открыть детали" className="overlay-image-1"/>
             </div>
+
             {showDetails && (
-                <div className="details-overlay-1">
-                    <button className="close-button" onClick={handleClose}>
-                        <span>&times;</span> {/* Крестик для закрытия */}
-                    </button>
-                    <div className="details">
-                        <h2>Информация о {showDetails}</h2>
-                        <p>Здесь подробности о выбранном объекте {showDetails}.</p>
-                        <audio controls>
-                            <source src={`../audio/${showDetails}.mp3`} type="audio/mpeg"/>
-                            Ваш браузер не поддерживает элемент audio.
-                        </audio>
-                    </div>
-                </div>
+    <div className="details-overlay-1">
+        <button className="close-button" onClick={handleClose}>
+            <span>&times;</span>
+        </button>
+        <h2 className="overlay-header">Комната для гостей</h2>
+        <div className="details-content">
+            <p>Добро пожаловать в уютную домашнюю комнату усадьбы, где проходили тихие семейные вечера и приемы гостей. Здесь вы видите мебель конца XVIII века, включая элегантный диван и кресла с зелеными подушками, отражающие стиль и комфорт той эпохи. Домра на диване напоминает о любви семьи к музыке и искусству. Картина на мольберте и пейзаж на стене добавляют нотки природы и вдохновения в интерьер комнаты. Туалетный столик с зеркалом и кружевной салфеткой создают атмосферу уюта и спокойствия, где проводились часы за чтением, рукоделием и беседами.</p>
+            <audio controls className="overlay-audio">
+                <source src={`../audio/${showDetails}.mp3`} type="audio/mpeg"/>
+                Ваш браузер не поддерживает элемент audio.
+            </audio>
+        </div>
+    </div>
+
+            
             )}
         </div>
     );

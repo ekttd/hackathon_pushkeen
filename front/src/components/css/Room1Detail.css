@@ -1,4 +1,3 @@
-/* src/components/Room1Detail.css */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
@@ -16,8 +15,8 @@ body {
     background-image: url('../pics/room1.png');
     background-position: 50% 50%;
     background-size: cover;
-    filter: blur(5px); /* Размытие фона */
-    z-index: 1; /* Установите z-index ниже з-индекса остальных элементов */
+    filter: blur(5px); 
+    z-index: 1; 
 }
 
 @keyframes panorama {
@@ -37,12 +36,12 @@ body {
     background-position: 50% 50%;
     background-size: cover;
     animation: panorama 30s linear infinite;
-    z-index: 1; /* Установите z-index ниже з-индекса остальных элементов */
+    z-index: 1;
 }
 
 .room-detail-container {
     background-image: url('../pics/room1.png');
-    background-position: 50% 50%; /* Начальная позиция фона по центру */
+    background-position: 50% 50%; 
     background-size: cover;
 }
 
@@ -56,7 +55,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    z-index: 10; /* Слой выше изображения */
+    z-index: 10; 
 }
 
 .large-text-rectangle-1 {
@@ -73,8 +72,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #143d49; /* Измените цвет на желаемый */
-    font-size: 250%; /* Измените размер шрифта на желаемый */
+    color: #143d49; 
+    font-size: 250%; 
     z-index: 20;
 }
 
@@ -83,14 +82,53 @@ body {
     height: 105%;
     object-fit: cover;
 }
+.details-overlay-1 h2.overlay-header {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.6); 
+    padding: 10px; 
+    z-index: 30; 
+    border-radius: 10px; 
+}
 
-/* Кнопка "Назад" */
+.details-overlay-1 .details-content {
+    flex: 1;
+    font-size: 16px; 
+    line-height: 1.6; 
+    text-align: justify; 
+    overflow-y: auto;
+    padding: 10px 30px; 
+    box-sizing: border-box;
+}
+
+.details-overlay-1 audio.overlay-audio {
+    position: absolute; 
+    bottom: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: calc(100% - 100px); 
+    margin: 0; 
+    background: rgba(255, 255, 255, 0.9); 
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 30; 
+}
+
+.details-overlay-1::-webkit-scrollbar {
+    width: 8px;
+}
+
+.details-overlay-1::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
 .back-button {
     position: absolute;
     top: 20px;
     left: 20px;
     padding: 10px 20px;
-    background-color: #2295b4; /* Основной цвет, как на главной странице */
+    background-color: #e3a400; 
     border: none;
     color: white;
     border-radius: 25px;
@@ -98,36 +136,37 @@ body {
     font-size: 16px;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 20; /* Кнопка должна быть поверх всего контента */
+    z-index: 20; 
 }
 .hidden {
-
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s 0.5s, opacity 0.5s ease;
 }
 
 .back-button:hover {
-    background-color: #196c83;
+    background-color: #e3a400;
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Окно с деталями */
 .details-overlay-1 {
-    position: absolute;
-    top: 20%;
-    right: 10%; /* Смещаем окно вправо, не доходя до краев */
-    width: 40%;
-    max-width: 400px;
-    height: 60%;
-    background: rgba(255, 255, 255, 0.9); /* Белый фон с прозрачностью */
-    backdrop-filter: blur(10px); /* Размытие фона за элементом */
-    padding: 20px;
+    position: fixed; 
+    top: 50%; 
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 60%; 
+    max-width: 600px; 
+    height: 55%;
+    background: rgba(255, 255, 255, 0.6); 
+    backdrop-filter: blur(10px); 
+    padding: 20px; 
     box-sizing: border-box;
-    overflow-y: auto; /* Добавляем прокрутку, если контент не помещается */
-    z-index: 30;
     border-radius: 10px;
+    overflow: hidden; 
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
 }
 
 .close-button {
@@ -135,7 +174,7 @@ body {
     top: 10px;
     right: 10px;
     padding: 5px 10px;
-    background-color: #2294b3;
+    background-color: #e3a400;
     border: none;
     color: white;
     border-radius: 25px;
@@ -143,15 +182,14 @@ body {
     font-size: 14px;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    z-index: 40; /* Кнопка должна быть поверх всего контента */
+    z-index: 40;
 }
 
 .close-button:hover {
-    background-color: #2294b3;
+    background-color: #e3a400;
 }
 
 
-/* Настройки для мобильной версии */
 @media (max-width: 768px) {
     .blur-filter {
         position: absolute;
@@ -162,45 +200,110 @@ body {
         background-image: url('../pics/room1.png');
         background-position: 50% 50%;
         background-size: cover;
-        filter: blur(5px); /* Размытие фона */
-        z-index: 1; /* Установите z-index ниже з-индекса остальных элементов */
+        filter: blur(5px); 
+        z-index: 1; 
     }
-
+    
     .room-detail-container {
         background-image: url('../pics/room1.png');
-        background-position: 50% 50%; /* Начальная позиция фона по центру */
+        background-position: 50% 50%; 
         background-size: cover;
-    }
-
-
+        position: relative;
+        width: 100%;
+        height: 100vh; 
+        overflow: hidden; 
+       }
+    
     .details-overlay-1 {
-        position: absolute;
-        top: 60%;
-        right: 50%; /* Смещаем окно вправо, не доходя до краев */
-        width: fit-content;
-        transform: translate(50%, 0%);
-        max-width: 400px;
-        height: 60%;
-        background: rgba(255, 255, 255, 0.5); /* Белый фон с прозрачностью */
-        backdrop-filter: blur(10px); /* Размытие фона за элементом */
+        position: fixed;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        max-width: 800px;
+        height: 55%;
+        background: rgba(255, 255, 255, 0.6); 
+        backdrop-filter: blur(10px); 
         padding: 20px;
         box-sizing: border-box;
-        overflow-y: auto; /* Добавляем прокрутку, если контент не помещается */
-        z-index: 30;
+        border-radius: 10px;
+        overflow: hidden; 
+        z-index: 20;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .details-overlay-1 h2.overlay-header {
+        position: sticky; 
+        top: 0;
+        background: rgba(255, 255, 255, 0.6); 
+        padding: 10px; 
+        z-index: 30; 
+        border-radius: 10px; 
+    }
+    
+    .details-overlay-1 .details-content {
+        flex: 1;
+        font-size: 16px; 
+        line-height: 1.6; 
+        text-align: justify; 
+        overflow-y: auto; 
+        padding: 10px 30px; 
+        box-sizing: border-box;
+    }
+    
+    .details-overlay-1 audio.overlay-audio {
+        position: absolute; 
+        bottom: 20px;
+        left: 50%; 
+        transform: translateX(-50%);
+        width: calc(100% - 40px); 
+        margin: 0; 
+        background: rgba(255, 255, 255, 0.9); 
+        padding: 10px;
+        border-radius: 10px;
+        z-index: 30; 
+    }
+    
+    .details-overlay-1::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    .details-overlay-1::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
         border-radius: 10px;
     }
-
+    
+    .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 5px 10px;
+        background-color: #e3a400;
+        border: none;
+        color: white;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        z-index: 50; 
+    }
+    
+    .close-button:hover {
+        background-color: #e3a400;
+    }
+    
     .clickable-item {
         font-size: 14px;
         padding: 8px;
     }
-
+    
     .back-button, .close-button {
         font-size: 14px;
         padding: 8px 16px;
     }
-
-
+    
     .clickable-balal {
         position: absolute;
         top: 37%;
@@ -211,33 +314,31 @@ body {
         border-radius: 5px;
         cursor: pointer;
         font-size: 16px;
-        z-index: 10; /* Слой выше изображения */
+        z-index: 10; 
     }
-
-
+    
     .overlay-image-1 {
         width: 150%;
         height: 150%;
         object-fit: cover;
     }
-
+    
     .large-text-rectangle-1 {
         position: absolute;
         bottom: 4%;
         left: 50%;
         transform: translate(-50%, -50%);
-        padding: 10px 20px;
+        padding: 20px 30px;
         border-radius: 10px;
         background-color: rgba(255, 255, 255, 0.7);
-        width: 200px;
-        height: 100px;
-        text-align: center;
+        width: 80%; 
+        max-width: 800px; 
+        height: auto; 
+        text-align: justify; 
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #143d49; /* Измените цвет на желаемый */
-        font-size: 150%; /* Измените размер шрифта на желаемый */
+        color: #143d49;
+        font-size: 200%; 
     }
-
-
-}
+}    

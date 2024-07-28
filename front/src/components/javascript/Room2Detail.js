@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/Room2Detail.css'; // Подключаем CSS файл
-import roomImage from '../pics/room2.png'; // Импортируем изображение комнаты
+import '../css/Room2Detail.css'; 
+import roomImage from '../pics/room2.png'; 
 import overlayImage from '../pics/candle.png';
 
 function Room2Detail() {
     const [isCandleVisible, setisCandleVisible] = useState(true);
-    const [showDetails, setShowDetails] = useState(null); // Хранение состояния выбранного объекта
+    const [showDetails, setShowDetails] = useState(null); 
     const navigate = useNavigate();
 
     const handleCandleClick = () => {
