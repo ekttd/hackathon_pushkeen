@@ -25,11 +25,11 @@ function Room2Detail() {
 
     return (
         <div className={`room-detail-container-2`}>
-            <button className="back-button" onClick={handleBack}>Назад к комнатам</button>
+            <button className="back-button-2" onClick={handleBack}>Назад к комнатам</button>
             {isCandleVisible ? (
                 <>
                     <div className="blur-filter-2" />
-                    <div className="large-text-rectangle-2">Комната 2</div>
+                    <div className="large-text-rectangle-2">Ремесленная мастерская</div>
                 </>
             ) : (
                 <div className="no-blur-filter-2"/>
@@ -39,12 +39,18 @@ function Room2Detail() {
             </div>
             {showDetails && (
                 <div className="details-overlay-2">
-                    <button className="close-button" onClick={handleClose}>
+                    <button className="close-button-2" onClick={handleClose}>
                         <span>&times;</span> {/* Крестик для закрытия */}
                     </button>
+                    <h2 className="overlay-header-2">Мастерская</h2>
                     <div className="details">
-                        <h2>Информация о {showDetails}</h2>
-                        <p>Здесь подробности о выбранном объекте {showDetails}.</p>
+                        <p>Вы находитесь в ремесленной мастерской, где оживали традиционные народные искусства и
+                            ремесла, которые были важной частью жизни в усадьбе. Здесь вы видите старинные прялки и
+                            станки для ткачества, которые использовались для создания уникальных тканых изделий и
+                            одежды. На стенах висят рушники с традиционными вышитыми узорами, изображающими сцены из
+                            сельской жизни и мифологии. Традиционный народный костюм на манекене с богатой вышивкой
+                            передает дух того времени и демонстрирует мастерство и творчество, передававшиеся из
+                            поколения в поколение.</p>
                         <audio controls>
                             <source src={`../audio/${showDetails}.mp3`} type="audio/mpeg"/>
                             Ваш браузер не поддерживает элемент audio.

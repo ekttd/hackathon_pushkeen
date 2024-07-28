@@ -5,16 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f42e13bb-7377-4e49-a6ad-43a7ceaa7071" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../backend/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../backend/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../backend/.idea/backend.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../backend/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../backend/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../backend/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../backend/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../backend/flask_session/2029240f6d1128be89ddc32729463129" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../backend/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/css/Room1Detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/Room1Detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/css/Room2Detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/Room2Detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/css/Room3Detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/Room3Detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/css/UserHome.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/UserHome.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/javascript/NavigationButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/NavigationButtons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/javascript/Room1Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/Room1Detail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/javascript/Room2Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/Room2Detail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/javascript/Room3Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/Room3Detail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pics/audio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pics/back-arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pics/home-icon.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,11 +33,11 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2jgpmtpFfml3UuF5rfzMy5rKCBT" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -43,14 +47,45 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/pipop/Downloads/hackathon_pushkeen/front",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "npm.build.executor": "Run",
+    "npm.start.executor": "Run",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="npm.start">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -67,6 +102,7 @@
       <option name="presentableId" value="Default" />
       <updated>1721818741692</updated>
       <workItem from="1721818744424" duration="8411000" />
+      <workItem from="1722184797037" duration="7476000" />
     </task>
     <servers />
   </component>

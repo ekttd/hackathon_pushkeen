@@ -48,9 +48,10 @@
 }
 
 .room-gallery {
-    width: 80%;
-    margin: 0 auto;
-    margin-bottom: 20px; /* Добавлен отступ снизу */
+    width: 95%;
+    height: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px; /* Добавлен отступ снизу */
 }
 
 .room {
@@ -88,7 +89,7 @@
     width: 20%;
     padding: 1%;
     margin: 10px 0;
-    background: linear-gradient(135deg, #e3a400, #fbb200);
+    background: #89441f;
     border: none;
     color: white;
     border-radius: 25px;
@@ -100,16 +101,24 @@
 }
 
 .test-button:hover {
-    background: linear-gradient(135deg, #e3a400, #fbb200);
+    background: #9a7053;
     transform: translateY(-3px);
 }
 
 @media (max-width: 768px) {
+    .room-gallery {
+        width: 95%;
+        height: 30%;
+        margin: 0 auto;
+        margin-top: 30px;
+        margin-bottom: 30px; /* Добавлен отступ снизу */
+    }
+
     .test-button {
         width: 35%;
         padding: 1%;
         margin: 10px 0;
-        background: linear-gradient(135deg, #cf9204, #fbb200);
+        background: #89441f;
         border: none;
         color: white;
         border-radius: 25px;
@@ -120,7 +129,7 @@
     }
 
     .test-button:hover {
-        background: linear-gradient(135deg, #e3a400, #fbb200);
+        background: #89441f;
         transform: translateY(-3px);
     }
 }
@@ -134,6 +143,7 @@
 .room-title {
     margin-top: 10%;
     margin-bottom: 10%; /* Отступ снизу */
+    color: #89441f;
 }
 
 .modal-buttons {
@@ -146,7 +156,7 @@
     width: 20%;
     padding: 1%;
     margin: 10px 0;
-    background: linear-gradient(135deg, #e3a400, #fbb200);
+    background: #89441f;
     border: none;
     color: white;
     border-radius: 25px;
@@ -157,7 +167,7 @@
 }
 
 .modal-button:hover {
-    background-color: #45a049;
+    background-color: #9A7053FF;
 }
 
 /* Slick slider custom styles */

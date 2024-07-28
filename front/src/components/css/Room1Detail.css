@@ -19,7 +19,7 @@ body {
     z-index: 1; 
 }
 
-@keyframes panorama {
+@keyframes panorama-1 {
     0% { background-position: 50% 50%; }
     30% { background-position: 0% 50%; }
     60% { background-position: 100% 50%; }
@@ -35,7 +35,7 @@ body {
     background-image: url('../pics/room1.png');
     background-position: 50% 50%;
     background-size: cover;
-    animation: panorama 30s linear infinite;
+    animation: panorama-1 30s linear infinite;
     z-index: 1;
 }
 
@@ -72,7 +72,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #143d49; 
+    color: #000000;
     font-size: 250%; 
     z-index: 20;
 }
@@ -123,12 +123,12 @@ body {
     border-radius: 10px;
 }
 
-.back-button {
+.back-button-1 {
     position: absolute;
     top: 20px;
     left: 20px;
     padding: 10px 20px;
-    background-color: #e3a400; 
+    background-color: #89441f;
     border: none;
     color: white;
     border-radius: 25px;
@@ -144,8 +144,8 @@ body {
     transition: visibility 0s 0.5s, opacity 0.5s ease;
 }
 
-.back-button:hover {
-    background-color: #e3a400;
+.back-button-1:hover {
+    background-color: #89441f;
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -169,12 +169,12 @@ body {
     flex-direction: column;
 }
 
-.close-button {
+.close-button-1 {
     position: absolute;
     top: 10px;
     right: 10px;
     padding: 5px 10px;
-    background-color: #e3a400;
+    background-color: #89441f;
     border: none;
     color: white;
     border-radius: 25px;
@@ -185,8 +185,8 @@ body {
     z-index: 40;
 }
 
-.close-button:hover {
-    background-color: #e3a400;
+.close-button-1:hover {
+    background-color: #89441f;
 }
 
 
@@ -274,12 +274,12 @@ body {
         border-radius: 10px;
     }
     
-    .close-button {
+    .close-button-1 {
         position: absolute;
         top: 10px;
         right: 10px;
         padding: 5px 10px;
-        background-color: #e3a400;
+        background-color: #89441f;
         border: none;
         color: white;
         border-radius: 25px;
@@ -290,8 +290,8 @@ body {
         z-index: 50; 
     }
     
-    .close-button:hover {
-        background-color: #e3a400;
+    .close-button-1:hover {
+        background-color: #89441f;
     }
     
     .clickable-item {
@@ -338,7 +338,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #143d49;
-        font-size: 200%; 
+        font-size: 200%;
+        color: #652c0d;
     }
 }    

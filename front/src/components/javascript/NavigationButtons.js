@@ -1,8 +1,8 @@
 // src/components/javascript/NavigationButtons.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import backArrow from '../pics/back-arrow.png';
-import homeIcon from '../pics/home-icon.png';
+import backArrow from '../pics/back-arrow.svg';
+import homeIcon from '../pics/home-icon.svg';
 import '../css/NavigationButtons.css';
 
 function NavigationButtons() {

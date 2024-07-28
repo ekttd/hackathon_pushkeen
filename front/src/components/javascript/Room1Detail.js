@@ -29,10 +29,10 @@ function Room1Detail() {
 
     return (
         <div className="room-detail-container">
-            <button className="back-button" onClick={handleBack}>Назад к комнатам</button>
+            <button className="back-button-1" onClick={handleBack}>Назад к комнатам</button>
             {isBalalaVisible ? (
                 <>
-                    <div className="large-text-rectangle-1">Гостевая</div>
+                    <div className="large-text-rectangle-1">Музыкальная гостиная</div>
                     <div className="blur-filter"/>
                 </>
             ) : (
@@ -45,7 +45,7 @@ function Room1Detail() {
 
             {showDetails && (
     <div className="details-overlay-1">
-        <button className="close-button" onClick={handleClose}>
+        <button className="close-button-1" onClick={handleClose}>
             <span>&times;</span>
         </button>
         <h2 className="overlay-header">Комната для гостей</h2>

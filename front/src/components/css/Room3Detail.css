@@ -71,10 +71,32 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #143d49; /* Измените цвет на желаемый */
+    color: #000000; /* Измените цвет на желаемый */
     font-size: 250%; /* Измените размер шрифта на желаемый */
     z-index: 20;
 }
+
+.details-overlay-3 .details .audio-player {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.details-overlay-3 .details .audio-player audio {
+    display: none; /* Скрываем стандартный аудиоплеер */
+}
+
+.details-overlay-3 .details .audio-player .audio-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.details-overlay-3 .details .audio-player .audio-icon img {
+    width: 30px;
+    height: 30px;
+}
+
 
 
 .full-image {
@@ -105,12 +127,12 @@ body {
 
 
 /* Кнопка "Назад" */
-.back-button {
+.back-button-3 {
     position: absolute;
     top: 20px;
     left: 20px;
     padding: 10px 20px;
-    background-color: #2295b4; /* Основной цвет, как на главной странице */
+    background-color: #89441f; /* Основной цвет, как на главной странице */
     border: none;
     color: white;
     border-radius: 25px;
@@ -118,19 +140,13 @@ body {
     font-size: 16px;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 20; /* Кнопка должна быть поверх всего контента */
+    z-index: 25; /* Кнопка должна быть поверх всего контента */
 }
 
-.back-button:hover {
-    background-color: #196c83;
+.back-button-3:hover {
+    background-color: #89441f;
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.hidden {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s 0.5s, opacity 0.5s ease;
 }
 
 
@@ -151,12 +167,12 @@ body {
     border-radius: 10px;
 }
 
-.close-button {
+.close-button-3 {
     position: absolute;
     top: 10px;
     right: 10px;
     padding: 5px 10px;
-    background-color: #2294b3;
+    background-color: #89441f;
     border: none;
     color: white;
     border-radius: 25px;
@@ -167,8 +183,8 @@ body {
     z-index: 40; /* Кнопка должна быть поверх всего контента */
 }
 
-.close-button:hover {
-    background-color: #2294b3;
+.close-button-3:hover {
+    background-color: #89441f;
 }
 
  .image-container img {
@@ -204,7 +220,7 @@ body {
             width: fit-content;
             transform: translate(50%, 0%);
             max-width: 400px;
-            height: 60%;
+            height: 38%;
             background: rgba(255, 255, 255, 0.5); /* Белый фон с прозрачностью */
             backdrop-filter: blur(10px); /* Размытие фона за элементом */
             padding: 20px;
@@ -212,8 +228,33 @@ body {
             overflow-y: auto; /* Добавляем прокрутку, если контент не помещается */
             z-index: 30;
             border-radius: 10px;
+            display: flex;
+            flex-direction: column;
         }
 
+        .details-overlay-3 h2.overlay-header-3 {
+            position: sticky;
+            top: 0;
+            background: #c8beb7;
+            padding: 10px;
+            z-index: 30;
+            border-radius: 10px;
+            margin-bottom: 20px; /* Добавляем отступ снизу для заголовка */
+        }
+
+        .details-overlay-3 .details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Расстояние между элементами */
+        }
+
+        .details-overlay-3 .details p {
+            flex: 1; /* Позволяет тексту занимать доступное пространство */
+        }
+
+        .details-overlay-3 .details audio {
+            align-self: center; /* Центрирует аудиоплеер по горизонтали */
+        }
         .clickable-pralka {
             position: absolute;
             top: 55%;
@@ -246,7 +287,7 @@ body {
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #143d49; /* Измените цвет на желаемый */
+            color: #652c0d; /* Измените цвет на желаемый */
             font-size: 150%; /* Измените размер шрифта на желаемый */
             z-index: 11;
         }
