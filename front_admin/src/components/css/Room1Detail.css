@@ -9,22 +9,22 @@ body {
 
 .room-detail-container {
     position: relative;
-    height: 100vh; /* Высота на весь экран */
-    overflow: hidden; /* Скрыть выходящие за пределы элементы */
+    height: 100vh; 
+    overflow: hidden; 
 }
 
 .image-container {
     position: relative;
     width: 100%;
     height: 100%;
-    filter: blur(10px); /* Размытие фона */
-    transition: filter 0.3s ease; /* Плавная анимация при изменении фильтра */
+    filter: blur(10px);
+    transition: filter 0.3s ease; 
 }
 
 .full-image {
     width: 120%;
     height: 100%;
-    object-fit: cover; /* Подгоняет изображение по размеру контейнера */
+    object-fit: cover;
 }
 
 
@@ -38,7 +38,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    z-index: 10; /* Слой выше изображения */
+    z-index: 10; 
 }
 
 .large-text-rectangle-1 {
@@ -55,8 +55,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #143d49; /* Измените цвет на желаемый */
-    font-size: 250%; /* Измените размер шрифта на желаемый */
+    color: #143d49;
+    font-size: 250%; 
 }
 
 .overlay-image-1 {
@@ -65,13 +65,12 @@ body {
     object-fit: cover;
 }
 
-/* Кнопка "Назад" */
 .back-button {
     position: absolute;
     top: 20px;
     left: 20px;
     padding: 10px 20px;
-    background-color: #2295b4; /* Основной цвет, как на главной странице */
+    background-color: #3a2b05;
     border: none;
     color: white;
     border-radius: 25px;
@@ -79,7 +78,7 @@ body {
     font-size: 16px;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 20; /* Кнопка должна быть поверх всего контента */
+    z-index: 20; 
 }
 .hidden {
 
@@ -89,109 +88,65 @@ body {
 }
 
 .back-button:hover {
-    background-color: #196c83;
+    background-color: #3a2b05;
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Окно с деталями */
 .details-overlay {
     position: absolute;
-    top: 20%;
-    right: 10%; /* Смещаем окно вправо, не доходя до краев */
-    width: 40%;
-    max-width: 400px;
-    height: 60%;
-    background: rgba(255, 255, 255, 0.9); /* Белый фон с прозрачностью */
-    backdrop-filter: blur(10px); /* Размытие фона за элементом */
+    top: 10%;
+    right: 20%;
+    width: 80%; 
+    max-width: 1000px;
+    height: 80%; 
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
     padding: 20px;
     box-sizing: border-box;
-    overflow-y: auto; /* Добавляем прокрутку, если контент не помещается */
+    overflow-y: auto;
     z-index: 30;
-    border-radius: 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 5px 10px;
-    background-color: #2294b3;
-    border: none;
-    color: white;
-    border-radius: 25px;
+
+.details-overlay h2 {
+    margin: 0; 
+    padding-bottom: 10px; 
+    border-bottom: 1px solid #ccc; 
+    position: sticky; 
+    top: 0;
+    background: rgba(255, 255, 255, 0.85); 
+    z-index: 31;
+}
+
+.details-overlay {
+    width: 80%; 
+    max-width: 1000px;
+    height: 80%; 
+}
+
+.audio-button {
+    position: fixed;
+    top: 400px; 
+    left: 100px;
+    background-color: transparent; 
+    border: none; 
+    padding: 0; 
     cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    z-index: 40; /* Кнопка должна быть поверх всего контента */
+    z-index: 20;
 }
 
-.close-button:hover {
-    background-color: #2294b3;
+.audio-button img {
+    width: 100px;
+    height: auto; 
 }
 
-/* Настройки для мобильной версии */
-@media (max-width: 768px) {
-    .details-overlay {
-        top: auto; /* Убираем фиксированное позиционирование */
-        bottom: 0; /* Размещаем окно внизу экрана */
-        right: 0;
-        left: 0;
-        width: 100%;
-        height: auto;
-        max-height: 50%;
-        border-radius: 0;
-    }
-
-    .clickable-item {
-        font-size: 14px;
-        padding: 8px;
-    }
-
-    .back-button, .close-button {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-
-
-    .clickable-balal {
-        position: absolute;
-        top: 37%;
-        left: 64%;
-        transform: translate(-50%, -50%);
-        color: white;
-        padding: 10px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        z-index: 10; /* Слой выше изображения */
-    }
-
-
-    .overlay-image-1 {
-        width: 125%;
-        height: 125%;
-        object-fit: cover;
-    }
-
-    .large-text-rectangle-1 {
-        position: absolute;
-        bottom: 4%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 10px 20px;
-        border-radius: 10px;
-        background-color: rgba(255, 255, 255, 0.7);
-        width: 200px;
-        height: 100px;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #143d49; /* Измените цвет на желаемый */
-        font-size: 150%; /* Измените размер шрифта на желаемый */
-    }
-
-
+.audio-button:hover {
+    opacity: 0.8; 
 }
+
+
+

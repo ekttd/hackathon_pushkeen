@@ -40,6 +40,7 @@ function Register() {
         }
     };
 
+    
     const handleCodeChange = (e, index) => {
         const { value } = e.target;
         if (/^\d*$/.test(value) && value.length <= 1) {

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Register.css';
-import NavigationButtons from './NavigationButtons';
 
 function Register() {
     const [username, setUsername] = useState('');
     const [code, setCode] = useState(Array(6).fill(''));
     const [errorMessage, setErrorMessage] = useState('');
     const [showCodeInput, setShowCodeInput] = useState(true);
+    const [codeSent, setCodeSent] = useState(false);  // Добавлено состояние для codeSent
     const navigate = useNavigate();
 
     const handleCodeChange = (e, index) => {
@@ -21,6 +21,29 @@ function Register() {
             } else if (value && index === 5) {
                 handleCodeSubmit();
             }
+        }
+    };
+
+    const handleGenerateCode = async () => {
+        try {
+            const response = await fetch('http://127.0.0.1:5000/add_admin', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username: '' })
+            });
+
+            if (response.ok) {
+                setCodeSent(true);
+                setShowCodeInput(true);
+                setErrorMessage('');
+            } else {
+                const errorData = await response.json();
+                setErrorMessage(errorData.error || 'Ошибка при генерации кода.');
+            }
+        } catch (error) {
+            setErrorMessage('Ошибка при соединении с сервером.');
         }
     };
 
@@ -60,22 +83,28 @@ function Register() {
             {errorMessage && <p className="error-message">{errorMessage}</p>}
             <div className="register-form">
                 <h1>Вход</h1>
-                {showCodeInput && (
+                {!codeSent ? (
+                    <button onClick={handleGenerateCode} className="main-button">Сгенерировать код</button>
+                ) : (
                     <>
-                        <div className="code-input-container">
-                            {code.map((digit, index) => (
-                                <input
-                                    key={index}
-                                    id={`code-input-${index}`}
-                                    type="text"
-                                    value={digit}
-                                    onChange={(e) => handleCodeChange(e, index)}
-                                    className="code-input"
-                                    maxLength="1"
-                                />
-                            ))}
-                        </div>
-                        <button onClick={handleCodeSubmit} className="main-button">Вход</button>
+                        {showCodeInput && (
+                            <>
+                                <div className="code-input-container">
+                                    {code.map((digit, index) => (
+                                        <input
+                                            key={index}
+                                            id={`code-input-${index}`}
+                                            type="text"
+                                            value={digit}
+                                            onChange={(e) => handleCodeChange(e, index)}
+                                            className="code-input"
+                                            maxLength="1"
+                                        />
+                                    ))}
+                                </div>
+                                <button onClick={handleCodeSubmit} className="main-button">Проверить код</button>
+                            </>
+                        )}
                     </>
                 )}
             </div>

@@ -1,31 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/Room1Detail.css'; // Подключаем CSS файл
-import roomImage from '../pics/room1.jpeg'; // Импортируем изображение комнаты
-import overlayImage from '../pics/balal.png'; // Импортируем изображение комнаты
+import '../css/Room1Detail.css';
+import roomImage from '../pics/room1.jpeg';
+import overlayImage from '../pics/balal.png';
+import audioPlayIcon from '../pics/audioplay.svg';
+import audioPauseIcon from '../pics/audioplay.svg';
+import audioFile from '../audio/room1.mp3';
+
+const FIXED_CODE = '123456';
+
 
 function Room1Detail() {
-    const [showDetails, setShowDetails] = useState(null); // Хранение состояния выбранного объекта
-    const [isBalalaVisible, setisBalalaVisible] = useState(true); // Хранение состояния видимости балалайки
+    const [showDetails, setShowDetails] = useState(null);
+    const [isBalalaVisible, setisBalalaVisible] = useState(true);
     const [code, setCode] = useState(['', '', '', '', '', '']);
     const [errorMessage, setErrorMessage] = useState('');
     const [showCodeInput, setShowCodeInput] = useState(false);
     const [showNameInput, setShowNameInput] = useState(false);
     const [isAdmin, setIsAdmin] = useState(localStorage.getItem('isAdmin') === 'true');
+    const [isAudioPlaying, setIsAudioPlaying] = useState(false);
+    const [showAudioButton, setShowAudioButton] = useState(false);
+    const audioRef = useRef(null);
     const navigate = useNavigate();
-
 
     const handleBalalaClick = () => {
         setisBalalaVisible(false);
         setShowDetails('item1');
+        setShowAudioButton(true);
     };
 
     const handleClose = () => {
         setisBalalaVisible(true);
         setShowDetails(null);
+        setShowAudioButton(false);
+        if (audioRef.current) {
+            audioRef.current.pause();
+            setIsAudioPlaying(false);
+        }
     };
+
     const handleBack = () => {
-        if (setIsAdmin) {
+        if (isAdmin) {
             setShowCodeInput(true);
         } else {
             navigate('/admin');
@@ -47,33 +62,26 @@ function Room1Detail() {
     const handleCodeSubmit = async () => {
         const fullCode = code.join('');
         if (fullCode.length === 6) {
-            try {
-                const response = await fetch('http://127.0.0.1:5000/submit_code', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ code: fullCode })
-                });
-
-                if (response.ok) {
-                    const data = await response.json();
-                    if (data.message === 'Code is valid') {
-                        setShowNameInput(true);
-                        setErrorMessage('');
-                        navigate('/admin');
-                    } else {
-                        setErrorMessage('Неверный код. Пожалуйста, введите 6-значный код.');
-                    }
-                } else {
-                    const errorData = await response.json();
-                    setErrorMessage(errorData.error || 'Ошибка при проверке кода.');
-                }
-            } catch (error) {
-                setErrorMessage('Ошибка при соединении с сервером.');
+            if (fullCode === FIXED_CODE) {
+                setShowNameInput(true);
+                setErrorMessage('');
+                navigate('/admin');
+            } else {
+                setErrorMessage('Неверный код. Пожалуйста, введите 6-значный код.');
             }
         } else {
             setErrorMessage('Код должен быть 6-значным числом.');
+        }
+    };
+
+    const toggleAudio = () => {
+        if (isAudioPlaying) {
+            audioRef.current.pause();
+            setIsAudioPlaying(false);
+        } else {
+            audioRef.current.currentTime = 0; 
+            audioRef.current.play();
+            setIsAudioPlaying(true);
         }
     };
 
@@ -103,27 +111,28 @@ function Room1Detail() {
                 <img src={roomImage} alt="Комната" className="full-image"/>
             </div>
             {isBalalaVisible && (
-                <div className="large-text-rectangle-1">Комната 2</div>
+                <div className="large-text-rectangle-1">Гостиная</div>
             )}
             <div className={`clickable-balal ${isBalalaVisible ? '' : 'hidden'}`} onClick={handleBalalaClick}>
                 <img src={overlayImage} alt="Открыть детали" className="overlay-image-1"/>
             </div>
             {showDetails && (
                 <div className="details-overlay">
-                <button className="close-button" onClick={handleClose}>
-                        <span>&times;</span> {/* Крестик для закрытия */}
+                    <button className="close-button" onClick={handleClose}>
+                        <span>&times;</span>
                     </button>
                     <div className="details">
-                        <h2>Информация о {showDetails}</h2>
-                        <p>Здесь подробности о выбранном объекте {showDetails}.</p>
-                        <audio controls>
-                            <source src={`../audio/${showDetails}.mp3`} type="audio/mpeg"/>
-                            Ваш браузер не поддерживает элемент audio.
-                        </audio>
+                        <h2>Комната для гостей</h2>
+                        <p>Здесь вы видите мебель конца XVIII века, включая элегантный диван и кресла с зелеными подушками, отражающие стиль и комфорт той эпохи. Домра на диване напоминает о любви семьи к музыке и искусству. Картина на мольберте и добавляют нотки природы и вдохновения в интерьер комнаты. Туалетный столик с зеркалом и кружевной салфеткой создают атмосферу уюта и спокойствия.</p>
                     </div>
                 </div>
             )}
-
+            {showAudioButton && (
+                <button className="audio-button" onClick={toggleAudio}>
+                    <img src={isAudioPlaying ? audioPauseIcon : audioPlayIcon} alt={isAudioPlaying ? 'Pause Audio' : 'Play Audio'} />
+                </button>
+            )}
+            <audio ref={audioRef} src={audioFile} />
         </div>
     );
 }

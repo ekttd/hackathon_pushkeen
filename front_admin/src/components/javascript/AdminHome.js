@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Slider from 'react-slick';
 import '../css/UserHome.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import room1Image from '../pics/room1.png';
 import room2Image from '../pics/room2.png';
 import room3Image from '../pics/room3.png';
