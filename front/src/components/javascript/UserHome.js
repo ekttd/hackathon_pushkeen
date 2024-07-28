@@ -81,6 +81,7 @@ function UserHome() {
                         <img src={room2Image} alt="Комната 2" className="room-image"/>
                         <div className="room-overlay">Комната 2</div>
                     </div>
+                    
                     <div className="room" onClick={() => handleNavigate('/room3')}>
                         <img src={room3Image} alt="Комната 3" className="room-image"/>
                         <div className="room-overlay">Комната 3</div>
