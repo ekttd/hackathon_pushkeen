@@ -1,8 +1,8 @@
 // src/components/javascript/NavigationButtons.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import backArrow from '../pics/back-arrow.png';
-import homeIcon from '../pics/home-icon.png';
+import backArrow from '../pics/back-arrow.svg';
+import homeIcon from '../pics/home-icon.svg';
 import '../css/NavigationButtons.css';
 
 function NavigationButtons() {
@@ -10,10 +10,10 @@ function NavigationButtons() {
 
     return (
         <div className="navigation-buttons">
-            <button onClick={() => navigate(-1)} className="nav-button">
+            <button onClick={() => navigate(-1)} className="nav-button nav-button-left">
                 <img src={backArrow} alt="Назад" />
             </button>
-            <button onClick={() => navigate('/')} className="nav-button">
+            <button onClick={() => navigate('/')} className="nav-button nav-button-right">
                 <img src={homeIcon} alt="На главную" />
             </button>
         </div>

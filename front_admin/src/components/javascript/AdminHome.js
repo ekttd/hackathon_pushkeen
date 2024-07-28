@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
-import '../css/UserHome.css';
+import '../css/AdminHome.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import room1Image from '../pics/room1.png';
@@ -33,8 +33,20 @@ function AdminHome() {
         navigate(path);
     };
 
+    const sliderSettings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        nextArrow: <div className="slick-arrow slick-next" />,
+        prevArrow: <div className="slick-arrow slick-prev" />,
+    };
+
     return (
-        <div className="user-home-container">
+        <div className="admin-home-container">
             {showMessage && (
                 <div className="message-overlay">
                     <div className="message-box">
@@ -45,7 +57,7 @@ function AdminHome() {
                 </div>
             )}
             <h1>Выберите комнату</h1>
-            <div className="room-gallery">
+            <Slider {...sliderSettings} className="room-gallery">
                 <div className="room" onClick={() => handleNavigate('/room1')}>
                     <img src={room1Image} alt="Комната 1" className="room-image"/>
                     <div className="room-overlay">Комната 1</div>
@@ -58,7 +70,7 @@ function AdminHome() {
                     <img src={room3Image} alt="Комната 3" className="room-image"/>
                     <div className="room-overlay">Комната 3</div>
                 </div>
-            </div>
+            </Slider>
             <NavigationButtons />
         </div>
     );

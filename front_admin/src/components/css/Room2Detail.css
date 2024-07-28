@@ -1,202 +1,108 @@
-/* src/components/Room1Detail.css */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.room-detail-container {
-    position: relative;
-    height: 100vh; /* Высота на весь экран */
-    overflow: hidden; /* Скрыть выходящие за пределы элементы */
-}
-
-.image-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    filter: blur(10px); /* Размытие фона */
-    transition: filter 0.3s ease; /* Плавная анимация при изменении фильтра */
-}
-
-.hidden {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s 0.5s, opacity 0.5s ease;
-}
-
-.full-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Подгоняет изображение по размеру контейнера */
-}
+/* Добавьте это в ваш CSS файл */
 
 .clickable-candle {
     position: absolute;
-    top: 17%;
-    left: 60%;
+    top: 30%; /* Изменено для соответствия с расположением в Room1Detail */
+    left: 56%; /* Перемещено вправо */
     transform: translate(-50%, -50%);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    z-index: 10; /* Слой выше изображения */
+    z-index: 10;
 }
 
-.overlay-image-2 {
-    width: 120%;
-    height: 120%;
-    object-fit: cover;
-}
-
-/* Кнопка "Назад" */
-.back-button {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    padding: 10px 20px;
-    background-color: #2295b4; /* Основной цвет, как на главной странице */
-    border: none;
-    color: white;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 20; /* Кнопка должна быть поверх всего контента */
-}
-
-.large-text-rectangle-2 {
-    position: absolute;
-    bottom: 30%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    padding: 10px 20px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.7);
-    width: 600px;
-    height: 150px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #143d49; /* Измените цвет на желаемый */
-    font-size: 250%; /* Измените размер шрифта на желаемый */
-}
-
-
-.back-button:hover {
-    background-color: #196c83;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.details-overlay-1 h2.overlay-header {
-    position: sticky;
-    top: 0;
-    background: rgba(255, 255, 255, 0.6); 
-    padding: 10px; 
-    z-index: 30; 
-    border-radius: 10px; 
-}
-
-.details-overlay-1 .details-content {
-    flex: 1;
-    font-size: 16px; 
-    line-height: 1.6; 
-    text-align: justify; 
-    overflow-y: auto;
-    padding: 10px 30px; 
-    box-sizing: border-box;
-}
-
-.details-overlay-1 audio.overlay-audio {
-    position: absolute; 
-    bottom: 20px; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    width: calc(100% - 100px); 
-    margin: 0; 
-    background: rgba(255, 255, 255, 0.9); 
-    padding: 10px;
-    border-radius: 10px;
-    z-index: 30; 
-}
-
-.details-overlay-1::-webkit-scrollbar {
-    width: 8px;
-}
-
-.details-overlay-1::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-}
-
-.back-button {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    padding: 10px 20px;
-    background-color: #e3a400; 
-    border: none;
-    color: white;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 20; 
-}
-.hidden {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s 0.5s, opacity 0.5s ease;
-}
-
-.back-button:hover {
-    background-color: #e3a400;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.clickable-candle img {
+    width: 80px; /* Увеличено для большей видимости */
+    height: auto;
+    display: block;
 }
 
 .details-overlay-1 {
-    position: fixed; 
-    top: 50%; 
-    left: 60%;
+    position: fixed;
+    top: 50%;
+    left: 70%; /* Центрирование окна */
     transform: translate(-50%, -50%);
-    width: 60%; 
-    max-width: 600px; 
-    height: 55%;
-    background: rgba(255, 255, 255, 0.6); 
-    backdrop-filter: blur(10px); 
-    padding: 20px; 
+    width: 60%;
+    max-width: 500px;
+    height: 45%;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 20px;
     box-sizing: border-box;
     border-radius: 10px;
-    overflow: hidden; 
+    overflow: hidden;
     z-index: 20;
     display: flex;
     flex-direction: column;
 }
 
-.close-button {
+.details-content {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    overflow-y: auto;
+    padding: 10px 30px;
+    box-sizing: border-box;
+}
+
+.details-overlay-1 audio.overlay-audio {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 5px 10px;
-    background-color: #e3a400;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px); /* Ширина аудио-плеера */
+    margin: 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 30;
+}
+
+.audio-button {
+    position: fixed;
+    bottom: 20px; /* Расположение внизу экрана */
+    left: 20px; /* Перемещено на левую сторону экрана */
+    background: rgba(255, 255, 255, 0.8); /* Фон кнопки */
+    border: none;
+    border-radius: 50%;
+    width: 60px; /* Установите ширину кнопки */
+    height: 60px; /* Установите высоту кнопки */
+    display: flex; /* Используем flexbox для центрирования содержимого */
+    align-items: center; /* Центрируем по вертикали */
+    justify-content: center; /* Центрируем по горизонтали */
+    cursor: pointer;
+    z-index: 40;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавим тень для лучшего визуального восприятия */
+}
+
+.audio-button img {
+    width: 30px; /* Размер иконки внутри кнопки */
+    height: 30px;
+}
+
+.back-button-1 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #89441f;
     border: none;
     color: white;
     border-radius: 25px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
-    z-index: 40;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 20;
 }
 
-.close-button:hover {
-    background-color: #e3a400;
+.back-button-1:hover {
+    background-color: #652c0d; /* Темнее при наведении */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.5s, opacity 0.5s ease;
 }

@@ -3,16 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import '../css/Room1Detail.css';
 import roomImage from '../pics/room1.jpeg';
 import overlayImage from '../pics/balal.png';
-import audioPlayIcon from '../pics/audioplay.svg';
-import audioPauseIcon from '../pics/audioplay.svg';
+import audioPlayIcon from '../pics/sound.svg'; // Используем одну иконку для воспроизведения и паузы
 import audioFile from '../audio/room1.mp3';
 
 const FIXED_CODE = '123456';
 
-
 function Room1Detail() {
     const [showDetails, setShowDetails] = useState(null);
-    const [isBalalaVisible, setisBalalaVisible] = useState(true);
+    const [isBalalaVisible, setIsBalalaVisible] = useState(true);
     const [code, setCode] = useState(['', '', '', '', '', '']);
     const [errorMessage, setErrorMessage] = useState('');
     const [showCodeInput, setShowCodeInput] = useState(false);
@@ -24,13 +22,13 @@ function Room1Detail() {
     const navigate = useNavigate();
 
     const handleBalalaClick = () => {
-        setisBalalaVisible(false);
+        setIsBalalaVisible(false);
         setShowDetails('item1');
         setShowAudioButton(true);
     };
 
     const handleClose = () => {
-        setisBalalaVisible(true);
+        setIsBalalaVisible(true);
         setShowDetails(null);
         setShowAudioButton(false);
         if (audioRef.current) {
@@ -79,15 +77,15 @@ function Room1Detail() {
             audioRef.current.pause();
             setIsAudioPlaying(false);
         } else {
-            audioRef.current.currentTime = 0; 
+            audioRef.current.currentTime = 0;
             audioRef.current.play();
             setIsAudioPlaying(true);
         }
     };
 
     return (
-        <div className={`room-detail-container`}>
-            <button className="back-button" onClick={handleBack}>Назад к комнатам</button>
+        <div className="room-detail-container">
+            <button className="button back-button-1" onClick={handleBack}>Назад к комнатам</button>
             {showCodeInput && (
                 <div className="code-input-container">
                     <div className="code-input-wrapper">
@@ -103,8 +101,9 @@ function Room1Detail() {
                             />
                         ))}
                     </div>
-                    <button onClick={handleCodeSubmit} className="code-button">Подтвердить</button>
-                    <button onClick={() => setShowCodeInput(false)} className="code-button">Отмена</button>
+                    <button onClick={handleCodeSubmit} className="button button-small">Подтвердить</button>
+                    <button onClick={() => setShowCodeInput(false)} className="button button-small">Отмена</button>
+                    {errorMessage && <p className="error-message">{errorMessage}</p>}
                 </div>
             )}
             <div className={`image-container ${isBalalaVisible ? '' : 'normal-back'}`} onClick={handleBalalaClick}>
@@ -117,22 +116,25 @@ function Room1Detail() {
                 <img src={overlayImage} alt="Открыть детали" className="overlay-image-1"/>
             </div>
             {showDetails && (
-                <div className="details-overlay">
-                    <button className="close-button" onClick={handleClose}>
+                <div className="details-overlay-1">
+                    <button className="close-button-1" onClick={handleClose}>
                         <span>&times;</span>
                     </button>
-                    <div className="details">
+                    <div className="details-content">
                         <h2>Комната для гостей</h2>
                         <p>Здесь вы видите мебель конца XVIII века, включая элегантный диван и кресла с зелеными подушками, отражающие стиль и комфорт той эпохи. Домра на диване напоминает о любви семьи к музыке и искусству. Картина на мольберте и добавляют нотки природы и вдохновения в интерьер комнаты. Туалетный столик с зеркалом и кружевной салфеткой создают атмосферу уюта и спокойствия.</p>
+                        <audio ref={audioRef} className="overlay-audio">
+                            <source src={audioFile} type="audio/mpeg"/>
+                            Ваш браузер не поддерживает элемент audio.
+                        </audio>
                     </div>
                 </div>
             )}
             {showAudioButton && (
                 <button className="audio-button" onClick={toggleAudio}>
-                    <img src={isAudioPlaying ? audioPauseIcon : audioPlayIcon} alt={isAudioPlaying ? 'Pause Audio' : 'Play Audio'} />
+                    <img src={audioPlayIcon} alt={isAudioPlaying ? 'Pause Audio' : 'Play Audio'} />
                 </button>
             )}
-            <audio ref={audioRef} src={audioFile} />
         </div>
     );
 }

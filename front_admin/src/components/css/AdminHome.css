@@ -1,14 +1,13 @@
-/* src/css/UserHome.css */
-.user-home-container {
+.admin-home-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: url('../pics/bg_pc.png') no-repeat center center fixed;
+    background: linear-gradient(135deg, #cfa847, #f8ebb9); /* Линейный градиент */
     background-size: cover;
     padding: 20px;
-    color: white;
+    color: #89441f; /* Изменен цвет текста на коричневый */
     text-align: center;
 }
 
@@ -33,8 +32,8 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     max-width: 400px;
     width: 100%;
+    position: relative;
 }
-
 
 .close-button {
     background: transparent;
@@ -48,20 +47,22 @@
 }
 
 .room-gallery {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+    width: 60%; /* Установлена ширина карусели */
+    max-width: 800px; /* Максимальная ширина карусели */
+    margin-top: 30px;
+    margin-bottom: 30px; /* Добавлен отступ снизу */
 }
 
 .room {
     position: relative;
     cursor: pointer;
+    padding: 10px;
+    outline: none;
 }
 
 .room-image {
-    width: 200px;
-    height: 150px;
+    width: 100%;
+    height: 300px;
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s ease;
@@ -87,7 +88,7 @@
     width: 20%;
     padding: 1%;
     margin: 10px 0;
-    background: linear-gradient(135deg, #2295b4, #196c83);
+    background: #89441f;
     border: none;
     color: white;
     border-radius: 25px;
@@ -95,19 +96,28 @@
     font-size: 16px;
     transition: background 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 40px; /* Добавлен отступ сверху */
 }
 
 .test-button:hover {
-    background: linear-gradient(135deg, #196c83, #2295b4);
+    background: #9a7053;
     transform: translateY(-3px);
 }
 
 @media (max-width: 768px) {
+    .room-gallery {
+        width: 95%;
+        height: auto; /* Изменена высота карусели */
+        margin: 0 auto;
+        margin-top: 30px;
+        margin-bottom: 30px; /* Добавлен отступ снизу */
+    }
+
     .test-button {
         width: 35%;
         padding: 1%;
         margin: 10px 0;
-        background: linear-gradient(135deg, #2295b4, #196c83);
+        background: #89441f;
         border: none;
         color: white;
         border-radius: 25px;
@@ -118,7 +128,52 @@
     }
 
     .test-button:hover {
-        background: linear-gradient(135deg, #196c83, #2295b4);
+        background: #89441f;
         transform: translateY(-3px);
     }
+}
+
+.custom-modal .modal-body {
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #fffce8;
+}
+
+.room-title {
+    margin-top: 10%;
+    margin-bottom: 10%; /* Отступ снизу */
+    color: #89441f; /* Изменен цвет текста на коричневый */
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.modal-button {
+    width: 20%;
+    padding: 1%;
+    margin: 10px 0;
+    background: #89441f;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-button:hover {
+    background-color: #9A7053FF;
+}
+
+/* Slick slider custom styles */
+.slick-prev:before, .slick-next:before {
+    color: black;
+}
+
+.slick-dots li button:before {
+    color: black;
 }

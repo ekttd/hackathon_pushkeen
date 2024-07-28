@@ -3,8 +3,8 @@
     display: flex;
     position: fixed;
     top: 10px;
-    left: 10px;
-    gap: 10px;
+    width: 100%;
+    justify-content: space-between;
     z-index: 1000; /* Обеспечивает, что кнопки будут выше остального контента */
 }
 
@@ -25,4 +25,14 @@
 
 .nav-button:hover img {
     opacity: 0.8; /* Эффект при наведении */
+}
+
+.nav-button-left {
+    position: absolute;
+    left: 10px;
+}
+
+.nav-button-right {
+    position: absolute;
+    right: 10px;
 }

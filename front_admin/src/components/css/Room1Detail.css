@@ -1,4 +1,3 @@
-/* src/components/Room1Detail.css */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
@@ -9,36 +8,27 @@ body {
 
 .room-detail-container {
     position: relative;
-    height: 100vh; 
-    overflow: hidden; 
+    width: 100%;
+    height: 100vh;
+    background-image: url('../pics/room1.jpeg');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
 }
 
 .image-container {
     position: relative;
     width: 100%;
     height: 100%;
-    filter: blur(10px);
-    transition: filter 0.3s ease; 
 }
 
 .full-image {
-    width: 120%;
-    height: 100%;
-    object-fit: cover;
+    width: 100%;
+    height: auto;
 }
 
-
-.clickable-balal {
-    position: absolute;
-    top: 30%;
-    left: 56%;
-    transform: translate(-50%, -50%);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    z-index: 10; 
+.normal-back {
+    filter: blur(5px);
 }
 
 .large-text-rectangle-1 {
@@ -55,8 +45,22 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #143d49;
-    font-size: 250%; 
+    color: #000000;
+    font-size: 250%;
+    z-index: 20;
+}
+
+.clickable-balal {
+    position: absolute;
+    top: 30%;
+    left: 56%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 10;
 }
 
 .overlay-image-1 {
@@ -65,12 +69,59 @@ body {
     object-fit: cover;
 }
 
-.back-button {
+.details-overlay-1 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    max-width: 600px;
+    height: 55%;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+}
+
+.details-content {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    overflow-y: auto;
+    padding: 10px 30px;
+    box-sizing: border-box;
+}
+
+.overlay-audio {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    padding: 10px 20px;
-    background-color: #3a2b05;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 100px);
+    margin: 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 30;
+}
+
+.details-overlay-1::-webkit-scrollbar {
+    width: 8px;
+}
+
+.details-overlay-1::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.button {
+    background-color: #89441f;
     border: none;
     color: white;
     border-radius: 25px;
@@ -78,75 +129,88 @@ body {
     font-size: 16px;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 20; 
-}
-.hidden {
-
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s 0.5s, opacity 0.5s ease;
-}
-
-.back-button:hover {
-    background-color: #3a2b05;
-    transform: translateY(-3px);
+    padding: 10px 20px;
+    margin: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
 }
 
-.details-overlay {
+.button:hover {
+    background-color: #6b2a11;
+    transform: translateY(-3px);
+}
+
+.back-button-1 {
     position: absolute;
-    top: 10%;
-    right: 20%;
-    width: 80%; 
-    max-width: 1000px;
-    height: 80%; 
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-    z-index: 30;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
+    top: 20px;
+    left: 20px;
+    z-index: 20;
 }
 
-
-.details-overlay h2 {
-    margin: 0; 
-    padding-bottom: 10px; 
-    border-bottom: 1px solid #ccc; 
-    position: sticky; 
-    top: 0;
-    background: rgba(255, 255, 255, 0.85); 
-    z-index: 31;
-}
-
-.details-overlay {
-    width: 80%; 
-    max-width: 1000px;
-    height: 80%; 
+.close-button-1 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 40;
 }
 
 .audio-button {
     position: fixed;
-    top: 400px; 
-    left: 100px;
-    background-color: transparent; 
-    border: none; 
-    padding: 0; 
+    bottom: 20px; /* Расположение внизу экрана */
+    left: 20px; /* Перемещено на левую сторону экрана */
+    background: rgba(255, 255, 255, 0.8); /* Фон кнопки */
+    border: none;
+    border-radius: 50%;
+    width: 60px; /* Установите ширину кнопки */
+    height: 60px; /* Установите высоту кнопки */
+    display: flex; /* Используем flexbox для центрирования содержимого */
+    align-items: center; /* Центрируем по вертикали */
+    justify-content: center; /* Центрируем по горизонтали */
     cursor: pointer;
-    z-index: 20;
+    z-index: 40;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавим тень для лучшего визуального восприятия */
 }
 
 .audio-button img {
-    width: 100px;
-    height: auto; 
+    width: 30px; /* Размер иконки внутри кнопки */
+    height: 30px;
 }
 
-.audio-button:hover {
-    opacity: 0.8; 
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
 }
 
+@media (max-width: 768px) {
+    .details-overlay-1 {
+        width: 80%;
+        max-width: 800px;
+    }
 
+    .large-text-rectangle-1 {
+        bottom: 4%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px 30px;
+        width: 80%;
+        max-width: 800px;
+        font-size: 200%;
+        color: #652c0d;
+    }
 
+    .clickable-balal {
+        top: 37%;
+        left: 64%;
+        font-size: 14px;
+    }
+
+    .details-content {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .overlay-audio {
+        width: calc(100% - 40px);
+    }
+}
