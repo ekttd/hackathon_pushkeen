@@ -1,15 +1,20 @@
-/* src/css/UserHome.css */
 .user-home-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(135deg, #cfa847, #f8ebb9); /* Линейный градиент */
-    background-size: cover;
+    background: linear-gradient(135deg, #cfa847, #f8ebb9);
     padding: 20px;
     color: white;
     text-align: center;
+    overflow: hidden; /* Добавлено, чтобы предотвратить прокрутку */
+    margin: 0; /* Убедитесь, что здесь нет отступов */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
 }
 
 .message-overlay {
@@ -29,7 +34,7 @@
     background: white;
     color: black;
     border-radius: 10px;
-    padding: 20px;
+    padding: 5%;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     max-width: 400px;
     width: 100%;
@@ -47,11 +52,16 @@
     color: black;
 }
 
+.room-title {
+    margin: 1% 0; /* Уменьшите отступы сверху и снизу */
+    color: #89441f;
+}
+
 .room-gallery {
-    width: 95%;
-    height: 100%;
-    margin-top: 30px;
-    margin-bottom: 30px; /* Добавлен отступ снизу */
+    width: 40%;
+    height: 40%; /* Установите высоту контейнера слайдера в процентах */
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .room {
@@ -63,7 +73,7 @@
 
 .room-image {
     width: 100%;
-    height: 150px;
+    height: 100%;
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s ease;
@@ -97,7 +107,7 @@
     font-size: 16px;
     transition: background 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 40px; /* Добавлен отступ сверху */
+    margin-top: 20px;
 }
 
 .test-button:hover {
@@ -108,10 +118,10 @@
 @media (max-width: 768px) {
     .room-gallery {
         width: 95%;
-        height: 30%;
+        height: 40%; /* Уменьшена высота для мобильных устройств */
         margin: 0 auto;
         margin-top: 30px;
-        margin-bottom: 30px; /* Добавлен отступ снизу */
+        margin-bottom: 30px;
     }
 
     .test-button {
@@ -138,12 +148,6 @@
     padding: 30px;
     border-radius: 10px;
     background-color: #fffce8;
-}
-
-.room-title {
-    margin-top: 10%;
-    margin-bottom: 10%; /* Отступ снизу */
-    color: #89441f;
 }
 
 .modal-buttons {

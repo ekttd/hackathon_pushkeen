@@ -1,26 +1,18 @@
-import React, { useState } from 'react';
+import React, {useRef, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Room3Detail.css'; // Подключаем CSS файл
 import '../css/PasswordForm.css'; // Подключаем CSS файл
 import roomImage from '../pics/room3.png';
 import overlayImage from "../pics/pralka.png";
+import soundImage from "../pics/sound.svg";
 
 function Room3Detail() {
     const [showDetails, setShowDetails] = useState(null); // Хранение состояния выбранного объекта
     const [isPralkaVisible, setIsPralkaVisible] = useState(true); // Хранение состояния видимости балалайки
     const navigate = useNavigate();
     const audio = document.getElementById('audio');
-    const audioIcon = document.querySelector('.audio-icon');
+    const audioRef = useRef(new Audio(`../audio/item1.mp3`)); // Инициализация аудио
 
-    function toggleAudio() {
-        if (audio.paused) {
-            audio.play();
-            audioIcon.innerHTML = '<img src="../pics/sound.svg" alt="Pause Icon"/>';
-        } else {
-            audio.pause();
-            audioIcon.innerHTML = '<img src="../pics/sound.svg" alt="Play Icon"/>';
-        }
-    }
     const handlePralkaClick = () => {
         setIsPralkaVisible(false);
         setShowDetails('item1');
@@ -33,6 +25,10 @@ function Room3Detail() {
 
     const handleBack = () => {
         navigate('/user');
+    };
+
+    const handleAudioPlay = () => {
+        audioRef.current.play(); // Воспроизвести аудио
     };
 
     return (
@@ -64,12 +60,9 @@ function Room3Detail() {
                             атмосферу уюта и спокойствия, где проводились часы за чтением, рукоделием и беседами.
                             Эти комнаты усадьбы прадеда Пушкина не только рассказывают о жизни и культуре того времени,
                             но и о наследии, которое вдохновляло будущего великого поэта.</p>
-                        <audio controls>
-                            <source src={`../audio/${showDetails}.mp3`} type="audio/mpeg"/>
-                            Ваш браузер не поддерживает элемент audio.
-                        </audio>
-                        <button className="audio-icon" onClick={toggleAudio}>
-                            <img src="path/to/your/icon.png" alt="Audio Icon"/>
+
+                        <button onClick={handleAudioPlay} className="sound-button">
+                            <img src={soundImage} alt="Воспроизвести звук" className="sound-image"/>
                         </button>
                     </div>
                 </div>

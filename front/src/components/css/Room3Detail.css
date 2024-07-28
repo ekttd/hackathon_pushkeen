@@ -217,7 +217,7 @@ body {
             position: absolute;
             top: 60%;
             right: 50%; /* Смещаем окно вправо, не доходя до краев */
-            width: fit-content;
+            width: 95%;
             transform: translate(50%, 0%);
             max-width: 400px;
             height: 38%;

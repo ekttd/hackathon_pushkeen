@@ -112,9 +112,9 @@ body {
 /* Окно с деталями */
 .details-overlay-2 {
     position: absolute;
-    top: 50%; /* Смещаем верхнюю границу элемента на половину высоты родителя */
+    top: 5%; /* Смещаем верхнюю границу элемента на половину высоты родителя */
     left: 50%; /* Смещаем левую границу элемента на половину ширины родителя */
-    transform: translate(50%, 0%); /* Смещаем элемент на -50% от его ширины и высоты, тем самым помещая его в центр */
+    transform: translate(-50%, 50%); /* Смещаем элемент на -50% от его ширины и высоты, тем самым помещая его в центр */
     background: rgba(255, 255, 255, 0.5); /* Белый фон с прозрачностью */
     padding: 20px;
     box-sizing: border-box;
@@ -152,6 +152,19 @@ body {
     background-color: #89441f;
 }
 
+/* Кнопка звука */
+.sound-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.sound-image {
+    width: 40px;
+    height: 40px;
+}
+
 /* Настройки для мобильной версии */
 @media (max-width: 768px) {
 
@@ -179,7 +192,7 @@ body {
         position: absolute;
         top: 60%;
         right: 50%; /* Смещаем окно вправо, не доходя до краев */
-        width: fit-content;
+        width: 95%;
         transform: translate(-50%, 0%);
         max-width: 400px;
         height: 60%;

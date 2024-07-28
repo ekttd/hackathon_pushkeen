@@ -115,7 +115,7 @@ function Register() {
                                             type="text"
                                             value={digit}
                                             onChange={(e) => handleCodeChange(e, index)}
-                                            className="code-input"
+                                            className="code-input-1"
                                             maxLength="1"
                                         />
                                     ))}

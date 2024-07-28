@@ -54,7 +54,7 @@ function UserHome() {
         <div className="user-home-container">
             <Modal show={showConfirmation} onHide={handleCancelExit} dialogClassName="custom-modal">
                 <Modal.Body>
-                    <h2 style={{textAlign: 'center'}}>Вы уверены, что хотите завершить просмотр?</h2>
+                    <h2 style={{ textAlign: 'center' }}>Вы уверены, что хотите завершить просмотр?</h2>
                     <div className="modal-buttons">
                         <button className="modal-button" onClick={handleConfirmExit}>Да</button>
                         <button className="modal-button" onClick={handleCancelExit}>Нет</button>
@@ -74,16 +74,15 @@ function UserHome() {
             <div className="room-gallery">
                 <Slider {...settings}>
                     <div className="room" onClick={() => handleNavigate('/room1')}>
-                        <img src={room1Image} alt="Комната 1" className="room-image"/>
+                        <img src={room1Image} alt="Комната 1" className="room-image" />
                         <div className="room-overlay">Комната 1</div>
                     </div>
                     <div className="room" onClick={() => handleNavigate('/room2')}>
-                        <img src={room2Image} alt="Комната 2" className="room-image"/>
+                        <img src={room2Image} alt="Комната 2" className="room-image" />
                         <div className="room-overlay">Комната 2</div>
                     </div>
-                    
                     <div className="room" onClick={() => handleNavigate('/room3')}>
-                        <img src={room3Image} alt="Комната 3" className="room-image"/>
+                        <img src={room3Image} alt="Комната 3" className="room-image" />
                         <div className="room-overlay">Комната 3</div>
                     </div>
                 </Slider>

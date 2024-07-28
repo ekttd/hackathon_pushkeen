@@ -6,19 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="f42e13bb-7377-4e49-a6ad-43a7ceaa7071" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/css/About.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/About.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/css/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/Home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/css/MuseumHistory.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/MuseumHistory.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/css/NavigationButtons.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/NavigationButtons.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/css/Register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/Register.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/css/Room1Detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/Room1Detail.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/css/Room2Detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/Room2Detail.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/css/Room3Detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/Room3Detail.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/css/UserHome.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/UserHome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/javascript/NavigationButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/NavigationButtons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/javascript/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/javascript/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/Register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/javascript/Room1Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/Room1Detail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/javascript/Room2Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/Room2Detail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/javascript/Room3Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/Room3Detail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pics/audio.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pics/back-arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pics/home-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/javascript/UserHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/UserHome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pics/logo2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pics/logo2.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +58,7 @@
     "nodejs_package_manager_path": "npm",
     "npm.build.executor": "Run",
     "npm.start.executor": "Run",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.1.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -103,6 +107,7 @@
       <updated>1721818741692</updated>
       <workItem from="1721818744424" duration="8411000" />
       <workItem from="1722184797037" duration="7476000" />
+      <workItem from="1722203200413" duration="7429000" />
     </task>
     <servers />
   </component>

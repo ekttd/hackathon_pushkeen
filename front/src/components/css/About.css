@@ -1,15 +1,15 @@
-/* src/css/About.css */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Предотвращает горизонтальную прокрутку */
 }
 
 .about-container {
     padding: 40px;
-    background: linear-gradient(to right, #f7f9fc, #e2ebf0);
+    background: linear-gradient(135deg, #cfa847, #f8ebb9);
     border-radius: 10px;
     max-width: 800px;
     margin: 0 auto;
@@ -18,7 +18,7 @@ body {
 
 .title {
     text-align: center;
-    color: #333;
+    color: #503a2c;
     margin-bottom: 20px;
 }
 
@@ -27,7 +27,7 @@ body {
 }
 
 .collapsible {
-    background-color: #2295b4;
+    background-color: #89441f;
     color: white;
     cursor: pointer;
     padding: 18px;
@@ -41,7 +41,7 @@ body {
 }
 
 .collapsible:hover {
-    background-color: #196c83;
+    background-color: #9a7053;
 }
 
 .content {
@@ -64,7 +64,7 @@ body {
 
 .museum-details h2 {
     font-size: 1.8rem;
-    color: #2c3e50;
+    color: #503a2c;
     margin-bottom: 10px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -74,6 +74,7 @@ body {
     line-height: 1.6;
     margin-bottom: 10px;
 }
+
 .video-wrapper {
     display: flex;
     flex-direction: column;
@@ -86,6 +87,7 @@ iframe {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .museum-address,
 .museum-hours {
     margin-bottom: 20px;
@@ -93,4 +95,36 @@ iframe {
     border-radius: 15px;
     background: rgba(240, 248, 255, 0.8);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 10%;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .collapsible {
+        font-size: 16px;
+        padding: 14px;
+    }
+
+    .content p {
+        margin: 14px 0;
+    }
+
+    iframe {
+        width: 100%;
+        height: auto;
+    }
+
+    .museum-details h2 {
+        font-size: 1.6rem;
+    }
+
+    .museum-details p {
+        font-size: 1rem;
+    }
 }
