@@ -1,20 +1,14 @@
-.user-home-container {
+.admin-home-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
     background: linear-gradient(135deg, #cfa847, #f8ebb9);
+    background-size: cover;
     padding: 20px;
-    color: white;
+    color: #89441f;
     text-align: center;
-    overflow: hidden;
-    margin: 0;
-}
-
-body, html {
-    margin: 0;
-    padding: 0;
 }
 
 .message-overlay {
@@ -34,7 +28,7 @@ body, html {
     background: white;
     color: black;
     border-radius: 10px;
-    padding: 5%;
+    padding: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     max-width: 400px;
     width: 100%;
@@ -52,16 +46,11 @@ body, html {
     color: black;
 }
 
-.room-title {
-    margin: 1% 0;
-    color: #89441f;
-}
-
 .room-gallery {
-    width: 40%;
-    height: 40%;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    width: 60%;
+    max-width: 800px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .room {
@@ -73,7 +62,7 @@ body, html {
 
 .room-image {
     width: 100%;
-    height: 100%;
+    height: 300px;
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s ease;
@@ -107,7 +96,7 @@ body, html {
     font-size: 16px;
     transition: background 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
+    margin-top: 40px; /* Добавлен отступ сверху */
 }
 
 .test-button:hover {
@@ -118,7 +107,7 @@ body, html {
 @media (max-width: 768px) {
     .room-gallery {
         width: 95%;
-        height: 40%;
+        height: auto; /* Изменена высота карусели */
         margin: 0 auto;
         margin-top: 30px;
         margin-bottom: 30px;
@@ -148,6 +137,12 @@ body, html {
     padding: 30px;
     border-radius: 10px;
     background-color: #fffce8;
+}
+
+.room-title {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    color: #89441f;
 }
 
 .modal-buttons {

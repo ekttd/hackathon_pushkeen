@@ -1,4 +1,3 @@
-// src/Register.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from './UserContext';
@@ -40,7 +39,6 @@ function Register() {
         }
     };
 
-    
     const handleCodeChange = (e, index) => {
         const { value } = e.target;
         if (/^\d*$/.test(value) && value.length <= 1) {
@@ -50,6 +48,12 @@ function Register() {
             if (value && index < 5) {
                 document.getElementById(`code-input-${index + 1}`).focus();
             }
+        }
+    };
+
+    const handleKeyDown = (e, index) => {
+        if (e.key === 'Backspace' && !e.target.value && index > 0) {
+            document.getElementById(`code-input-${index - 1}`).focus();
         }
     };
 
@@ -100,7 +104,9 @@ function Register() {
         <div className="register-container">
             {errorMessage && <p className="error-message">{errorMessage}</p>}
             <div className="register-form">
-                <h1>Регистрация</h1>
+                <div className="your-component-container">
+                    <h1 className="centered-heading">Код для просмотра</h1>
+                </div>
                 {!codeSent ? (
                     <button onClick={handleGenerateCode} className="main-button">Сгенерировать код</button>
                 ) : (
@@ -115,24 +121,13 @@ function Register() {
                                             type="text"
                                             value={digit}
                                             onChange={(e) => handleCodeChange(e, index)}
+                                            onKeyDown={(e) => handleKeyDown(e, index)}
                                             className="code-input-1"
                                             maxLength="1"
                                         />
                                     ))}
                                 </div>
                                 <button onClick={handleCodeSubmit} className="main-button">Проверить код</button>
-                            </>
-                        )}
-                        {showNameInput && (
-                            <>
-                                <input
-                                    type="text"
-                                    placeholder="Введите ваше имя"
-                                    value={username}
-                                    onChange={(e) => setUsername(e.target.value)}
-                                    className="input-field"
-                                />
-                                <button onClick={handleRegister} className="main-button">Зарегистрироваться</button>
                             </>
                         )}
                     </>

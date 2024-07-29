@@ -41,7 +41,7 @@ function Register() {
         <div className="register-container">
             {errorMessage && <p className="error-message">{errorMessage}</p>}
             <div className="register-form">
-                <h1>Введите пароль</h1>
+                <h1>Вход</h1>
                 <>
                     {showCodeInput && (
                         <>
