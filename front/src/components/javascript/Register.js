@@ -12,11 +12,9 @@ const instance = axios.create({
 });
 
 function Register() {
-    const [username, setUsername] = useState('');
     const [code, setCode] = useState(['', '', '', '', '', '']);
     const [errorMessage, setErrorMessage] = useState('');
     const [showCodeInput, setShowCodeInput] = useState(false);
-    const [showNameInput, setShowNameInput] = useState(false);
     const [codeSent, setCodeSent] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);
     const navigate = useNavigate();
@@ -64,8 +62,10 @@ function Register() {
                 const response = await instance.post('/submit_code', { code: fullCode });
 
                 if (response.status === 200) {
-                    setShowNameInput(true);
-                    setErrorMessage('');
+                    localStorage.setItem('userCode', fullCode);
+                    setUser({ code: fullCode });
+                    setShowSuccess(true);
+                    setTimeout(() => navigate('/user'), 2000);
                 } else {
                     const errorData = response.data;
                     setErrorMessage('Неверный код. Пожалуйста, введите 6-значный код.');
@@ -75,28 +75,6 @@ function Register() {
             }
         } else {
             setErrorMessage('Код должен быть 6-значным числом.');
-        }
-    };
-
-    const handleRegister = async () => {
-        const fullCode = code.join('');
-        if (username.trim()) {
-            try {
-                const response = await instance.post('/update_username', { code: fullCode, username });
-                if (response.status === 200) {
-                    localStorage.setItem('userCode', fullCode);
-                    setUser({ code: fullCode });
-                    setShowSuccess(true);
-                    setTimeout(() => navigate('/user'), 2000);
-                } else {
-                    const errorData = response.data;
-                    setErrorMessage(errorData.error || 'Ошибка при обновлении имени.');
-                }
-            } catch (error) {
-                setErrorMessage('Ошибка при соединении с сервером.');
-            }
-        } else {
-            setErrorMessage('Пожалуйста, введите ваше имя.');
         }
     };
 
@@ -138,7 +116,6 @@ function Register() {
                     <div className="success-animation">
                         <img src={successImage} alt="Success" className="success-image" />
                     </div>
-                    <p>Успешная регистрация!</p>
                 </div>
             )}
             <NavigationButtons />

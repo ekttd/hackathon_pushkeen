@@ -40,10 +40,8 @@ def generate_unique_code():
 @app.route('/add_user', methods=['POST'])
 def add_user():
     data = request.json
-    username = data.get('username', '')  # Пустое имя по умолчанию
     code = generate_unique_code()
     user_data = {
-        'username': username,
         '_id': users.count_documents({}) + 1,
         'coins': 0,
         'valid_date': datetime.strptime('2024-07-19T00:00:00.000+00:00', '%Y-%m-%dT%H:%M:%S.%f+00:00'),
