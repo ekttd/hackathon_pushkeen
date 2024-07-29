@@ -1,4 +1,3 @@
-// src/Test.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -12,6 +11,11 @@ const shuffleArray = (array) => {
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
     return shuffled;
+};
+
+const getRandomQuestions = (questions, num) => {
+    const shuffledQuestions = shuffleArray(questions);
+    return shuffledQuestions.slice(0, num);
 };
 
 const Test = () => {
@@ -31,9 +35,11 @@ const Test = () => {
         axios.get('http://localhost:5000/get_questions')
             .then(response => {
                 const data = response.data;
-                setQuestions(data);
-                setAnswers(Array(data.length).fill(null));
-                setCurrentShuffledAnswers(data.map(q => shuffleArray([q.answer, q.trap_1, q.trap_2])));
+                // Выберите случайные 5 вопросов
+                const selectedQuestions = getRandomQuestions(data, 5);
+                setQuestions(selectedQuestions);
+                setAnswers(Array(selectedQuestions.length).fill(null));
+                setCurrentShuffledAnswers(selectedQuestions.map(q => shuffleArray([q.answer, q.trap_1, q.trap_2])));
             })
             .catch(error => console.error('Error fetching questions:', error));
     }, []);
@@ -134,3 +140,4 @@ const Test = () => {
 };
 
 export default Test;
+
