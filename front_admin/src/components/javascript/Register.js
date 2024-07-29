@@ -24,6 +24,12 @@ function Register() {
         }
     };
 
+    const handleKeyDown = (e, index) => {
+        if (e.key === 'Backspace' && !e.target.value && index > 0) {
+            document.getElementById(`code-input-${index - 1}`).focus();
+        }
+    };
+
     const handleGenerateCode = async () => {
         try {
             const response = await fetch('http://127.0.0.1:5000/add_admin', {
@@ -83,26 +89,27 @@ function Register() {
             {errorMessage && <p className="error-message">{errorMessage}</p>}
             <div className="register-form">
                 <h1>Вход</h1>
-                    <>
-                        {showCodeInput && (
-                            <>
-                                <div className="code-input-container">
-                                    {code.map((digit, index) => (
-                                        <input
-                                            key={index}
-                                            id={`code-input-${index}`}
-                                            type="text"
-                                            value={digit}
-                                            onChange={(e) => handleCodeChange(e, index)}
-                                            className="code-input"
-                                            maxLength="1"
-                                        />
-                                    ))}
-                                </div>
-                                <button onClick={handleCodeSubmit} className="main-button">Проверить код</button>
-                            </>
-                        )}
-                    </>
+                <>
+                    {showCodeInput && (
+                        <>
+                            <div className="code-input-container">
+                                {code.map((digit, index) => (
+                                    <input
+                                        key={index}
+                                        id={`code-input-${index}`}
+                                        type="text"
+                                        value={digit}
+                                        onChange={(e) => handleCodeChange(e, index)}
+                                        onKeyDown={(e) => handleKeyDown(e, index)}
+                                        className="code-input"
+                                        maxLength="1"
+                                    />
+                                ))}
+                            </div>
+                            <button onClick={handleCodeSubmit} className="main-button">Проверить код</button>
+                        </>
+                    )}
+                </>
             </div>
         </div>
     );

@@ -1,4 +1,4 @@
-/* src/components/Room1Detail.css */
+/* src/components/Room2Detail.css */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
@@ -36,11 +36,11 @@ body {
     background-image: url('../pics/room2.png');
     background-position: 50% 50%;
     background-size: cover;
-    animation: panorama-2 30s linear infinite;
+    animation: panorama-1 30s linear infinite;
     z-index: 1;
 }
 
-.room-detail-container-2 {
+.room-detail-container {
     background-image: url('../pics/room2.png');
     background-position: 50% 50%;
     background-size: cover;
@@ -59,30 +59,6 @@ body {
     z-index: 10;
 }
 
-.overlay-image-2 {
-    width: 120%;
-    height: 120%;
-    object-fit: cover;
-}
-
-/* Кнопка "Назад" */
-.back-button-2 {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    padding: 10px 20px;
-    background-color: #89441f;
-    border: none;
-    color: white;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 20;
-
-}
-
 .large-text-rectangle-2 {
     position: absolute;
     bottom: 30%;
@@ -97,11 +73,78 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #143d49;
+    color: #000000;
     font-size: 250%;
     z-index: 20;
 }
 
+.overlay-image-2 {
+    width: 105%;
+    height: 105%;
+    object-fit: cover;
+}
+
+.details-overlay-2 h2.overlay-header {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 10px;
+    z-index: 30;
+    border-radius: 10px;
+}
+
+.details-overlay-2 .details-content-2 {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    overflow-y: auto;
+    padding: 10px 30px;
+    box-sizing: border-box;
+}
+
+.details-overlay-2 audio.overlay-audio {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 100px);
+    margin: 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 30;
+}
+
+.details-overlay-2::-webkit-scrollbar {
+    width: 8px;
+}
+
+.details-overlay-2::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.back-button-2 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #89441f;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 20;
+}
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.5s, opacity 0.5s ease;
+}
 
 .back-button-2:hover {
     background-color: #89441f;
@@ -109,27 +152,23 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Окно с деталями */
 .details-overlay-2 {
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    background: rgba(255, 255, 255, 0.5);
+    position: fixed;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    max-width: 600px;
+    height: 55%;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
     padding: 20px;
     box-sizing: border-box;
-    overflow-y: auto;
-    z-index: 30;
     border-radius: 10px;
-}
-
-.details-overlay-2 h2.overlay-header-2 {
-    position: sticky;
-    top: 0;
-    background: rgba(255, 255, 255, 0.6);
-    padding: 10px;
-    z-index: 30;
-    border-radius: 10px;
+    overflow: hidden;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
 }
 
 .close-button-2 {
@@ -152,7 +191,6 @@ body {
     background-color: #89441f;
 }
 
-/* Кнопка звука */
 .sound-button {
     background: none;
     border: none;
@@ -165,9 +203,7 @@ body {
     height: 40px;
 }
 
-/* Настройки для мобильной версии */
 @media (max-width: 768px) {
-
     .blur-filter-2 {
         position: absolute;
         top: 0;
@@ -175,51 +211,108 @@ body {
         width: 100%;
         height: 100%;
         background-image: url('../pics/room2.png');
-        background-position: 55% 50%;
+        background-position: 50% 50%;
         background-size: cover;
         filter: blur(5px);
         z-index: 1;
     }
 
-    .room-detail-container-2 {
+    .room-detail-container {
         background-image: url('../pics/room2.png');
-        background-position: 55% 50%;
+        background-position: 50% 50%;
         background-size: cover;
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
     }
 
-
     .details-overlay-2 {
-        position: absolute;
-        top: 60%;
-        right: 50%;
+        position: fixed;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         width: 95%;
-        transform: translate(-50%, 0%);
-        max-width: 400px;
-        height: 60%;
-        background: rgba(255, 255, 255, 0.5);
+        max-width: 800px;
+        height: 55%;
+        background: rgba(255, 255, 255, 0.6);
         backdrop-filter: blur(10px);
         padding: 20px;
         box-sizing: border-box;
-        overflow-y: auto;
+        border-radius: 10px;
+        overflow: hidden;
+        z-index: 20;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .details-overlay-2 h2.overlay-header-2 {
+        position: sticky;
+        top: 0;
+        background: rgba(255, 255, 255, 0.6);
+        padding: 10px;
         z-index: 30;
         border-radius: 10px;
     }
 
+    .details-overlay-2 .details-content-2 {
+        flex: 1;
+        font-size: 16px;
+        line-height: 1.6;
+        text-align: justify;
+        overflow-y: auto;
+        padding: 10px 30px;
+        box-sizing: border-box;
+    }
+
+    .details-overlay-2 audio.overlay-audio {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 40px);
+        margin: 0;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 10px;
+        border-radius: 10px;
+        z-index: 30;
+    }
+
+    .details-overlay-2::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .details-overlay-2::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+    }
+
+    .close-button-2 {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 5px 10px;
+        background-color: #89441f;
+        border: none;
+        color: white;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        z-index: 50;
+    }
+
+    .close-button-2:hover {
+        background-color: #89441f;
+    }
 
     .clickable-item {
         font-size: 14px;
         padding: 8px;
     }
 
-    .image-container {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        filter: blur(10px);
-        transition: filter 0.3s ease;
-    }
-
-    .back-button-2, .close-button-2 {
+    .back-button, .close-button {
         font-size: 14px;
         padding: 8px 16px;
     }
@@ -227,7 +320,7 @@ body {
     .clickable-candle {
         position: absolute;
         top: 25%;
-        left: 68%;
+        left: 75%;
         transform: translate(-50%, -50%);
         color: white;
         padding: 10px;
@@ -236,7 +329,6 @@ body {
         font-size: 16px;
         z-index: 10;
     }
-
 
     .overlay-image-2 {
         width: 100%;
@@ -249,17 +341,22 @@ body {
         bottom: 4%;
         left: 50%;
         transform: translate(-50%, -50%);
-        padding: 10px 20px;
+        padding: 20px 30px;
         border-radius: 10px;
         background-color: rgba(255, 255, 255, 0.7);
-        width: 200px;
-        height: 100px;
-        text-align: center;
+        width: 80%;
+        max-width: 800px;
+        height: auto;
+        text-align: justify;
         display: flex;
         align-items: center;
         justify-content: center;
+        font-size: 200%;
         color: #652c0d;
-        font-size: 150%;
-        z-index: 20;
     }
 }
+
+
+
+
+

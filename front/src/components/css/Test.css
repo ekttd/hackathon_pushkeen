@@ -13,13 +13,13 @@ body {
     justify-content: center;
     height: 100vh;
     padding: 20px;
-    background: linear-gradient(to bottom right, #82d2ea, #ffffff);
+    background: linear-gradient(135deg, #cfa847, #f8ebb9);
     position: relative;
     overflow: hidden;
 }
 
 .notification {
-    color: green;
+    color: #d3a22e;
     font-weight: bold;
     margin-top: 10px;
 }
@@ -41,7 +41,7 @@ body {
 .test-title {
     text-align: center;
     font-size: 2rem;
-    color: #2295b4;
+    color: #89441f;
     margin-bottom: 20px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
@@ -85,7 +85,7 @@ body {
 
 .test-form h1 {
     font-size: 2rem;
-    color: #2295b4;
+    color: #89441f;
     margin-bottom: 20px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
@@ -108,15 +108,15 @@ body {
 }
 
 .test-form label.option:hover {
-    background-color: #e8f8ff;
-    border-color: #2295b4;
+    background-color: #e6e1d4;
+    border-color: #89441f;
 }
 
 .test-form button {
     width: 100%;
     padding: 15px;
     margin: 10px 0;
-    background-color: #2295b4;
+    background-color: #89441f;
     border: none;
     color: white;
     border-radius: 25px;
@@ -126,7 +126,7 @@ body {
 }
 
 .test-form button:hover {
-    background-color: #196c83;
+    background-color: #9a7053;
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

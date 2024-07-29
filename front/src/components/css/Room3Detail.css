@@ -1,4 +1,4 @@
-/* src/components/Room1Detail.css */
+/* src/components/room3Detail.css */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
@@ -20,10 +20,10 @@ body {
     z-index: 1;
 }
 
-@keyframes panorama {
-    0% { background-position: 5% 50%; }
+@keyframes panorama-3 {
+    0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
-    100% { background-position: 5% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .no-blur-filter-3 {
@@ -33,34 +33,36 @@ body {
     width: 100%;
     height: 100%;
     background-image: url('../pics/room3.png');
-    background-position: 5% 50%;
+    background-position: 50% 50%;
     background-size: cover;
-    animation: panorama 30s linear infinite;
+    animation: panorama-3 30s linear infinite;
     z-index: 1;
 }
 
-.room-detail-container-3 {
-    background-image: url('../pics/room1.png');
+.room-detail-container {
+    background-image: url('../pics/room3.png');
     background-position: 50% 50%;
     background-size: cover;
 }
 
-.normal-back {
-    display: flex;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    filter: blur(0px);
-    transition: filter 0.3s ease;
-    align-items: center;
-    overflow: hidden;
+.clickable-pralka {
+    position: absolute;
+    top: 60%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 10;
 }
 
 
 .large-text-rectangle-3 {
     position: absolute;
     bottom: 30%;
-    left: 60%;
+    left: 30%;
     transform: translate(-50%, -50%);
     padding: 10px 20px;
     border-radius: 10px;
@@ -76,35 +78,53 @@ body {
     z-index: 20;
 }
 
-
-.full-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-.clickable-pralka {
-    position: absolute;
-    top: 60%;
-    left: 25%;
-    transform: translate(-50%, -50%);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    z-index: 10;
-}
-
 .overlay-image-3 {
-    width: 80%;
-    height: 80%;
+    width: 105%;
+    height: 105%;
     object-fit: cover;
 }
 
+.details-overlay-3 h2.overlay-header {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 10px;
+    z-index: 30;
+    border-radius: 10px;
+}
 
-/* Кнопка "Назад" */
+.details-overlay-3 .details-content {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    overflow-y: auto;
+    padding: 10px 30px;
+    box-sizing: border-box;
+}
+
+.details-overlay-3 audio.overlay-audio {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 100px);
+    margin: 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 30;
+}
+
+.details-overlay-3::-webkit-scrollbar {
+    width: 8px;
+}
+
+.details-overlay-3::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
 .back-button-3 {
     position: absolute;
     top: 20px;
@@ -118,7 +138,12 @@ body {
     font-size: 16px;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 25;
+    z-index: 20;
+}
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.5s, opacity 0.5s ease;
 }
 
 .back-button-3:hover {
@@ -127,22 +152,23 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
-/* Окно с деталями */
 .details-overlay-3 {
-    position: absolute;
-    top: 20%;
-    right: 10%;
-    width: 40%;
-    max-width: 400px;
-    height: 60%;
-    background: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    max-width: 600px;
+    height: 55%;
+    background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(10px);
     padding: 20px;
     box-sizing: border-box;
-    overflow-y: auto;
-    z-index: 30;
     border-radius: 10px;
+    overflow: hidden;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
 }
 
 .close-button-3 {
@@ -165,109 +191,170 @@ body {
     background-color: #89441f;
 }
 
- .image-container img {
-        object-position: left bottom;
+.sound-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.sound-image {
+    width: 40px;
+    height: 40px;
+}
+
+@media (max-width: 768px) {
+    .blur-filter-3 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../pics/room3.png');
+        background-position: 0% 50%;
+        background-size: cover;
+        filter: blur(5px);
+        z-index: 1;
     }
 
-    @media (max-width: 768px) {
-
-        .blur-filter-3 {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('../pics/room3.png');
-            background-position: 5% 50%;
-            background-size: cover;
-            filter: blur(5px);
-            z-index: 1;
-        }
-
-        .room-detail-container-3 {
-            background-image: url('../pics/room3.png');
-            background-position: 5% 50%;
-            background-size: cover;
-        }
-
-
-        .details-overlay-3 {
-            position: absolute;
-            top: 60%;
-            right: 50%;
-            width: 95%;
-            transform: translate(50%, 0%);
-            max-width: 400px;
-            height: 38%;
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            box-sizing: border-box;
-            overflow-y: auto;
-            z-index: 30;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .details-overlay-3 h2.overlay-header-3 {
-            position: sticky;
-            top: 0;
-            background: #c8beb7;
-            padding: 10px;
-            z-index: 30;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        .details-overlay-3 .details {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .details-overlay-3 .details p {
-            flex: 1;
-        }
-
-        .details-overlay-3 .details audio {
-            align-self: center;
-        }
-        .clickable-pralka {
-            position: absolute;
-            top: 55%;
-            left: 42%;
-            transform: translate(-50%, -50%);
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            z-index: 10;
-        }
-        .overlay-image-3 {
-            width: 155%;
-            height: 155%;
-            object-fit: cover;
-        }
-
-        .large-text-rectangle-3 {
-            position: absolute;
-            bottom: -3%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 10px 20px;
-            border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.5);
-            width: 200px;
-            height: 100px;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #652c0d;
-            font-size: 150%;
-            z-index: 11;
-        }
+    .room-detail-container-3 {
+        background-image: url('../pics/room3.png');
+        background-position: 50% 50%;
+        background-size: cover;
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
     }
+
+    .details-overlay-3 {
+        position: fixed;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 95%;
+        max-width: 800px;
+        height: 55%;
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        overflow: hidden;
+        z-index: 20;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .details-overlay-3 h2.overlay-header-3 {
+        position: sticky;
+        top: 0;
+        background: rgba(255, 255, 255, 0.6);
+        padding: 10px;
+        z-index: 30;
+        border-radius: 10px;
+    }
+
+    .details-overlay-3 .details-content-3 {
+        flex: 1;
+        font-size: 16px;
+        line-height: 1.6;
+        text-align: justify;
+        overflow-y: auto;
+        padding: 10px 30px;
+        box-sizing: border-box;
+    }
+
+    .details-overlay-3 audio.overlay-audio {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 40px);
+        margin: 0;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 10px;
+        border-radius: 10px;
+        z-index: 30;
+    }
+
+    .details-overlay-3::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .details-overlay-3::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+    }
+
+    .close-button-3 {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 5px 10px;
+        background-color: #89441f;
+        border: none;
+        color: white;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        z-index: 50;
+    }
+
+    .close-button-3:hover {
+        background-color: #89441f;
+    }
+
+    .clickable-item {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .back-button, .close-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .clickable-pralka {
+        position: absolute;
+        top: 55%;
+        left: 42%;
+        transform: translate(-50%, -50%);
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        z-index: 10;
+    }
+
+    .overlay-image-3 {
+        width: 150%;
+        height: 150%;
+        object-fit: cover;
+    }
+
+    .large-text-rectangle-3 {
+        position: absolute;
+        bottom: 4%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px 30px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        width: 80%;
+        max-width: 800px;
+        height: auto;
+        text-align: justify;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 200%;
+        color: #652c0d;
+    }
+}
+
+
 
