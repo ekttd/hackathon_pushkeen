@@ -48,7 +48,7 @@ function MuseumHistory() {
                     <img src={galleryImage2} alt="Gallery Image 2" className="gallery-image" />
                     <img src={galleryImage3} alt="Gallery Image 3" className="gallery-image" />
                 </div>
-            </div>+
+            </div>
             <NavigationButtons />
         </div>
     );
