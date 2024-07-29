@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import '../css/Room2Detail.css';
 import roomImage from '../pics/room2.png';
 import overlayImage from '../pics/candle.png';
-import pauseImage from "../pics/pause.svg"; // Добавьте изображение паузы
+import pauseImage from "../pics/pause.svg"; 
 import audioFile from '../audio/room2.mp3';
 import soundImage from "../pics/sound.svg";
 const FIXED_CODE = '123456';
@@ -111,7 +111,7 @@ function Room2Detail() {
             {isCandleVisible ? (
                 <>
                     <div className="blur-filter-2" />
-                    <div className="large-text-rectangle-2">Ремесленная мастерская</div>
+                    <div className="large-text-rectangle-2">Музыкальная гостиная</div>
                 </>
             ) : (
                 <div className="no-blur-filter-2"/>
@@ -124,9 +124,9 @@ function Room2Detail() {
                     <button className="close-button-1" onClick={handleClose}>
                         <span>&times;</span>
                     </button>
-                    <h2 className="overlay-header">Третья Комната</h2>
+                    <h2 className="overlay-header">Музыкальная гостиная</h2>
                     <div className="details-content">
-                        <p>Эта комната оформлена в стиле модерн с элементами ар-деко. Вы увидите шикарные диваны, изысканные светильники и современные аксессуары. Окна с великолепным видом на сад и теплые, уютные текстуры создают атмосферу комфорта и стиля. Большая картина на стене добавляет драматизма в интерьер.</p>
+                        <p>Эта комната была центром культурной жизни семьи, где часто устраивались музыкальные вечера и литературные чтения. Перед вами старинный рояль, изготовленный в конце XVIII века, на котором, возможно, играли классические произведения того времени.</p>
                         <audio ref={audioRef} className="overlay-audio">
                             <source src={audioFile} type="audio/mpeg"/>
                             Ваш браузер не поддерживает элемент audio.

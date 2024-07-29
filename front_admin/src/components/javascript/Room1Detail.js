@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import '../css/Room1Detail.css';
 import roomImage from '../pics/room1.png';
 import overlayImage from '../pics/balal.png';
-import pauseImage from "../pics/pause.svg"; // Добавьте изображение паузы
+import pauseImage from "../pics/pause.svg";
 import audioFile from '../audio/room1.mp3';
 import soundImage from "../pics/sound.svg";
 const FIXED_CODE = '123456';
@@ -115,7 +115,7 @@ function Room1Detail() {
 
             {isBalalaVisible ? (
                 <>
-                    <div className="large-text-rectangle-1">Музыкальная гостиная</div>
+                    <div className="large-text-rectangle-1">Комната для гостей</div>
                     <div className="blur-filter"/>
                 </>
             ) : (
@@ -131,9 +131,9 @@ function Room1Detail() {
                     <button className="close-button-1" onClick={handleClose}>
                         <span>&times;</span>
                     </button>
-                    <h2 className="overlay-header">Третья Комната</h2>
+                    <h2 className="overlay-header">Комната для гостей</h2>
                     <div className="details-content">
-                        <p>Эта комната оформлена в стиле модерн с элементами ар-деко. Вы увидите шикарные диваны, изысканные светильники и современные аксессуары. Окна с великолепным видом на сад и теплые, уютные текстуры создают атмосферу комфорта и стиля. Большая картина на стене добавляет драматизма в интерьер.</p>
+                        <p>Здесь вы видите мебель конца XVIII века, включая элегантный диван и кресла с зелеными подушками, отражающие стиль и комфорт той эпохи. Лютня на диване напоминает о любви семьи к музыке и искусству. </p>
                         <audio ref={audioRef} className="overlay-audio">
                             <source src={audioFile} type="audio/mpeg"/>
                             Ваш браузер не поддерживает элемент audio.

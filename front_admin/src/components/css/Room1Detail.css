@@ -202,6 +202,7 @@ body {
     height: 40px;
 }
 
+
 @media (max-width: 768px) {
     .blur-filter {
         position: absolute;

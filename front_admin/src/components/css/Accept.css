@@ -1,4 +1,3 @@
-/* src/css/Accept.css */
 .accept-container {
     display: flex;
     flex-direction: column;
@@ -46,7 +45,7 @@
     padding: 15px;
     background: linear-gradient(135deg, #ffe082, #ffeb3b);
     border: none;
-    color: #333; /* Темный текст для контраста */
+    color: #333;
     border-radius: 25px;
     cursor: pointer;
     font-size: 18px;

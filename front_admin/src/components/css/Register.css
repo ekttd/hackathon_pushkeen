@@ -1,4 +1,3 @@
-/* src/css/Register.css */
 .register-container {
     display: flex;
     flex-direction: column;
@@ -9,6 +8,7 @@
     position: relative;
     overflow: hidden;
 }
+
 .register-form {
     display: flex;
     flex-direction: column;
@@ -46,19 +46,18 @@
 
 .input-field:focus {
     border-color: #89441f;
-    /*box-shadow: 0 0 8px rgba(34, 149, 180, 0.3);*/
     outline: none;
 }
 
 .code-container {
     display: flex;
     justify-content: space-between;
-    gap: 10px; /* Расстояние между инпутами */
+    gap: 10px;
 }
 
 .code-input {
-    width: 40px; /* Ширина инпута */
-    height: 40px; /* Высота инпута */
+    width: 40px; 
+    height: 40px; 
     text-align: center;
     font-size: 16px;
     border: 1px solid #ccc;
@@ -69,7 +68,6 @@
     width: 100%;
     padding: 15px;
     margin: 10px 0;
-    /*background: linear-gradient(135deg, #2295b4, #196c83);*/
     background: #89441f;
     border: none;
     color: #e8a108;
@@ -121,8 +119,8 @@
 }
 
 .success-image {
-    width: 100vw; /* Начальная ширина */
-    height: 100vh; /* Начальная высота */
+    width: 100vw; 
+    height: 100vh; 
     object-fit: cover;
     animation: scaleUp 2s ease-out forwards;
 }

@@ -12,7 +12,6 @@ body {
     height: 100vh;
     padding: 20px;
     background: linear-gradient(135deg, #cfa847, #f8ebb9);
-    /*background: linear-gradient(to bottom, #82d2ea, #ffffff);*/
     position: relative;
     overflow: hidden;
 }
@@ -91,7 +90,7 @@ body {
 }
 
 .secondary-button:hover {
-    background-color: rgba(203, 233, 242, 0.7);
+    background-color: rgba(254, 222, 152, 0.7);
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }

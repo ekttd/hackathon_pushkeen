@@ -1,4 +1,3 @@
-// src/components/javascript/NavigationButtons.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import backArrow from '../pics/back-arrow.svg';

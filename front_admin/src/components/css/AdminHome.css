@@ -96,7 +96,7 @@
     font-size: 16px;
     transition: background 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 40px; /* Добавлен отступ сверху */
+    margin-top: 40px; 
 }
 
 .test-button:hover {
@@ -107,7 +107,7 @@
 @media (max-width: 768px) {
     .room-gallery {
         width: 95%;
-        height: auto; /* Изменена высота карусели */
+        height: auto; 
         margin: 0 auto;
         margin-top: 30px;
         margin-bottom: 30px;
@@ -169,7 +169,6 @@
     background-color: #9A7053FF;
 }
 
-/* Slick slider custom styles */
 .slick-prev:before, .slick-next:before {
     color: black;
 }

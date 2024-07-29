@@ -101,7 +101,7 @@ iframe {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Медиа-запросы для мобильных устройств */
+
 @media (max-width: 768px) {
     .about-container {
         padding: 10%;

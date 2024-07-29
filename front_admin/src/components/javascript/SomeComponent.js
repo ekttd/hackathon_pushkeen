@@ -1,4 +1,3 @@
-// src/SomeComponent.js
 import React, { useEffect } from 'react';
 import { useUser } from './UserContext';
 import axios from 'axios';

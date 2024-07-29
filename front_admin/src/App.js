@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/javascript/Home';
@@ -9,7 +8,6 @@ import Room1Detail from './components/javascript/./Room1Detail';
 import Room2Detail from "./components/javascript/Room2Detail";
 import Room3Detail from "./components/javascript/Room3Detail";
 import About from "./components/javascript/About";
-// Импортируйте остальные компоненты
 
 function App() {
     return (
@@ -24,7 +22,6 @@ function App() {
                     <Route path="/room2" element={<Room2Detail />} />
                     <Route path="/room3" element={<Room3Detail />} />
                     <Route path="/about" element={<About />} />
-                    {/* Добавьте маршруты для других комнат */}
                 </Routes>
             </div>
         </Router>

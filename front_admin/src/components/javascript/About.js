@@ -1,4 +1,3 @@
-// src/components/javascript/About.js
 import React from 'react';
 import '../css/About.css';
 import NavigationButtons from './NavigationButtons';

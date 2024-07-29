@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/Room3Detail.css'; // Подключаем CSS файл
+import '../css/Room3Detail.css';
 import overlayImage from "../pics/pralka.png";
-import pauseImage from "../pics/pause.svg"; // Добавьте изображение паузы
+import pauseImage from "../pics/pause.svg";
 import audioFile from '../audio/room3.mp3';
 import soundImage from "../pics/sound.svg";
 const FIXED_CODE = '123456';
@@ -110,7 +110,7 @@ function Room3Detail() {
             {isPralkaVisible ? (
                 <>
                     <div className="blur-filter-3"/>
-                    <div className="large-text-rectangle-3">Домашний уют</div>
+                    <div className="large-text-rectangle-3">Ремесленная мастерская</div>
                 </>
             ) : (
                 <div className="no-blur-filter-3"/>
@@ -123,13 +123,9 @@ function Room3Detail() {
                     <button className="close-button-1" onClick={handleClose}>
                         <span>&times;</span>
                     </button>
-                    <h2 className="overlay-header">Третья Комната</h2>
+                    <h2 className="overlay-header">Ремесленная мастерская</h2>
                     <div className="details-content">
-                        <p>Эта комната оформлена в стиле модерн с элементами ар-деко.
-                            Вы увидите шикарные диваны, изысканные светильники и современные
-                            аксессуары. Окна с великолепным видом на сад и теплые, уютные
-                            текстуры создают атмосферу комфорта и стиля. Большая картина на стене
-                            добавляет драматизма в интерьер.</p>
+                        <p>В ремесленной мастерской оживали традиционные народные искусства и ремесла, которые были важной частью жизни в усадьбе. Традиционный народный костюм на манекене передает дух того времени и демонстрирует мастерство и творчество.</p>
                         <audio ref={audioRef} className="overlay-audio">
                             <source src={audioFile} type="audio/mpeg"/>
                             Ваш браузер не поддерживает элемент audio.
