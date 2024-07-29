@@ -1,17 +1,17 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/Room3Detail.css'; // Подключаем CSS файл
+import '../css/Room3Detail.css';
 import overlayImage from "../pics/pralka.png";
 import soundImage from "../pics/sound.svg";
-import pauseImage from "../pics/pause.svg"; // Добавьте изображение паузы
+import pauseImage from "../pics/pause.svg";
 import audioFile from '../audio/room3.mp3';
 
 function Room3Detail() {
-    const [showDetails, setShowDetails] = useState(null); // Хранение состояния выбранного объекта
-    const [isPralkaVisible, setIsPralkaVisible] = useState(true); // Хранение состояния видимости балалайки
-    const [isPlaying, setIsPlaying] = useState(false); // Хранение состояния воспроизведения
+    const [showDetails, setShowDetails] = useState(null);
+    const [isPralkaVisible, setIsPralkaVisible] = useState(true);
+    const [isPlaying, setIsPlaying] = useState(false);
     const navigate = useNavigate();
-    const audioRef = useRef(new Audio(audioFile)); // Создаем реф для объекта Audio
+    const audioRef = useRef(new Audio(audioFile));
 
     const handlePralkaClick = () => {
         setIsPralkaVisible(false);
@@ -29,11 +29,11 @@ function Room3Detail() {
 
     const handleAudioPlayPause = () => {
         if (isPlaying) {
-            audioRef.current.pause(); // Приостановить аудио
+            audioRef.current.pause();
         } else {
-            audioRef.current.play(); // Воспроизвести аудио
+            audioRef.current.play();
         }
-        setIsPlaying(!isPlaying); // Переключить состояние воспроизведения
+        setIsPlaying(!isPlaying);
     };
 
     return (
@@ -42,7 +42,7 @@ function Room3Detail() {
             {isPralkaVisible ? (
                 <>
                     <div className="blur-filter-3"/>
-                    <div className="large-text-rectangle-3">Домашний уют</div>
+                    <div className="large-text-rectangle-3">Ремесленная мастерская</div>
                 </>
             ) : (
                 <div className="no-blur-filter-3"/>
@@ -55,16 +55,8 @@ function Room3Detail() {
                     <button className="close-button-3" onClick={handleClose}>
                         <span>&times;</span> {/* Крестик для закрытия */}
                     </button>
-                    <h2 className="overlay-header-3">Домашний уют</h2>
-                    <div className="details">
-                        <p>Добро пожаловать в уютную домашнюю комнату усадьбы, где проходили тихие семейные вечера и
-                            приемы гостей. Здесь вы видите мебель конца XVIII века, включая элегантный диван и кресла с
-                            зелеными подушками, отражающие стиль и комфорт той эпохи. Лютня на диване напоминает о любви
-                            семьи к музыке и искусству. Картина на мольберте и пейзаж на стене добавляют нотки природы и
-                            вдохновения в интерьер комнаты. Туалетный столик с зеркалом и кружевной салфеткой создают
-                            атмосферу уюта и спокойствия, где проводились часы за чтением, рукоделием и беседами.
-                            Эти комнаты усадьбы прадеда Пушкина не только рассказывают о жизни и культуре того времени,
-                            но и о наследии, которое вдохновляло будущего великого поэта.</p>
+                    <h2 className="overlay-header-3">
+
                         <button onClick={handleAudioPlayPause} className="sound-button">
                             <img
                                 src={isPlaying ? pauseImage : soundImage}
@@ -72,6 +64,19 @@ function Room3Detail() {
                                 className="sound-image"
                             />
                         </button>
+                        Мастерская
+                    </h2>
+                    <div className="details">
+                        <p>Вы находитесь в ремесленной мастерской, где оживали
+                            традиционные народные искусства и ремесла, которые
+                            были важной частью жизни в усадьбе. Здесь вы видите
+                            старинные прялки и станки для ткачества, которые
+                            использовались для создания уникальных тканых
+                            изделий и одежды. На стенах висят рушники с традиционными
+                            вышитыми узорами, изображающими сцены из сельской жизни
+                            и мифологии. Традиционный народный костюм на манекене с
+                            богатой вышивкой передает дух того времени и демонстрирует
+                            мастерство и творчество, передававшиеся из поколения в поколение.</p>
                     </div>
                 </div>
             )}

@@ -17,11 +17,11 @@ function Accept() {
     };
 
     const handleDeclineTest = () => {
-        navigate('/'); // Предполагается, что '/' - это стартовая страница
+        navigate('/');
     };
 
     const handleDebilTest = () => {
-        setShowWarning(false); // Закрываем окно с предупреждением
+        setShowWarning(false);
     };
 
     return (

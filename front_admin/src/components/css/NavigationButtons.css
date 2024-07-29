@@ -5,7 +5,7 @@
     top: 10px;
     width: 100%;
     justify-content: space-between;
-    z-index: 1000; /* Обеспечивает, что кнопки будут выше остального контента */
+    z-index: 1000;
 }
 
 .nav-button {
@@ -17,14 +17,14 @@
 }
 
 .nav-button img {
-    width: 50px; /* Измените размер изображения по необходимости */
+    width: 50px;
     height: auto;
     display: block;
     transition: opacity 0.3s ease;
 }
 
 .nav-button:hover img {
-    opacity: 0.8; /* Эффект при наведении */
+    opacity: 0.8;
 }
 
 .nav-button-left {

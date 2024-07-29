@@ -7,7 +7,6 @@ const SomeComponent = () => {
     const { setUser } = useUser();
 
     useEffect(() => {
-        // Пример получения кода пользователя после входа
         axios.get('http://localhost:5000/get_user_code')
             .then(response => {
                 setUser({ code: response.data.code });

@@ -4,7 +4,7 @@ import '../css/Room2Detail.css';
 import roomImage from '../pics/room2.png';
 import overlayImage from '../pics/candle.png';
 import soundImage from "../pics/sound.svg";
-import pauseImage from "../pics/pause.svg"; // Добавьте изображение паузы
+import pauseImage from "../pics/pause.svg";
 import audioFile from '../audio/room2.mp3';
 
 
@@ -12,8 +12,8 @@ function Room2Detail() {
     const [isCandleVisible, setisCandleVisible] = useState(true);
     const [showDetails, setShowDetails] = useState(null);
     const navigate = useNavigate();
-    const audioRef = useRef(new Audio(audioFile)); // Создаем реф для объекта Audio
-    const [isPlaying, setIsPlaying] = useState(false); // Хранение состояния воспроизведения
+    const audioRef = useRef(new Audio(audioFile));
+    const [isPlaying, setIsPlaying] = useState(false);
 
     const handleCandleClick = () => {
         setisCandleVisible(false);
@@ -23,8 +23,8 @@ function Room2Detail() {
     const handleClose = () => {
         setisCandleVisible(true);
         setShowDetails(null);
-        audioRef.current.pause(); // Остановить аудио при закрытии
-        audioRef.current.currentTime = 0; // Сбросить время воспроизведения
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
     };
 
     const handleBack = () => {
@@ -33,11 +33,11 @@ function Room2Detail() {
 
     const handleAudioPlayPause = () => {
         if (isPlaying) {
-            audioRef.current.pause(); // Приостановить аудио
+            audioRef.current.pause();
         } else {
-            audioRef.current.play(); // Воспроизвести аудио
+            audioRef.current.play();
         }
-        setIsPlaying(!isPlaying); // Переключить состояние воспроизведения
+        setIsPlaying(!isPlaying);
     };
 
 
@@ -47,7 +47,7 @@ function Room2Detail() {
             {isCandleVisible ? (
                 <>
                     <div className="blur-filter-2" />
-                    <div className="large-text-rectangle-2">Ремесленная мастерская</div>
+                    <div className="large-text-rectangle-2">Музыкальная гостиная</div>
                 </>
             ) : (
                 <div className="no-blur-filter-2"/>
@@ -60,15 +60,8 @@ function Room2Detail() {
                     <button className="close-button-2" onClick={handleClose}>
                         <span>&times;</span> {/* Крестик для закрытия */}
                     </button>
-                    <h2 className="overlay-header-2">Мастерская</h2>
-                    <div className="details">
-                        <p>Вы находитесь в ремесленной мастерской, где оживали традиционные народные искусства и
-                            ремесла, которые были важной частью жизни в усадьбе. Здесь вы видите старинные прялки и
-                            станки для ткачества, которые использовались для создания уникальных тканых изделий и
-                            одежды. На стенах висят рушники с традиционными вышитыми узорами, изображающими сцены из
-                            сельской жизни и мифологии. Традиционный народный костюм на манекене с богатой вышивкой
-                            передает дух того времени и демонстрирует мастерство и творчество, передававшиеся из
-                            поколения в поколение.</p>
+                    <h2 className="overlay-header-2">
+
                         <button onClick={handleAudioPlayPause} className="sound-button">
                             <img
                                 src={isPlaying ? pauseImage : soundImage}
@@ -76,6 +69,12 @@ function Room2Detail() {
                                 className="sound-image"
                             />
                         </button>
+
+                        Гостиная
+                    </h2>
+                    <div className="details">
+                        <p>Добро пожаловать в музыкальную гостиную усадьбы прадеда великого поэта Александра Сергеевича Пушкина. Эта комната была центром культурной жизни семьи, где часто устраивались музыкальные вечера и литературные чтения. Перед вами старинный рояль, изготовленный в конце XVIII века, на котором, возможно, играли классические произведения того времени. Рояль украшен изящной резьбой и инкрустацией, отражающей высокий статус семьи. Подсвечник на рояле создавал мягкое освещение для уютных вечеров, наполненных музыкой и творческим общением.</p>
+
                     </div>
                 </div>
             )}

@@ -7,7 +7,7 @@ function Register() {
     const [code, setCode] = useState(Array(6).fill(''));
     const [errorMessage, setErrorMessage] = useState('');
     const [showCodeInput, setShowCodeInput] = useState(true);
-    const [codeSent, setCodeSent] = useState(false);  // Добавлено состояние для codeSent
+    const [codeSent, setCodeSent] = useState(false);
     const navigate = useNavigate();
 
     const handleCodeChange = (e, index) => {

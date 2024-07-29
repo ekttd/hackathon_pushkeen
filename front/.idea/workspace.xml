@@ -6,57 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="f42e13bb-7377-4e49-a6ad-43a7ceaa7071" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/css/About.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/About.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/css/Accept.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/Accept.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/css/AdminExit.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/css/AdminHome.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/css/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/css/Login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/css/NavigationButtons.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/NavigationButtons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/css/PasswordForm.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/css/Register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/Register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/css/Room2Detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/Room2Detail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/css/Room3Detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/Room3Detail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/css/UserHome.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/UserHome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/javascript/AdminExit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/javascript/AdminHome.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/javascript/Login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/javascript/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/About.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/javascript/Accept.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/Accept.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/javascript/Contact.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/javascript/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/javascript/Room1.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/javascript/Room1Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/Room1Detail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/javascript/Room2.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/javascript/Room2Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/Room2Detail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/javascript/Room3Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/Room3Detail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pics/sound.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pics/sound.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/css/About.css" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/css/About.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/css/AdminExit.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/css/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/css/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/css/Login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/css/MuseumHistory.css" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/css/MuseumHistory.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/css/NavigationButtons.css" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/css/NavigationButtons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/css/PasswordForm.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/css/Register.css" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/css/Register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/css/Room1Detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/css/Room1Detail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/css/Room2Detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/css/Room2Detail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/css/Room3Detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/css/Room3Detail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/css/Test.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/css/UserHome.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/javascript/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/javascript/About.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/javascript/AdminExit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/javascript/Contact.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/javascript/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/javascript/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/javascript/Login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/javascript/MuseumHistory.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/javascript/MuseumHistory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/javascript/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/javascript/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/javascript/Room1Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/javascript/Room1Detail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/javascript/Room2Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/javascript/Room2Detail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/javascript/Room3Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/javascript/Room3Detail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/pics/audio.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/pics/back-arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/pics/balal.png" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/pics/balal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/pics/logo2.png" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/pics/logo2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/pics/room2.png" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/pics/room2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/pics/room3.png" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/pics/room3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/pics/sound.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/pics/sound.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/javascript/SomeComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/SomeComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/javascript/UserContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/UserContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/javascript/axiosInstance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/axiosInstance.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,6 +110,7 @@
       <workItem from="1722246538277" duration="1307000" />
       <workItem from="1722251453328" duration="982000" />
       <workItem from="1722255846579" duration="373000" />
+      <workItem from="1722270573836" duration="1396000" />
     </task>
     <servers />
   </component>

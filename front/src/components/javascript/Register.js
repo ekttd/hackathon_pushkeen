@@ -21,7 +21,7 @@ function Register() {
     const [codeSent, setCodeSent] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);
     const navigate = useNavigate();
-    const { setUser } = useUser(); // Используем setUser для обновления контекста
+    const { setUser } = useUser();
 
     const handleGenerateCode = async () => {
         try {
@@ -80,8 +80,8 @@ function Register() {
             try {
                 const response = await instance.post('/update_username', { code: fullCode, username });
                 if (response.status === 200) {
-                    localStorage.setItem('userCode', fullCode);  // Сохранение кода в localStorage
-                    setUser({ code: fullCode }); // Обновление кода в UserContext
+                    localStorage.setItem('userCode', fullCode);
+                    setUser({ code: fullCode });
                     setShowSuccess(true);
                     setTimeout(() => navigate('/user'), 2000);
                 } else {

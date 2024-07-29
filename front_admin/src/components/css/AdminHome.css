@@ -4,10 +4,10 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(135deg, #cfa847, #f8ebb9); /* Линейный градиент */
+    background: linear-gradient(135deg, #cfa847, #f8ebb9);
     background-size: cover;
     padding: 20px;
-    color: #89441f; /* Изменен цвет текста на коричневый */
+    color: #89441f;
     text-align: center;
 }
 
@@ -47,10 +47,10 @@
 }
 
 .room-gallery {
-    width: 60%; /* Установлена ширина карусели */
-    max-width: 800px; /* Максимальная ширина карусели */
+    width: 60%;
+    max-width: 800px;
     margin-top: 30px;
-    margin-bottom: 30px; /* Добавлен отступ снизу */
+    margin-bottom: 30px;
 }
 
 .room {
@@ -110,7 +110,7 @@
         height: auto; /* Изменена высота карусели */
         margin: 0 auto;
         margin-top: 30px;
-        margin-bottom: 30px; /* Добавлен отступ снизу */
+        margin-bottom: 30px;
     }
 
     .test-button {
@@ -141,8 +141,8 @@
 
 .room-title {
     margin-top: 10%;
-    margin-bottom: 10%; /* Отступ снизу */
-    color: #89441f; /* Изменен цвет текста на коричневый */
+    margin-bottom: 10%;
+    color: #89441f;
 }
 
 .modal-buttons {
