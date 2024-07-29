@@ -8,8 +8,8 @@
     padding: 20px;
     color: white;
     text-align: center;
-    overflow: hidden; /* Добавлено, чтобы предотвратить прокрутку */
-    margin: 0; /* Убедитесь, что здесь нет отступов */
+    overflow: hidden;
+    margin: 0;
 }
 
 body, html {
@@ -53,13 +53,13 @@ body, html {
 }
 
 .room-title {
-    margin: 1% 0; /* Уменьшите отступы сверху и снизу */
+    margin: 1% 0;
     color: #89441f;
 }
 
 .room-gallery {
     width: 40%;
-    height: 40%; /* Установите высоту контейнера слайдера в процентах */
+    height: 40%;
     margin-top: 2%;
     margin-bottom: 2%;
 }
@@ -118,7 +118,7 @@ body, html {
 @media (max-width: 768px) {
     .room-gallery {
         width: 95%;
-        height: 40%; /* Уменьшена высота для мобильных устройств */
+        height: 40%;
         margin: 0 auto;
         margin-top: 30px;
         margin-bottom: 30px;

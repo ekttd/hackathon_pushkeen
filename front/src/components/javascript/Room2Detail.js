@@ -3,13 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import '../css/Room2Detail.css';
 import roomImage from '../pics/room2.png';
 import overlayImage from '../pics/candle.png';
-import soundImage from '../pics/sound.svg'; // Добавьте ваш звук
+import soundImage from "../pics/sound.svg";
+import pauseImage from "../pics/pause.svg"; // Добавьте изображение паузы
+import audioFile from '../audio/room2.mp3';
+
 
 function Room2Detail() {
     const [isCandleVisible, setisCandleVisible] = useState(true);
     const [showDetails, setShowDetails] = useState(null);
     const navigate = useNavigate();
-    const audioRef = useRef(new Audio(`../audio/item1.mp3`)); // Инициализация аудио
+    const audioRef = useRef(new Audio(audioFile)); // Создаем реф для объекта Audio
+    const [isPlaying, setIsPlaying] = useState(false); // Хранение состояния воспроизведения
 
     const handleCandleClick = () => {
         setisCandleVisible(false);
@@ -27,9 +31,15 @@ function Room2Detail() {
         navigate('/user');
     };
 
-    const handleAudioPlay = () => {
-        audioRef.current.play(); // Воспроизвести аудио
+    const handleAudioPlayPause = () => {
+        if (isPlaying) {
+            audioRef.current.pause(); // Приостановить аудио
+        } else {
+            audioRef.current.play(); // Воспроизвести аудио
+        }
+        setIsPlaying(!isPlaying); // Переключить состояние воспроизведения
     };
+
 
     return (
         <div className={`room-detail-container-2`}>
@@ -59,8 +69,12 @@ function Room2Detail() {
                             сельской жизни и мифологии. Традиционный народный костюм на манекене с богатой вышивкой
                             передает дух того времени и демонстрирует мастерство и творчество, передававшиеся из
                             поколения в поколение.</p>
-                        <button onClick={handleAudioPlay} className="sound-button">
-                            <img src={soundImage} alt="Воспроизвести звук" className="sound-image"/>
+                        <button onClick={handleAudioPlayPause} className="sound-button">
+                            <img
+                                src={isPlaying ? pauseImage : soundImage}
+                                alt={isPlaying ? "Пауза" : "Воспроизвести звук"}
+                                className="sound-image"
+                            />
                         </button>
                     </div>
                 </div>

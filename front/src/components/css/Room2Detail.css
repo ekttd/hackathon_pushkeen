@@ -16,8 +16,8 @@ body {
     background-image: url('../pics/room2.png');
     background-position: 50% 50%;
     background-size: cover;
-    filter: blur(5px); /* Размытие фона */
-    z-index: 1; /* Установите z-index ниже з-индекса остальных элементов */
+    filter: blur(5px);
+    z-index: 1;
 }
 
 @keyframes panorama-2 {
@@ -37,12 +37,12 @@ body {
     background-position: 50% 50%;
     background-size: cover;
     animation: panorama-2 30s linear infinite;
-    z-index: 1; /* Установите z-index ниже з-индекса остальных элементов */
+    z-index: 1;
 }
 
 .room-detail-container-2 {
     background-image: url('../pics/room2.png');
-    background-position: 50% 50%; /* Начальная позиция фона по центру */
+    background-position: 50% 50%;
     background-size: cover;
 }
 
@@ -56,7 +56,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    z-index: 10; /* Слой выше изображения */
+    z-index: 10;
 }
 
 .overlay-image-2 {
@@ -71,7 +71,7 @@ body {
     top: 20px;
     left: 20px;
     padding: 10px 20px;
-    background-color: #89441f; /* Основной цвет, как на главной странице */
+    background-color: #89441f;
     border: none;
     color: white;
     border-radius: 25px;
@@ -97,9 +97,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #143d49; /* Измените цвет на желаемый */
-    font-size: 250%; /* Измените размер шрифта на желаемый */
-    z-index: 20; /* Кнопка должна быть поверх всего контента */
+    color: #143d49;
+    font-size: 250%;
+    z-index: 20;
 }
 
 
@@ -112,13 +112,13 @@ body {
 /* Окно с деталями */
 .details-overlay-2 {
     position: absolute;
-    top: 5%; /* Смещаем верхнюю границу элемента на половину высоты родителя */
-    left: 50%; /* Смещаем левую границу элемента на половину ширины родителя */
-    transform: translate(-50%, 50%); /* Смещаем элемент на -50% от его ширины и высоты, тем самым помещая его в центр */
-    background: rgba(255, 255, 255, 0.5); /* Белый фон с прозрачностью */
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background: rgba(255, 255, 255, 0.5);
     padding: 20px;
     box-sizing: border-box;
-    overflow-y: auto; /* Добавляем прокрутку, если контент не помещается */
+    overflow-y: auto;
     z-index: 30;
     border-radius: 10px;
 }
@@ -145,7 +145,7 @@ body {
     font-size: 14px;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    z-index: 40; /* Кнопка должна быть поверх всего контента */
+    z-index: 40;
 }
 
 .close-button-2:hover {
@@ -177,13 +177,13 @@ body {
         background-image: url('../pics/room2.png');
         background-position: 55% 50%;
         background-size: cover;
-        filter: blur(5px); /* Размытие фона */
-        z-index: 1; /* Установите z-index ниже з-индекса остальных элементов */
+        filter: blur(5px);
+        z-index: 1;
     }
 
     .room-detail-container-2 {
         background-image: url('../pics/room2.png');
-        background-position: 55% 50%; /* Начальная позиция фона по центру */
+        background-position: 55% 50%;
         background-size: cover;
     }
 
@@ -191,16 +191,16 @@ body {
     .details-overlay-2 {
         position: absolute;
         top: 60%;
-        right: 50%; /* Смещаем окно вправо, не доходя до краев */
+        right: 50%;
         width: 95%;
         transform: translate(-50%, 0%);
         max-width: 400px;
         height: 60%;
-        background: rgba(255, 255, 255, 0.5); /* Белый фон с прозрачностью */
-        backdrop-filter: blur(10px); /* Размытие фона за элементом */
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(10px);
         padding: 20px;
         box-sizing: border-box;
-        overflow-y: auto; /* Добавляем прокрутку, если контент не помещается */
+        overflow-y: auto;
         z-index: 30;
         border-radius: 10px;
     }
@@ -215,8 +215,8 @@ body {
         position: relative;
         width: 100%;
         height: 100%;
-        filter: blur(10px); /* Размытие фона */
-        transition: filter 0.3s ease; /* Плавная анимация при изменении фильтра */
+        filter: blur(10px);
+        transition: filter 0.3s ease;
     }
 
     .back-button-2, .close-button-2 {
@@ -234,7 +234,7 @@ body {
         border-radius: 5px;
         cursor: pointer;
         font-size: 16px;
-        z-index: 10; /* Слой выше изображения */
+        z-index: 10;
     }
 
 
@@ -258,8 +258,8 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #652c0d; /* Измените цвет на желаемый */
-        font-size: 150%; /* Измените размер шрифта на желаемый */
+        color: #652c0d;
+        font-size: 150%;
         z-index: 20;
     }
 }

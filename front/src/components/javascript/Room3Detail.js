@@ -1,17 +1,17 @@
-import React, {useRef, useState} from 'react';
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Room3Detail.css'; // Подключаем CSS файл
-import '../css/PasswordForm.css'; // Подключаем CSS файл
-import roomImage from '../pics/room3.png';
 import overlayImage from "../pics/pralka.png";
 import soundImage from "../pics/sound.svg";
+import pauseImage from "../pics/pause.svg"; // Добавьте изображение паузы
+import audioFile from '../audio/room3.mp3';
 
 function Room3Detail() {
     const [showDetails, setShowDetails] = useState(null); // Хранение состояния выбранного объекта
     const [isPralkaVisible, setIsPralkaVisible] = useState(true); // Хранение состояния видимости балалайки
+    const [isPlaying, setIsPlaying] = useState(false); // Хранение состояния воспроизведения
     const navigate = useNavigate();
-    const audio = document.getElementById('audio');
-    const audioRef = useRef(new Audio(`../audio/item1.mp3`)); // Инициализация аудио
+    const audioRef = useRef(new Audio(audioFile)); // Создаем реф для объекта Audio
 
     const handlePralkaClick = () => {
         setIsPralkaVisible(false);
@@ -27,8 +27,13 @@ function Room3Detail() {
         navigate('/user');
     };
 
-    const handleAudioPlay = () => {
-        audioRef.current.play(); // Воспроизвести аудио
+    const handleAudioPlayPause = () => {
+        if (isPlaying) {
+            audioRef.current.pause(); // Приостановить аудио
+        } else {
+            audioRef.current.play(); // Воспроизвести аудио
+        }
+        setIsPlaying(!isPlaying); // Переключить состояние воспроизведения
     };
 
     return (
@@ -60,14 +65,16 @@ function Room3Detail() {
                             атмосферу уюта и спокойствия, где проводились часы за чтением, рукоделием и беседами.
                             Эти комнаты усадьбы прадеда Пушкина не только рассказывают о жизни и культуре того времени,
                             но и о наследии, которое вдохновляло будущего великого поэта.</p>
-
-                        <button onClick={handleAudioPlay} className="sound-button">
-                            <img src={soundImage} alt="Воспроизвести звук" className="sound-image"/>
+                        <button onClick={handleAudioPlayPause} className="sound-button">
+                            <img
+                                src={isPlaying ? pauseImage : soundImage}
+                                alt={isPlaying ? "Пауза" : "Воспроизвести звук"}
+                                className="sound-image"
+                            />
                         </button>
                     </div>
                 </div>
             )}
-
         </div>
     );
 }

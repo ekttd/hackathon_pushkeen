@@ -16,7 +16,7 @@ function Home() {
                 </div>
             </div>
             <div className="main-buttons">
-                <button className="main-button" onClick={() => navigate('/register')}>Начать путешествие</button>
+                <button className="main-button-admin" onClick={() => navigate('/register')}>Начать путешествие</button>
                 <button className="secondary-button" onClick={() => navigate('/history')}>История музея</button>
                 <button className="secondary-button" onClick={() => navigate('/about')}>О нас</button>
             </div>

@@ -1,16 +1,15 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/Room2Detail.css';
-import roomImage from '../pics/room3.png';
-import overlayImage from '../pics/pralka.svg'; // Убедитесь, что путь правильный
-import audioPlayIcon from '../pics/sound.svg';
-import audioFile from '../audio/room2.mp3';
-
+import '../css/Room3Detail.css'; // Подключаем CSS файл
+import overlayImage from "../pics/pralka.png";
+import pauseImage from "../pics/pause.svg"; // Добавьте изображение паузы
+import audioFile from '../audio/room3.mp3';
+import soundImage from "../pics/sound.svg";
 const FIXED_CODE = '123456';
 
-function Room2Detail() {
-    const [showDetails, setShowDetails] = useState(null);
-    const [isCandleVisible, setIsCandleVisible] = useState(true);
+function Room3Detail() {
+    const [showDetails, setShowDetails] = useState(null); // Хранение состояния выбранного объекта
+    const [isPralkaVisible, setIsPralkaVisible] = useState(true); // Хранение состояния видимости балалайки
     const [code, setCode] = useState(['', '', '', '', '', '']);
     const [errorMessage, setErrorMessage] = useState('');
     const [showCodeInput, setShowCodeInput] = useState(false);
@@ -21,14 +20,14 @@ function Room2Detail() {
     const audioRef = useRef(null);
     const navigate = useNavigate();
 
-    const handleCandleClick = () => {
-        setIsCandleVisible(false);
-        setShowDetails('item2');
+    const handlePralkaClick = () => {
+        setIsPralkaVisible(false);
+        setShowDetails('item1');
         setShowAudioButton(true);
     };
 
     const handleClose = () => {
-        setIsCandleVisible(true);
+        setIsPralkaVisible(true);
         setShowDetails(null);
         setShowAudioButton(false);
         if (audioRef.current) {
@@ -38,7 +37,7 @@ function Room2Detail() {
     };
 
     const handleBack = () => {
-        if (isAdmin) {
+        if (setIsAdmin) {
             setShowCodeInput(true);
         } else {
             navigate('/admin');
@@ -84,8 +83,9 @@ function Room2Detail() {
     };
 
     return (
-        <div className="room-detail-container">
-            <button className="back-button-1" onClick={handleBack}>Назад к комнатам</button>
+        <div className="room-detail-container-3">
+            <button className="back-button-3" onClick={handleBack}>Назад к комнатам</button>
+
             {showCodeInput && (
                 <div className="code-input-container">
                     <div className="code-input-wrapper">
@@ -106,14 +106,17 @@ function Room2Detail() {
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
                 </div>
             )}
-            <div className={`image-container ${isCandleVisible ? '' : 'normal-back'}`} onClick={handleCandleClick}>
-                <img src={roomImage} alt="Комната" className="full-image"/>
-            </div>
-            {isCandleVisible && (
-                <div className="large-text-rectangle-1">Третья Комната</div>
+
+            {isPralkaVisible ? (
+                <>
+                    <div className="blur-filter-3"/>
+                    <div className="large-text-rectangle-3">Домашний уют</div>
+                </>
+            ) : (
+                <div className="no-blur-filter-3"/>
             )}
-            <div className={`clickable-candle ${isCandleVisible ? '' : 'hidden'}`} onClick={handleCandleClick}>
-                <img src={overlayImage} alt="Открыть детали" className="overlay-image-1"/>
+            <div className={`clickable-pralka ${isPralkaVisible ? '' : 'hidden'}`} onClick={handlePralkaClick}>
+                <img src={overlayImage} alt="Открыть детали" className="overlay-image-3"/>
             </div>
             {showDetails && (
                 <div className="details-overlay-1">
@@ -131,12 +134,17 @@ function Room2Detail() {
                 </div>
             )}
             {showAudioButton && (
-                <button className="audio-button" onClick={toggleAudio}>
-                    <img src={audioPlayIcon} alt={isAudioPlaying ? 'Pause Audio' : 'Play Audio'} />
+                <button onClick={toggleAudio} className="audio-button">
+                    <img
+                        src={isAudioPlaying ? pauseImage : soundImage}
+                        alt={isAudioPlaying ? "Пауза" : "Воспроизвести звук"}
+                        className="sound-image"
+                    />
                 </button>
             )}
+
         </div>
     );
 }
 
-export default Room2Detail;
+export default Room3Detail;

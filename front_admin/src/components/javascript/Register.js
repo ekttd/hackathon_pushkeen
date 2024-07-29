@@ -83,9 +83,6 @@ function Register() {
             {errorMessage && <p className="error-message">{errorMessage}</p>}
             <div className="register-form">
                 <h1>Вход</h1>
-                {!codeSent ? (
-                    <button onClick={handleGenerateCode} className="main-button">Сгенерировать код</button>
-                ) : (
                     <>
                         {showCodeInput && (
                             <>
@@ -106,7 +103,6 @@ function Register() {
                             </>
                         )}
                     </>
-                )}
             </div>
         </div>
     );

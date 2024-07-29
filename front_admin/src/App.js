@@ -2,7 +2,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/javascript/Home';
-import Login from './components/javascript/Login';
 import AdminHome from './components/javascript/AdminHome';
 import Register from './components/javascript/Register';
 import MuseumHistory from './components/javascript/MuseumHistory';
@@ -18,7 +17,6 @@ function App() {
             <div>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/login" element={<Login />} />
                     <Route path="/admin" element={<AdminHome />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/history" element={<MuseumHistory />} />

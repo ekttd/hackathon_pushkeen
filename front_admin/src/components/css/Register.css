@@ -5,16 +5,15 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: #72cbee; /* Фон, пока изображение загружается */
+    background: linear-gradient(135deg, #cfa847, #f8ebb9);
     position: relative;
     overflow: hidden;
 }
-
 .register-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgb(243, 233, 211);
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -29,7 +28,7 @@
 
 .register-form h1 {
     font-size: 2.5rem;
-    color: #333;
+    color: #89441f;
     margin-bottom: 20px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
@@ -46,41 +45,34 @@
 }
 
 .input-field:focus {
-    border-color: #2295b4;
-    box-shadow: 0 0 8px rgba(34, 149, 180, 0.3);
+    border-color: #89441f;
+    /*box-shadow: 0 0 8px rgba(34, 149, 180, 0.3);*/
     outline: none;
 }
 
-.code-input-container {
+.code-container {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    gap: 10px; /* Расстояние между инпутами */
 }
 
 .code-input {
-    width: 40px;
-    height: 40px;
+    width: 40px; /* Ширина инпута */
+    height: 40px; /* Высота инпута */
     text-align: center;
-    font-size: 24px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.code-input:focus {
-    border-color: #2295b4;
-    box-shadow: 0 0 8px rgba(34, 149, 180, 0.3);
-    outline: none;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .main-button {
     width: 100%;
     padding: 15px;
     margin: 10px 0;
-    background: linear-gradient(135deg, #2295b4, #196c83);
+    /*background: linear-gradient(135deg, #2295b4, #196c83);*/
+    background: #89441f;
     border: none;
-    color: white;
+    color: #e8a108;
     border-radius: 25px;
     cursor: pointer;
     font-size: 16px;
@@ -89,7 +81,8 @@
 }
 
 .main-button:hover {
-    background: linear-gradient(135deg, #196c83, #2295b4);
+    background: #9a7053;
+    color: #89441f;
     transform: translateY(-3px);
 }
 

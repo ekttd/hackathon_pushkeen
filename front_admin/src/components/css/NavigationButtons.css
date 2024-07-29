@@ -28,11 +28,11 @@
 }
 
 .nav-button-left {
-    position: absolute;
-    left: 10px;
+    position: fixed;
+    left: 5%;
 }
 
 .nav-button-right {
-    position: absolute;
-    right: 10px;
+    position: fixed;
+    right: 5%;
 }

@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(135deg, #cfa847, #f8ebb9); /* Линейный градиент */
+    background: linear-gradient(135deg, #cfa847, #f8ebb9);
     position: relative;
     overflow: hidden;
 }
@@ -130,8 +130,8 @@
 }
 
 .success-image {
-    width: 100vw; /* Начальная ширина */
-    height: 100vh; /* Начальная высота */
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
     animation: scaleUp 2s ease-out forwards;
 }

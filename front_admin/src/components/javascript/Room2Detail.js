@@ -2,15 +2,16 @@ import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Room2Detail.css';
 import roomImage from '../pics/room2.png';
-import overlayImage from '../pics/candle.png'; // Изменен путь к изображению
-import audioPlayIcon from '../pics/sound.svg'; // Иконка воспроизведения аудио
+import overlayImage from '../pics/candle.png';
+import pauseImage from "../pics/pause.svg"; // Добавьте изображение паузы
 import audioFile from '../audio/room2.mp3';
-
+import soundImage from "../pics/sound.svg";
 const FIXED_CODE = '123456';
 
+
 function Room2Detail() {
+    const [isCandleVisible, setisCandleVisible] = useState(true);
     const [showDetails, setShowDetails] = useState(null);
-    const [isCandleVisible, setIsCandleVisible] = useState(true);
     const [code, setCode] = useState(['', '', '', '', '', '']);
     const [errorMessage, setErrorMessage] = useState('');
     const [showCodeInput, setShowCodeInput] = useState(false);
@@ -22,15 +23,14 @@ function Room2Detail() {
     const navigate = useNavigate();
 
     const handleCandleClick = () => {
-        setIsCandleVisible(false);
-        setShowDetails('item2');
+        setisCandleVisible(false);
+        setShowDetails('item1');
         setShowAudioButton(true);
     };
 
     const handleClose = () => {
-        setIsCandleVisible(true);
+        setisCandleVisible(true);
         setShowDetails(null);
-        setShowAudioButton(false);
         if (audioRef.current) {
             audioRef.current.pause();
             setIsAudioPlaying(false);
@@ -38,7 +38,7 @@ function Room2Detail() {
     };
 
     const handleBack = () => {
-        if (isAdmin) {
+        if (setIsAdmin) {
             setShowCodeInput(true);
         } else {
             navigate('/admin');
@@ -84,8 +84,9 @@ function Room2Detail() {
     };
 
     return (
-        <div className="room-detail-container">
-            <button className="back-button-1" onClick={handleBack}>Назад к комнатам</button>
+        <div className={`room-detail-container-2`}>
+            <button className="back-button-2" onClick={handleBack}>Назад к комнатам</button>
+
             {showCodeInput && (
                 <div className="code-input-container">
                     <div className="code-input-wrapper">
@@ -106,21 +107,24 @@ function Room2Detail() {
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
                 </div>
             )}
-            <div className={`image-container ${isCandleVisible ? '' : 'normal-back'}`} onClick={handleCandleClick}>
-                <img src={roomImage} alt="Комната" className="full-image"/>
-            </div>
-            {isCandleVisible && (
-                <div className="large-text-rectangle-1">Вторая Комната</div>
+
+            {isCandleVisible ? (
+                <>
+                    <div className="blur-filter-2" />
+                    <div className="large-text-rectangle-2">Ремесленная мастерская</div>
+                </>
+            ) : (
+                <div className="no-blur-filter-2"/>
             )}
             <div className={`clickable-candle ${isCandleVisible ? '' : 'hidden'}`} onClick={handleCandleClick}>
-                <img src={overlayImage} alt="Открыть детали" className="overlay-image-1"/>
+                <img src={overlayImage} alt="Открыть детали" className="overlay-image-2"/>
             </div>
             {showDetails && (
                 <div className="details-overlay-1">
                     <button className="close-button-1" onClick={handleClose}>
                         <span>&times;</span>
                     </button>
-                    <h2 className="overlay-header">Вторая Комната</h2>
+                    <h2 className="overlay-header">Третья Комната</h2>
                     <div className="details-content">
                         <p>Эта комната оформлена в стиле модерн с элементами ар-деко. Вы увидите шикарные диваны, изысканные светильники и современные аксессуары. Окна с великолепным видом на сад и теплые, уютные текстуры создают атмосферу комфорта и стиля. Большая картина на стене добавляет драматизма в интерьер.</p>
                         <audio ref={audioRef} className="overlay-audio">
@@ -131,8 +135,12 @@ function Room2Detail() {
                 </div>
             )}
             {showAudioButton && (
-                <button className="audio-button" onClick={toggleAudio}>
-                    <img src={audioPlayIcon} alt={isAudioPlaying ? 'Pause Audio' : 'Play Audio'} />
+                <button onClick={toggleAudio} className="audio-button">
+                    <img
+                        src={isAudioPlaying ? pauseImage : soundImage}
+                        alt={isAudioPlaying ? "Пауза" : "Воспроизвести звук"}
+                        className="sound-image"
+                    />
                 </button>
             )}
         </div>

@@ -1,12 +1,13 @@
-import React, { useState, useRef } from 'react';
+import React, {useRef, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Room1Detail.css';
-import roomImage from '../pics/room1.jpeg';
+import roomImage from '../pics/room1.png';
 import overlayImage from '../pics/balal.png';
-import audioPlayIcon from '../pics/sound.svg'; // Используем одну иконку для воспроизведения и паузы
+import pauseImage from "../pics/pause.svg"; // Добавьте изображение паузы
 import audioFile from '../audio/room1.mp3';
-
+import soundImage from "../pics/sound.svg";
 const FIXED_CODE = '123456';
+
 
 function Room1Detail() {
     const [showDetails, setShowDetails] = useState(null);
@@ -23,14 +24,17 @@ function Room1Detail() {
 
     const handleBalalaClick = () => {
         setIsBalalaVisible(false);
-        setShowDetails('item1');
+        setShowDetails('room1');
+        document.querySelector('.clickable-balal').classList.add('clicked');
+        setTimeout(() => {
+            document.querySelector('.clickable-balal').classList.remove('clicked');
+        }, 300);
         setShowAudioButton(true);
     };
 
     const handleClose = () => {
         setIsBalalaVisible(true);
         setShowDetails(null);
-        setShowAudioButton(false);
         if (audioRef.current) {
             audioRef.current.pause();
             setIsAudioPlaying(false);
@@ -38,7 +42,7 @@ function Room1Detail() {
     };
 
     const handleBack = () => {
-        if (isAdmin) {
+        if (setIsAdmin) {
             setShowCodeInput(true);
         } else {
             navigate('/admin');
@@ -83,9 +87,11 @@ function Room1Detail() {
         }
     };
 
+
     return (
         <div className="room-detail-container">
-            <button className="button back-button-1" onClick={handleBack}>Назад к комнатам</button>
+            <button className="back-button-1" onClick={handleBack}>Назад к комнатам</button>
+
             {showCodeInput && (
                 <div className="code-input-container">
                     <div className="code-input-wrapper">
@@ -106,23 +112,28 @@ function Room1Detail() {
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
                 </div>
             )}
-            <div className={`image-container ${isBalalaVisible ? '' : 'normal-back'}`} onClick={handleBalalaClick}>
-                <img src={roomImage} alt="Комната" className="full-image"/>
-            </div>
-            {isBalalaVisible && (
-                <div className="large-text-rectangle-1">Гостиная</div>
+
+            {isBalalaVisible ? (
+                <>
+                    <div className="large-text-rectangle-1">Музыкальная гостиная</div>
+                    <div className="blur-filter"/>
+                </>
+            ) : (
+                <div className="no-blur-filter"/>
             )}
+
             <div className={`clickable-balal ${isBalalaVisible ? '' : 'hidden'}`} onClick={handleBalalaClick}>
                 <img src={overlayImage} alt="Открыть детали" className="overlay-image-1"/>
             </div>
+
             {showDetails && (
                 <div className="details-overlay-1">
                     <button className="close-button-1" onClick={handleClose}>
                         <span>&times;</span>
                     </button>
+                    <h2 className="overlay-header">Третья Комната</h2>
                     <div className="details-content">
-                        <h2>Комната для гостей</h2>
-                        <p>Здесь вы видите мебель конца XVIII века, включая элегантный диван и кресла с зелеными подушками, отражающие стиль и комфорт той эпохи. Домра на диване напоминает о любви семьи к музыке и искусству. Картина на мольберте и добавляют нотки природы и вдохновения в интерьер комнаты. Туалетный столик с зеркалом и кружевной салфеткой создают атмосферу уюта и спокойствия.</p>
+                        <p>Эта комната оформлена в стиле модерн с элементами ар-деко. Вы увидите шикарные диваны, изысканные светильники и современные аксессуары. Окна с великолепным видом на сад и теплые, уютные текстуры создают атмосферу комфорта и стиля. Большая картина на стене добавляет драматизма в интерьер.</p>
                         <audio ref={audioRef} className="overlay-audio">
                             <source src={audioFile} type="audio/mpeg"/>
                             Ваш браузер не поддерживает элемент audio.
@@ -131,8 +142,12 @@ function Room1Detail() {
                 </div>
             )}
             {showAudioButton && (
-                <button className="audio-button" onClick={toggleAudio}>
-                    <img src={audioPlayIcon} alt={isAudioPlaying ? 'Pause Audio' : 'Play Audio'} />
+                <button onClick={toggleAudio} className="audio-button">
+                    <img
+                        src={isAudioPlaying ? pauseImage : soundImage}
+                        alt={isAudioPlaying ? "Пауза" : "Воспроизвести звук"}
+                        className="sound-image"
+                    />
                 </button>
             )}
         </div>

@@ -15,7 +15,7 @@ function MuseumHistory() {
         <div className="museum-history-container">
             <h1 className="title">История музея</h1>
             <div className="history-section">
-                <button className="collapsible" onClick={handleToggle}>Основание музея</button>
+                <button className="collapsible-history" onClick={handleToggle}>Основание музея</button>
                 <div className="content">
                     <p>
                         Музейное агентство было основано в 1990 году. Его миссия — сохранить и популяризировать культурное наследие нашей области.
@@ -24,7 +24,7 @@ function MuseumHistory() {
                 </div>
             </div>
             <div className="history-section">
-                <button className="collapsible" onClick={handleToggle}>Коллекция</button>
+                <button className="collapsible-history" onClick={handleToggle}>Коллекция</button>
                 <div className="content">
                     <p>
                         В музее представлены экспонаты различных эпох и направлений, от древности до современности.
@@ -33,7 +33,7 @@ function MuseumHistory() {
                 </div>
             </div>
             <div className="history-section">
-                <button className="collapsible" onClick={handleToggle}>Выставки</button>
+                <button className="collapsible-history" onClick={handleToggle}>Выставки</button>
                 <div className="content">
                     <p>
                         Музей проводит множество выставок, посвящённых различным темам и эпохам. Каждая выставка тщательно подготовлена и предлагает посетителям уникальную возможность
@@ -48,7 +48,7 @@ function MuseumHistory() {
                     <img src={galleryImage2} alt="Gallery Image 2" className="gallery-image" />
                     <img src={galleryImage3} alt="Gallery Image 3" className="gallery-image" />
                 </div>
-            </div>+
+            </div>
             <NavigationButtons />
         </div>
     );

@@ -11,7 +11,7 @@ body {
     justify-content: center;
     height: 100vh;
     padding: 20px;
-    background: linear-gradient(135deg, #cfa847, #f8ebb9); /* Линейный градиент */
+    background: linear-gradient(135deg, #cfa847, #f8ebb9);
     /*background: linear-gradient(to bottom, #82d2ea, #ffffff);*/
     position: relative;
     overflow: hidden;

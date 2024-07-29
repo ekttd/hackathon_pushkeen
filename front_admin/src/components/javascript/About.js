@@ -12,7 +12,7 @@ function About() {
         <div className="about-container">
             <h1 className="title">О нас</h1>
             <div className="about-section">
-                <button className="collapsible" onClick={handleToggle}>Режим работы</button>
+                <button className="collapsible-about" onClick={handleToggle}>Режим работы</button>
                 <div className="content">
                     <p>Вторник - Воскресенье:</p>
                     <p>10:00 - 17:00 (Касса до 16:30)</p>
@@ -20,14 +20,14 @@ function About() {
                 </div>
             </div>
             <div className="about-section">
-                <button className="collapsible" onClick={handleToggle}>Стоимость билетов</button>
+                <button className="collapsible-about" onClick={handleToggle}>Стоимость билетов</button>
                 <div className="content">
                     <p>Взрослый билет (от 18 лет) - 120 рублей</p>
                     <p>Детский билет - бесплатно</p>
                 </div>
             </div>
             <div className="about-section">
-                <button className="collapsible" onClick={handleToggle}>Контакты</button>
+                <button className="collapsible-about" onClick={handleToggle}>Контакты</button>
                 <div className="content">
                     <p>E-mail: mus_agency_obl@lenoblmus.ru</p>
                     <p>Приёмная: 8 812 579 57 22</p>
@@ -35,7 +35,7 @@ function About() {
                 </div>
             </div>
             <div className="about-section">
-                <button className="collapsible" onClick={handleToggle}>Видео об усадьбе</button>
+                <button className="collapsible-about" onClick={handleToggle}>Видео об усадьбе</button>
                 <div className="content">
                     <div className="video-wrapper">
                         <iframe
