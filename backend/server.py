@@ -37,16 +37,20 @@ def generate_unique_code():
             return code
 
 
+def get_end_of_day():
+    now = datetime.now()
+    end_of_day = datetime(now.year, now.month, now.day, 23, 59, 59)
+    return end_of_day
+
+
 @app.route('/add_user', methods=['POST'])
 def add_user():
-    data = request.json
-    username = data.get('username', '')  # Пустое имя по умолчанию
+    end_of_day = get_end_of_day()
     code = generate_unique_code()
     user_data = {
-        'username': username,
         '_id': users.count_documents({}) + 1,
         'coins': 0,
-        'valid_date': datetime.strptime('2024-07-19T00:00:00.000+00:00', '%Y-%m-%dT%H:%M:%S.%f+00:00'),
+        'valid_date': end_of_day,
         'code': code
     }
 
