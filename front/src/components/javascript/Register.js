@@ -71,7 +71,7 @@ function Register() {
                     setErrorMessage('Неверный код. Пожалуйста, введите 6-значный код.');
                 }
             } catch (error) {
-                setErrorMessage('Ошибка при соединении с сервером.');
+                setErrorMessage('Ошибка. Неверный код.');
             }
         } else {
             setErrorMessage('Код должен быть 6-значным числом.');

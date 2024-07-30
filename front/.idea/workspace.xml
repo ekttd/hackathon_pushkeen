@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f42e13bb-7377-4e49-a6ad-43a7ceaa7071" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/css/Accept.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/Accept.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/javascript/MuseumHistory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/MuseumHistory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/css/Register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/Register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/javascript/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/javascript/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front_admin/src/components/css/Register.css" beforeDir="false" afterPath="$PROJECT_DIR$/../front_admin/src/components/css/Register.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,22 +33,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/pipop/Downloads/hackathon_pushkeen/front",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.build.executor": "Run",
-    "npm.start.executor": "Run",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.1.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/pipop/Downloads/hackathon_pushkeen/front&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.1.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="npm.start">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -100,6 +101,7 @@
       <workItem from="1722270573836" duration="1396000" />
       <workItem from="1722275261588" duration="4846000" />
       <workItem from="1722283339483" duration="593000" />
+      <workItem from="1722321587550" duration="3388000" />
     </task>
     <servers />
   </component>
